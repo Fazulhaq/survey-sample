@@ -1,0 +1,31 @@
+{
+  "surveySampleApp": {
+    "backup": {
+      "home": {
+        "title": "Backups",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Backup",
+        "createOrEditLabel": "Create or edit a Backup",
+        "notFound": "No Backups found"
+      },
+      "created": "A new Backup is created with identifier {{ param }}",
+      "updated": "A Backup is updated with identifier {{ param }}",
+      "deleted": "A Backup is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Backup {{ id }}?"
+      },
+      "detail": {
+        "title": "Backup"
+      },
+      "id": "ID",
+      "question1": "Question 1",
+      "question2": "Question 2",
+      "question3": "Question 3",
+      "question4": "Question 4",
+      "question5": "Question 5",
+      "question6": "Question 6",
+      "question7": "Question 7",
+      "form": "Form"
+    }
+  }
+}

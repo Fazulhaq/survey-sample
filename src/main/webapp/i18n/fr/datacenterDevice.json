@@ -1,0 +1,30 @@
+{
+  "surveySampleApp": {
+    "datacenterDevice": {
+      "home": {
+        "title": "DatacenterDevices",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Datacenter Device",
+        "createOrEditLabel": "Créer ou éditer un Datacenter Device",
+        "notFound": "Aucun Datacenter Device trouvé"
+      },
+      "created": "Un nouveau Datacenter Device a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Datacenter Device avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Datacenter Device avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Datacenter Device {{ id }} ?"
+      },
+      "detail": {
+        "title": "Datacenter Device"
+      },
+      "id": "ID",
+      "deviceType": "Device Type",
+      "quantity": "Quantity",
+      "brandAndModel": "Brand And Model",
+      "age": "Age",
+      "purpose": "Purpose",
+      "currentStatus": "Current Status",
+      "form": "Form"
+    }
+  }
+}

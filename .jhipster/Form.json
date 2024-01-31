@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20240131052502",
+  "entityTableName": "form",
+  "fields": [
+    {
+      "fieldName": "futurePlan",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "FormStatus",
+      "fieldValues": "INPROGRESS,SUBMITTED"
+    },
+    {
+      "fieldName": "createDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updateDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Form",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "organization",
+      "relationshipName": "organization",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

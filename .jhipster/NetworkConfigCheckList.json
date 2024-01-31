@@ -1,0 +1,98 @@
+{
+  "applications": "*",
+  "changelogDate": "20240131053002",
+  "entityTableName": "network_config_check_list",
+  "fields": [
+    {
+      "fieldName": "dhcp",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "dns",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "activeDirectory",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "sharedDrives",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "mailServer",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "firewalls",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "loadBalancing",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "networkMonitoring",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "antivirus",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "integratedSystems",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "antiSpam",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "wpa",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "autoBackup",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "physicalSecurity",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "storageServer",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "securityAudit",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "disasterRecovery",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "proxyServer",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "wdsServer",
+      "fieldType": "Boolean"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "NetworkConfigCheckList",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "form",
+      "relationshipName": "form",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

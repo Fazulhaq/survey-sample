@@ -1,0 +1,50 @@
+{
+  "applications": "*",
+  "changelogDate": "20240131052902",
+  "entityTableName": "backup",
+  "fields": [
+    {
+      "fieldName": "question1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "question2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "question3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "question4",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "question5",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "question6",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "question7",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Backup",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "form",
+      "relationshipName": "form",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

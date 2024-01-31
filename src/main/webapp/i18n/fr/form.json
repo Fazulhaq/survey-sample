@@ -1,0 +1,29 @@
+{
+  "surveySampleApp": {
+    "form": {
+      "home": {
+        "title": "Forms",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Form",
+        "createOrEditLabel": "Créer ou éditer un Form",
+        "notFound": "Aucun Form trouvé"
+      },
+      "created": "Un nouveau Form a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Form avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Form avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Form {{ id }} ?"
+      },
+      "detail": {
+        "title": "Form"
+      },
+      "id": "ID",
+      "futurePlan": "Future Plan",
+      "status": "Status",
+      "createDate": "Create Date",
+      "updateDate": "Update Date",
+      "user": "User",
+      "organization": "Organization"
+    }
+  }
+}

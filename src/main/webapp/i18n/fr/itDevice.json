@@ -1,0 +1,30 @@
+{
+  "surveySampleApp": {
+    "itDevice": {
+      "home": {
+        "title": "ItDevices",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau It Device",
+        "createOrEditLabel": "Créer ou éditer un It Device",
+        "notFound": "Aucun It Device trouvé"
+      },
+      "created": "Un nouveau It Device a été créé avec l'identifiant {{ param }}",
+      "updated": "Le It Device avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le It Device avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le It Device {{ id }} ?"
+      },
+      "detail": {
+        "title": "It Device"
+      },
+      "id": "ID",
+      "deviceType": "Device Type",
+      "quantity": "Quantity",
+      "brandAndModel": "Brand And Model",
+      "age": "Age",
+      "purpose": "Purpose",
+      "currentStatus": "Current Status",
+      "form": "Form"
+    }
+  }
+}

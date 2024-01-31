@@ -38,6 +38,16 @@ public class CacheConfiguration {
         return cm -> {
             createCache(cm, com.amin.survey.repository.UserRepository.USERS_BY_LOGIN_CACHE);
             createCache(cm, com.amin.survey.repository.UserRepository.USERS_BY_EMAIL_CACHE);
+            createCache(cm, com.amin.survey.domain.Organization.class.getName());
+            createCache(cm, com.amin.survey.domain.Form.class.getName());
+            createCache(cm, com.amin.survey.domain.OrgResponsiblePerson.class.getName());
+            createCache(cm, com.amin.survey.domain.Server.class.getName());
+            createCache(cm, com.amin.survey.domain.Internet.class.getName());
+            createCache(cm, com.amin.survey.domain.Backup.class.getName());
+            createCache(cm, com.amin.survey.domain.NetworkConfigCheckList.class.getName());
+            createCache(cm, com.amin.survey.domain.DatacenterDevice.class.getName());
+            createCache(cm, com.amin.survey.domain.ItDevice.class.getName());
+            createCache(cm, com.amin.survey.domain.System.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -6,8 +6,18 @@
       "home": "Home",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
-        "main": "Entities",
-        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+        "main": "Services",
+        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
+        "organization": "Organization",
+        "form": "Survey",
+        "orgResponsiblePerson": "Org Responsible Person",
+        "server": "Server",
+        "internet": "Internet",
+        "backup": "Backup",
+        "networkConfigCheckList": "Network Config Check List",
+        "datacenterDevice": "Datacenter Device",
+        "itDevice": "It Device",
+        "system": "System"
       },
       "account": {
         "main": "Account",
@@ -48,7 +58,7 @@
       "info": {
         "authenticated": {
           "prefix": "If you want to ",
-          "link": "sign in",
+          "link": "SIGN IN",
           "suffix": ", you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\")."
         },
         "register": {
@@ -95,6 +105,7 @@
       "cancel": "Cancel",
       "delete": "Delete",
       "edit": "Edit",
+      "addsurvey": "Survey",
       "open": "Open",
       "save": "Save",
       "view": "View",

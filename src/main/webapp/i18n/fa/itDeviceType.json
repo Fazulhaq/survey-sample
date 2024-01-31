@@ -1,0 +1,12 @@
+{
+  "surveySampleApp": {
+    "ItDeviceType": {
+      "null": "",
+      "DesktopComputers": "DesktopComputers",
+      "Laptops": "Laptops",
+      "Servers": "Servers",
+      "Printers": "Printers",
+      "Scanners": "Scanners"
+    }
+  }
+}

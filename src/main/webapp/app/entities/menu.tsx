@@ -6,8 +6,12 @@ import MenuItem from 'app/shared/layout/menus/menu-item';
 const EntitiesMenu = () => {
   return (
     <>
-      {/* prettier-ignore */}
-      {/* jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here */}
+      <MenuItem icon="asterisk" to="/organization">
+        <Translate contentKey="global.menu.entities.organization" />
+      </MenuItem>
+      <MenuItem icon="asterisk" to="/form">
+        <Translate contentKey="global.menu.entities.form" />
+      </MenuItem>
     </>
   );
 };

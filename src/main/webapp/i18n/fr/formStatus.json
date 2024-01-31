@@ -1,0 +1,9 @@
+{
+  "surveySampleApp": {
+    "FormStatus": {
+      "null": "",
+      "INPROGRESS": "INPROGRESS",
+      "SUBMITTED": "SUBMITTED"
+    }
+  }
+}

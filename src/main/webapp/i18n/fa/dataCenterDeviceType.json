@@ -1,0 +1,13 @@
+{
+  "surveySampleApp": {
+    "DataCenterDeviceType": {
+      "null": "",
+      "Racks": "Racks",
+      "Servers": "Servers",
+      "Routers": "Routers",
+      "Switches": "Switches",
+      "Firewalls": "Firewalls",
+      "DataStorage": "DataStorage"
+    }
+  }
+}

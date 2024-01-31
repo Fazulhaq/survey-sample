@@ -1,0 +1,130 @@
+enum FormStatus{
+    INPROGRESS,
+    SUBMITTED
+}
+enum ItDeviceType{
+    DesktopComputers
+    Laptops
+    Servers
+    Printers
+    Scanners
+}
+enum DataCenterDeviceType{
+  Racks
+  Servers
+  Routers
+  Switches
+  Firewalls
+  DataStorage
+}
+
+entity Organization{
+    name String required unique
+    code String required 
+    description String
+    address String  required
+    CreateDate  Instant
+    UpdateDate  Instant
+}
+entity Form{
+ futurePlan   String 
+ status       FormStatus
+ CreateDate  Instant
+ UpdateDate  Instant
+}
+entity OrgResponsiblePerson{
+    fullName String required
+    position String required
+    contact  String required
+    date     LocalDate required
+}
+entity Server{
+    question1 String
+    question2 String
+    question3 String
+    question4 String
+    question5 String
+    question6 String
+    question7 String
+}
+
+entity Internet{
+    question1 String
+    question2 String
+    question3 String
+    question4 String
+    question5 String
+    question6 String
+}
+entity Backup{
+    question1 String
+    question2 String
+    question3 String
+    question4 String
+    question5 String
+    question6 String
+    question7 String
+}
+entity NetworkConfigCheckList{
+   dhcp    Boolean		 
+   dns     Boolean
+   activeDirectory Boolean
+   sharedDrives	Boolean	
+   mailServer		Boolean
+   firewalls       Boolean
+   loadBalancing   Boolean
+   networkMonitoring Boolean
+   antivirus         Boolean
+   integratedSystems Boolean		
+   antiSpam		  Boolean
+   wpa                Boolean
+   autoBackup		  Boolean
+   physicalSecurity          Boolean
+   storageServer          Boolean
+   securityAudit     Boolean
+   disasterRecovery		  Boolean
+   proxyServer        Boolean
+   wdsServer          Boolean
+}
+entity DatacenterDevice{
+  deviceType DataCenterDeviceType
+  quantity String	
+  brandAndModel String
+  age  String
+  purpose String
+  currentStatus String
+}
+
+entity ItDevice{
+  deviceType ItDeviceType
+  quantity String	
+  brandAndModel String
+  age  String
+  purpose String
+  currentStatus String
+}
+entity System{
+    question1 String
+    question2 String
+    question3 String
+    question4 String
+    question5 String
+}
+
+
+relationship ManyToOne{
+ Organization {user(login) required} to User with builtInEntity
+ OrgResponsiblePerson {form(id) required} to Form
+ Server {form(id) required} to Form
+ Internet {form(id) required} to Form
+ Backup {form(id) required} to Form
+ NetworkConfigCheckList {form(id) required} to Form
+ DatacenterDevice {form(id) required} to Form
+ ItDevice {form(id) required} to Form
+ System {form(id) required} to Form
+ Form {user(login) required} to User with builtInEntity
+ Form {organization(name) required} to Organization
+}
+
+filter *
+paginate * with pagination

@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "changelogDate": "20240131053102",
+  "entityTableName": "datacenter_device",
+  "fields": [
+    {
+      "fieldName": "deviceType",
+      "fieldType": "DataCenterDeviceType",
+      "fieldValues": "Racks,Servers,Routers,Switches,Firewalls,DataStorage"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "brandAndModel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "age",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "purpose",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "currentStatus",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "DatacenterDevice",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "form",
+      "relationshipName": "form",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

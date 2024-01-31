@@ -7,7 +7,17 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entités",
-        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
+        "organization": "Organization",
+        "form": "Form",
+        "orgResponsiblePerson": "Org Responsible Person",
+        "server": "Server",
+        "internet": "Internet",
+        "backup": "Backup",
+        "networkConfigCheckList": "Network Config Check List",
+        "datacenterDevice": "Datacenter Device",
+        "itDevice": "It Device",
+        "system": "System"
       },
       "account": {
         "main": "Compte",

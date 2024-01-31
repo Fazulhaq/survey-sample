@@ -1,0 +1,28 @@
+{
+  "surveySampleApp": {
+    "orgResponsiblePerson": {
+      "home": {
+        "title": "Org Responsible People",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Org Responsible Person",
+        "createOrEditLabel": "Create or edit a Org Responsible Person",
+        "notFound": "No Org Responsible People found"
+      },
+      "created": "A new Org Responsible Person is created with identifier {{ param }}",
+      "updated": "A Org Responsible Person is updated with identifier {{ param }}",
+      "deleted": "A Org Responsible Person is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Org Responsible Person {{ id }}?"
+      },
+      "detail": {
+        "title": "Org Responsible Person"
+      },
+      "id": "ID",
+      "fullName": "Full Name",
+      "position": "Position",
+      "contact": "Contact",
+      "date": "Date",
+      "form": "Form"
+    }
+  }
+}

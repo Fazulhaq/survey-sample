@@ -1,0 +1,31 @@
+{
+  "surveySampleApp": {
+    "server": {
+      "home": {
+        "title": "Servers",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Server",
+        "createOrEditLabel": "Créer ou éditer un Server",
+        "notFound": "Aucun Server trouvé"
+      },
+      "created": "Un nouveau Server a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Server avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Server avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Server {{ id }} ?"
+      },
+      "detail": {
+        "title": "Server"
+      },
+      "id": "ID",
+      "question1": "Question 1",
+      "question2": "Question 2",
+      "question3": "Question 3",
+      "question4": "Question 4",
+      "question5": "Question 5",
+      "question6": "Question 6",
+      "question7": "Question 7",
+      "form": "Form"
+    }
+  }
+}

@@ -1,9 +1,11 @@
 import './home.scss';
 
+import { Divider } from 'primereact/divider';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Translate } from 'react-jhipster';
-import { Row, Col, Alert } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { Alert, Col, Row } from 'reactstrap';
 
 import { useAppSelector } from 'app/config/store';
 
@@ -12,16 +14,42 @@ export const Home = () => {
 
   return (
     <Row>
-      <Col md="3" className="pad">
-        <span className="hipster rounded" />
+      <Col md="12">
+        <div style={{ textAlign: 'justify' }}>
+          <br />
+          <h4>Dear Participant,</h4>
+          <br />
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thank you for taking the time to join our survey and sharing your valuable insights
+            with us. Your participation is essential in helping us understand and improve our products/services to better cater to your
+            needs. At MCIT, we believe in continuously enhancing the experiences we provide to our customers. Your feedback plays a vital
+            role in shaping our future endeavors, and we are grateful for your input. This survey aims to gather your thoughts, opinions,
+            and suggestions regarding software requirements survey. By sharing your honest feedback, you will help us gain a deeper
+            understanding of what matters most to you, enabling us to serve you better in the future.
+          </p>
+          <Divider />
+          <br />
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The survey should take approximately 10 minutes to complete. We understand your time
+            is valuable, so we greatly appreciate your willingness to participate. To access the survey, please click on the following link.
+            If you encounter any technical issues or have any questions, please feel free to reach out to our dedicated support team at
+            info@mcit.gov.af. Once again, thank you for your involvement. Your feedback is invaluable to us, and we genuinely appreciate
+            your contribution. We look forward to hearing your thoughts and working towards creating an even better experience for you.
+          </p>
+          <br />
+          <Divider />
+          <br />
+          <br />
+          <h6>Best regards,</h6>
+          Survey Team
+          <br />
+          System Development Directorate
+          <br />
+          Ministry of Communication and Information Technology
+          <br />
+        </div>
       </Col>
-      <Col md="9">
-        <h2>
-          <Translate contentKey="home.title">Welcome, Java Hipster!</Translate>
-        </h2>
-        <p className="lead">
-          <Translate contentKey="home.subtitle">This is your homepage</Translate>
-        </p>
+      <Col md="12">
         {account?.login ? (
           <div>
             <Alert color="success">
@@ -31,67 +59,12 @@ export const Home = () => {
             </Alert>
           </div>
         ) : (
-          <div>
-            <Alert color="warning">
-              <Translate contentKey="global.messages.info.authenticated.prefix">If you want to </Translate>
-
-              <Link to="/login" className="alert-link">
-                <Translate contentKey="global.messages.info.authenticated.link"> sign in</Translate>
-              </Link>
-              <Translate contentKey="global.messages.info.authenticated.suffix">
-                , you can try the default accounts:
-                <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;)
-                <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
-              </Translate>
-            </Alert>
-
-            <Alert color="warning">
-              <Translate contentKey="global.messages.info.register.noaccount">You do not have an account yet?</Translate>&nbsp;
-              <Link to="/account/register" className="alert-link">
-                <Translate contentKey="global.messages.info.register.link">Register a new account</Translate>
-              </Link>
-            </Alert>
+          <div style={{ marginLeft: 'auto', marginRight: 'auto', textAlign: 'center', justifyContent: 'center', alignItems: 'center' }}>
+            <Link to="/login" style={{ fontSize: '20px' }}>
+              <Translate contentKey="global.messages.info.authenticated.link"> sign in</Translate>
+            </Link>
           </div>
         )}
-        <p>
-          <Translate contentKey="home.question">If you have any question on JHipster:</Translate>
-        </p>
-
-        <ul>
-          <li>
-            <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.homepage">JHipster homepage</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.stackoverflow">JHipster on Stack Overflow</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.bugtracker">JHipster bug tracker</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.chat">JHipster public chat room</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.follow">follow @jhipster on Twitter</Translate>
-            </a>
-          </li>
-        </ul>
-
-        <p>
-          <Translate contentKey="home.like">If you like JHipster, do not forget to give us a star on</Translate>{' '}
-          <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          !
-        </p>
       </Col>
     </Row>
   );

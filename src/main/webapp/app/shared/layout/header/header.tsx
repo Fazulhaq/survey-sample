@@ -1,15 +1,15 @@
 import './header.scss';
 
-import React, { useState, useEffect } from 'react';
-import { Translate, Storage } from 'react-jhipster';
-import { Navbar, Nav, NavbarToggler, Collapse } from 'reactstrap';
+import React, { useEffect, useState } from 'react';
+import { Storage } from 'react-jhipster';
 import LoadingBar from 'react-redux-loading-bar';
+import { Collapse, Nav, Navbar, NavbarToggler } from 'reactstrap';
 
-import { isRTL } from 'app/config/translation';
-import { Home, Brand } from './header-components';
-import { AdminMenu, EntitiesMenu, AccountMenu, LocaleMenu } from '../menus';
 import { useAppDispatch } from 'app/config/store';
+import { isRTL } from 'app/config/translation';
 import { setLocale } from 'app/shared/reducers/locale';
+import { AccountMenu, AdminMenu, EntitiesMenu, LocaleMenu } from '../menus';
+import { Brand } from './header-components';
 
 export interface IHeaderProps {
   isAuthenticated: boolean;
@@ -33,29 +33,18 @@ const Header = (props: IHeaderProps) => {
     document.querySelector('html').setAttribute('dir', isRTL(langKey) ? 'rtl' : 'ltr');
   };
 
-  const renderDevRibbon = () =>
-    props.isInProduction === false ? (
-      <div className="ribbon dev">
-        <a href="">
-          <Translate contentKey={`global.ribbon.${props.ribbonEnv}`} />
-        </a>
-      </div>
-    ) : null;
-
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   /* jhipster-needle-add-element-to-menu - JHipster will add new menu items here */
 
   return (
     <div id="app-header">
-      {renderDevRibbon()}
       <LoadingBar className="loading-bar" />
       <Navbar data-cy="navbar" dark expand="md" fixed="top" className="jh-navbar">
         <NavbarToggler aria-label="Menu" onClick={toggleMenu} />
         <Brand />
         <Collapse isOpen={menuOpen} navbar>
           <Nav id="header-tabs" className="ms-auto" navbar>
-            <Home />
             {props.isAuthenticated && <EntitiesMenu />}
             {props.isAuthenticated && props.isAdmin && <AdminMenu showOpenAPI={props.isOpenAPIEnabled} />}
             <LocaleMenu currentLocale={props.currentLocale} onClick={handleLocaleChange} />

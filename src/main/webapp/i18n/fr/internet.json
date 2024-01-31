@@ -1,0 +1,30 @@
+{
+  "surveySampleApp": {
+    "internet": {
+      "home": {
+        "title": "Internets",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Internet",
+        "createOrEditLabel": "Créer ou éditer un Internet",
+        "notFound": "Aucun Internet trouvé"
+      },
+      "created": "Un nouveau Internet a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Internet avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Internet avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Internet {{ id }} ?"
+      },
+      "detail": {
+        "title": "Internet"
+      },
+      "id": "ID",
+      "question1": "Question 1",
+      "question2": "Question 2",
+      "question3": "Question 3",
+      "question4": "Question 4",
+      "question5": "Question 5",
+      "question6": "Question 6",
+      "form": "Form"
+    }
+  }
+}

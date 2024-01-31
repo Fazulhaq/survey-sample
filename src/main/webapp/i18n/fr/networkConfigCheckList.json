@@ -1,0 +1,43 @@
+{
+  "surveySampleApp": {
+    "networkConfigCheckList": {
+      "home": {
+        "title": "NetworkConfigCheckLists",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Network Config Check List",
+        "createOrEditLabel": "Créer ou éditer un Network Config Check List",
+        "notFound": "Aucun Network Config Check List trouvé"
+      },
+      "created": "Un nouveau Network Config Check List a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Network Config Check List avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Network Config Check List avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Network Config Check List {{ id }} ?"
+      },
+      "detail": {
+        "title": "Network Config Check List"
+      },
+      "id": "ID",
+      "dhcp": "Dhcp",
+      "dns": "Dns",
+      "activeDirectory": "Active Directory",
+      "sharedDrives": "Shared Drives",
+      "mailServer": "Mail Server",
+      "firewalls": "Firewalls",
+      "loadBalancing": "Load Balancing",
+      "networkMonitoring": "Network Monitoring",
+      "antivirus": "Antivirus",
+      "integratedSystems": "Integrated Systems",
+      "antiSpam": "Anti Spam",
+      "wpa": "Wpa",
+      "autoBackup": "Auto Backup",
+      "physicalSecurity": "Physical Security",
+      "storageServer": "Storage Server",
+      "securityAudit": "Security Audit",
+      "disasterRecovery": "Disaster Recovery",
+      "proxyServer": "Proxy Server",
+      "wdsServer": "Wds Server",
+      "form": "Form"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "surveySampleApp": {
+    "system": {
+      "home": {
+        "title": "Systems",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau System",
+        "createOrEditLabel": "Créer ou éditer un System",
+        "notFound": "Aucun System trouvé"
+      },
+      "created": "Un nouveau System a été créé avec l'identifiant {{ param }}",
+      "updated": "Le System avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le System avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le System {{ id }} ?"
+      },
+      "detail": {
+        "title": "System"
+      },
+      "id": "ID",
+      "question1": "Question 1",
+      "question2": "Question 2",
+      "question3": "Question 3",
+      "question4": "Question 4",
+      "question5": "Question 5",
+      "form": "Form"
+    }
+  }
+}
