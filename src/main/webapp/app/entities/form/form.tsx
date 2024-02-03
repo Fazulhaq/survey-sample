@@ -132,11 +132,7 @@ export const Form = () => {
             <tbody>
               {formList.map((form, i) => (
                 <tr key={`entity-${i}`} data-cy="entityTable">
-                  <td>
-                    <Button tag={Link} to={`/form/${form.id}`} color="link" size="sm">
-                      {form.id}
-                    </Button>
-                  </td>
+                  <td>{form.id}</td>
                   <td>{form.futurePlan}</td>
                   <td>
                     <Translate contentKey={`surveySampleApp.FormStatus.${form.status}`} />
@@ -163,18 +159,6 @@ export const Form = () => {
                         <FontAwesomeIcon icon="pencil-alt" />{' '}
                         <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.edit">Edit</Translate>
-                        </span>
-                      </Button>
-                      <Button
-                        tag={Link}
-                        to={`/form/${form.id}/delete?page=${paginationState.activePage}&sort=${paginationState.sort},${paginationState.order}`}
-                        color="danger"
-                        size="sm"
-                        data-cy="entityDeleteButton"
-                      >
-                        <FontAwesomeIcon icon="trash" />{' '}
-                        <span className="d-none d-md-inline">
-                          <Translate contentKey="entity.action.delete">Delete</Translate>
                         </span>
                       </Button>
                     </div>

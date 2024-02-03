@@ -4,9 +4,9 @@ import { Route } from 'react-router-dom';
 import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 
 import Organization from './organization';
+import OrganizationDeleteDialog from './organization-delete-dialog';
 import OrganizationDetail from './organization-detail';
 import OrganizationUpdate from './organization-update';
-import OrganizationDeleteDialog from './organization-delete-dialog';
 
 const OrganizationRoutes = () => (
   <ErrorBoundaryRoutes>

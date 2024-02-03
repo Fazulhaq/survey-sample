@@ -1,3 +1,4 @@
+import { useAppSelector } from 'app/config/store';
 import React, { useState } from 'react';
 import { Stepper } from 'react-form-stepper';
 import BackupUpdate from '../backup/backup-update';
@@ -12,6 +13,12 @@ import CompletionPage from './form-completion';
 import FormUpdate from './form-update';
 
 export default function InteractiveSteps() {
+  const forms = useAppSelector(state => state.form.entities);
+
+  const lastFormId = forms.reduce((maxId, form) => {
+    return form.id > maxId ? form.id : maxId;
+  }, 0);
+
   const [activeStep, setActiveStep] = useState(0);
   const steps = [
     {
@@ -51,21 +58,21 @@ export default function InteractiveSteps() {
       case 0:
         return <FormUpdate />;
       case 1:
-        return <ServerUpdate />;
+        return <ServerUpdate formId={lastFormId} />;
       case 2:
-        return <SystemUpdate />;
+        return <SystemUpdate formId={lastFormId} />;
       case 3:
-        return <BackupUpdate />;
+        return <BackupUpdate formId={lastFormId} />;
       case 4:
-        return <DatacenterDeviceUpdate />;
+        return <DatacenterDeviceUpdate formId={lastFormId} />;
       case 5:
-        return <InternetUpdate />;
+        return <InternetUpdate formId={lastFormId} />;
       case 6:
-        return <ItDeviceUpdate />;
+        return <ItDeviceUpdate formId={lastFormId} />;
       case 7:
-        return <NetworkConfigCheckListUpdate />;
+        return <NetworkConfigCheckListUpdate formId={lastFormId} />;
       case 8:
-        return <OrgResponsiblePersonUpdate />;
+        return <OrgResponsiblePersonUpdate formId={lastFormId} />;
       case 9:
         return <CompletionPage />;
       default:

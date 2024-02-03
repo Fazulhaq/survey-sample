@@ -1,10 +1,13 @@
 import React from 'react';
-import InteractiveSteps from './form-stepper';
+import { useNavigate } from 'react-router-dom';
 
 const CompletionPage: React.FC = () => {
+  const navigate = useNavigate();
+
   const handleClick = () => {
-    return <InteractiveSteps />;
+    navigate('/organization');
   };
+
   return (
     <div style={{ textAlign: 'center', alignItems: 'center' }}>
       <br /> <br /> <br /> <br />

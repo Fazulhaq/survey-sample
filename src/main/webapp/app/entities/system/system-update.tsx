@@ -1,25 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Row, Col, FormText } from 'reactstrap';
-import { isNumber, Translate, translate, ValidatedField, ValidatedForm } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect } from 'react';
+import { Translate, ValidatedField, ValidatedForm, translate } from 'react-jhipster';
+import { Button, Col, Row } from 'reactstrap';
 
-import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
-import { mapIdList } from 'app/shared/util/entity-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
-import { IForm } from 'app/shared/model/form.model';
 import { getEntities as getForms } from 'app/entities/form/form.reducer';
-import { ISystem } from 'app/shared/model/system.model';
-import { getEntity, updateEntity, createEntity, reset } from './system.reducer';
+import { createEntity, reset } from './system.reducer';
 
-export const SystemUpdate = () => {
+interface SystemUpdateProps {
+  formId: number;
+}
+
+export const SystemUpdate: React.FC<SystemUpdateProps> = ({ formId }) => {
   const dispatch = useAppDispatch();
 
-  const navigate = useNavigate();
-
-  const { id } = useParams<'id'>();
-  const isNew = id === undefined;
+  // const navigate = useNavigate();
 
   const forms = useAppSelector(state => state.form.entities);
   const systemEntity = useAppSelector(state => state.system.entity);
@@ -27,25 +23,22 @@ export const SystemUpdate = () => {
   const updating = useAppSelector(state => state.system.updating);
   const updateSuccess = useAppSelector(state => state.system.updateSuccess);
 
-  const handleClose = () => {
-    navigate('/system' + location.search);
-  };
+  const lastForm = forms.find(it => it.id.toString() === formId.toString());
+
+  // const handleClose = () => {
+  //   navigate('/system' + location.search);
+  // };
 
   useEffect(() => {
-    if (isNew) {
-      dispatch(reset());
-    } else {
-      dispatch(getEntity(id));
-    }
-
+    dispatch(reset());
     dispatch(getForms({}));
   }, []);
 
-  useEffect(() => {
-    if (updateSuccess) {
-      handleClose();
-    }
-  }, [updateSuccess]);
+  // useEffect(() => {
+  //   if (updateSuccess) {
+  //     handleClose();
+  //   }
+  // }, [updateSuccess]);
 
   const saveEntity = values => {
     const entity = {
@@ -53,16 +46,11 @@ export const SystemUpdate = () => {
       ...values,
       form: forms.find(it => it.id.toString() === values.form.toString()),
     };
-
-    if (isNew) {
-      dispatch(createEntity(entity));
-    } else {
-      dispatch(updateEntity(entity));
-    }
+    dispatch(createEntity(entity));
   };
 
   const defaultValues = () =>
-    isNew
+    true
       ? {}
       : {
           ...systemEntity,
@@ -84,10 +72,11 @@ export const SystemUpdate = () => {
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!isNew ? (
+              {!true ? (
                 <ValidatedField
                   name="id"
                   required
+                  hidden
                   readOnly
                   id="system-id"
                   label={translate('global.field.id')}
@@ -137,25 +126,10 @@ export const SystemUpdate = () => {
                 type="select"
                 required
               >
-                <option value="" key="0" />
-                {forms
-                  ? forms.map(otherEntity => (
-                      <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
-                      </option>
-                    ))
-                  : null}
+                <option value={lastForm.id} key={lastForm.id}>
+                  {lastForm.id}
+                </option>
               </ValidatedField>
-              <FormText>
-                <Translate contentKey="entity.validation.required">This field is required.</Translate>
-              </FormText>
-              <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/system" replace color="info">
-                <FontAwesomeIcon icon="arrow-left" />
-                &nbsp;
-                <span className="d-none d-md-inline">
-                  <Translate contentKey="entity.action.back">Back</Translate>
-                </span>
-              </Button>
               &nbsp;
               <Button color="primary" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
                 <FontAwesomeIcon icon="save" />
