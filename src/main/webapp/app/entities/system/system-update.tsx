@@ -6,47 +6,34 @@ import { Button, Col, Row } from 'reactstrap';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities as getForms } from 'app/entities/form/form.reducer';
+import { incrementIndex } from '../stepper-index/stepper-index.reducer';
 import { createEntity, reset } from './system.reducer';
 
-interface SystemUpdateProps {
-  formId: number;
-}
-
-export const SystemUpdate: React.FC<SystemUpdateProps> = ({ formId }) => {
+export const SystemUpdate = () => {
   const dispatch = useAppDispatch();
-
-  // const navigate = useNavigate();
 
   const forms = useAppSelector(state => state.form.entities);
   const systemEntity = useAppSelector(state => state.system.entity);
   const loading = useAppSelector(state => state.system.loading);
   const updating = useAppSelector(state => state.system.updating);
-  const updateSuccess = useAppSelector(state => state.system.updateSuccess);
 
-  const lastForm = forms.find(it => it.id.toString() === formId.toString());
-
-  // const handleClose = () => {
-  //   navigate('/system' + location.search);
-  // };
+  const lastForm = forms.reduce((maxId, form) => {
+    return form.id > maxId ? form.id : maxId;
+  }, 0);
 
   useEffect(() => {
     dispatch(reset());
     dispatch(getForms({}));
   }, []);
 
-  // useEffect(() => {
-  //   if (updateSuccess) {
-  //     handleClose();
-  //   }
-  // }, [updateSuccess]);
-
-  const saveEntity = values => {
+  const saveEntity = async values => {
     const entity = {
       ...systemEntity,
       ...values,
       form: forms.find(it => it.id.toString() === values.form.toString()),
     };
-    dispatch(createEntity(entity));
+    await dispatch(createEntity(entity));
+    dispatch(incrementIndex(1));
   };
 
   const defaultValues = () =>
@@ -120,14 +107,15 @@ export const SystemUpdate: React.FC<SystemUpdateProps> = ({ formId }) => {
               />
               <ValidatedField
                 id="system-form"
+                hidden
                 name="form"
                 data-cy="form"
                 label={translate('surveySampleApp.system.form')}
                 type="select"
                 required
               >
-                <option value={lastForm.id} key={lastForm.id}>
-                  {lastForm.id}
+                <option value={lastForm} key={lastForm}>
+                  {lastForm}
                 </option>
               </ValidatedField>
               &nbsp;

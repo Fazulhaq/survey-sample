@@ -5,36 +5,35 @@ import { Button, Col, Row } from 'reactstrap';
 
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
-interface NetworkConfigCheckListUpdateProps {
-  formId: number;
-}
-
 import { getEntities as getForms } from 'app/entities/form/form.reducer';
+import { incrementIndex } from '../stepper-index/stepper-index.reducer';
 import { createEntity, reset } from './network-config-check-list.reducer';
 
-export const NetworkConfigCheckListUpdate: React.FC<NetworkConfigCheckListUpdateProps> = ({ formId }) => {
+export const NetworkConfigCheckListUpdate = () => {
   const dispatch = useAppDispatch();
 
   const forms = useAppSelector(state => state.form.entities);
   const networkConfigCheckListEntity = useAppSelector(state => state.networkConfigCheckList.entity);
   const loading = useAppSelector(state => state.networkConfigCheckList.loading);
   const updating = useAppSelector(state => state.networkConfigCheckList.updating);
-  const updateSuccess = useAppSelector(state => state.networkConfigCheckList.updateSuccess);
 
-  const lastForm = forms.find(it => it.id.toString() === formId.toString());
+  const lastForm = forms.reduce((maxId, form) => {
+    return form.id > maxId ? form.id : maxId;
+  }, 0);
 
   useEffect(() => {
     dispatch(reset());
     dispatch(getForms({}));
   }, []);
 
-  const saveEntity = values => {
+  const saveEntity = async values => {
     const entity = {
       ...networkConfigCheckListEntity,
       ...values,
       form: forms.find(it => it.id.toString() === values.form.toString()),
     };
-    dispatch(createEntity(entity));
+    await dispatch(createEntity(entity));
+    dispatch(incrementIndex(1));
   };
 
   const defaultValues = () =>
@@ -227,14 +226,15 @@ export const NetworkConfigCheckListUpdate: React.FC<NetworkConfigCheckListUpdate
               />
               <ValidatedField
                 id="network-config-check-list-form"
+                hidden
                 name="form"
                 data-cy="form"
                 label={translate('surveySampleApp.networkConfigCheckList.form')}
                 type="select"
                 required
               >
-                <option value={lastForm.id} key={lastForm.id}>
-                  {lastForm.id}
+                <option value={lastForm} key={lastForm}>
+                  {lastForm}
                 </option>
               </ValidatedField>
               &nbsp;

@@ -6,13 +6,10 @@ import { Button, Col, Row } from 'reactstrap';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities as getForms } from 'app/entities/form/form.reducer';
+import { incrementIndex } from '../stepper-index/stepper-index.reducer';
 import { createEntity, reset } from './server.reducer';
 
-interface ServerUpdateProps {
-  formId: number;
-}
-
-export const ServerUpdate: React.FC<ServerUpdateProps> = ({ formId }) => {
+export const ServerUpdate = () => {
   const dispatch = useAppDispatch();
 
   const forms = useAppSelector(state => state.form.entities);
@@ -20,20 +17,23 @@ export const ServerUpdate: React.FC<ServerUpdateProps> = ({ formId }) => {
   const loading = useAppSelector(state => state.server.loading);
   const updating = useAppSelector(state => state.server.updating);
 
-  const lastForm = forms.find(it => it.id.toString() === formId.toString());
+  const lastFormId = forms.reduce((maxId, form) => {
+    return form.id > maxId ? form.id : maxId;
+  }, 0);
 
   useEffect(() => {
     dispatch(reset());
     dispatch(getForms({}));
   }, []);
 
-  const saveEntity = values => {
+  const saveEntity = async values => {
     const entity = {
       ...serverEntity,
       ...values,
       form: forms.find(it => it.id.toString() === values.form.toString()),
     };
-    dispatch(createEntity(entity));
+    await dispatch(createEntity(entity));
+    dispatch(incrementIndex(1));
   };
 
   const defaultValues = () =>
@@ -121,14 +121,15 @@ export const ServerUpdate: React.FC<ServerUpdateProps> = ({ formId }) => {
               />
               <ValidatedField
                 id="server-form"
+                hidden
                 name="form"
                 data-cy="form"
                 label={translate('surveySampleApp.server.form')}
                 type="select"
                 required
               >
-                <option value={lastForm.id} key={lastForm.id}>
-                  {lastForm.id}
+                <option value={lastFormId} key={lastFormId}>
+                  {lastFormId}
                 </option>
               </ValidatedField>
               &nbsp;

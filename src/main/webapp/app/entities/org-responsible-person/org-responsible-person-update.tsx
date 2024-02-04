@@ -6,35 +6,34 @@ import { Button, Col, Row } from 'reactstrap';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities as getForms } from 'app/entities/form/form.reducer';
+import { incrementIndex } from '../stepper-index/stepper-index.reducer';
 import { createEntity, reset } from './org-responsible-person.reducer';
 
-interface OrgResponsiblePersonUpdateProps {
-  formId: number;
-}
-
-export const OrgResponsiblePersonUpdate: React.FC<OrgResponsiblePersonUpdateProps> = ({ formId }) => {
+export const OrgResponsiblePersonUpdate = () => {
   const dispatch = useAppDispatch();
 
   const forms = useAppSelector(state => state.form.entities);
   const orgResponsiblePersonEntity = useAppSelector(state => state.orgResponsiblePerson.entity);
   const loading = useAppSelector(state => state.orgResponsiblePerson.loading);
   const updating = useAppSelector(state => state.orgResponsiblePerson.updating);
-  const updateSuccess = useAppSelector(state => state.orgResponsiblePerson.updateSuccess);
 
-  const lastForm = forms.find(it => it.id.toString() === formId.toString());
+  const lastForm = forms.reduce((maxId, form) => {
+    return form.id > maxId ? form.id : maxId;
+  }, 0);
 
   useEffect(() => {
     dispatch(reset());
     dispatch(getForms({}));
   }, []);
 
-  const saveEntity = values => {
+  const saveEntity = async values => {
     const entity = {
       ...orgResponsiblePersonEntity,
       ...values,
       form: forms.find(it => it.id.toString() === values.form.toString()),
     };
-    dispatch(createEntity(entity));
+    await dispatch(createEntity(entity));
+    dispatch(incrementIndex(1));
   };
 
   const defaultValues = () =>
@@ -115,14 +114,15 @@ export const OrgResponsiblePersonUpdate: React.FC<OrgResponsiblePersonUpdateProp
               />
               <ValidatedField
                 id="org-responsible-person-form"
+                hidden
                 name="form"
                 data-cy="form"
                 label={translate('surveySampleApp.orgResponsiblePerson.form')}
                 type="select"
                 required
               >
-                <option value={lastForm.id} key={lastForm.id}>
-                  {lastForm.id}
+                <option value={lastForm} key={lastForm}>
+                  {lastForm}
                 </option>
               </ValidatedField>
               &nbsp;

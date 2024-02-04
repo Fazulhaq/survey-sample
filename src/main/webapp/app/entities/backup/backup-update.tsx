@@ -6,13 +6,10 @@ import { Button, Col, Row } from 'reactstrap';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities as getForms } from 'app/entities/form/form.reducer';
+import { incrementIndex } from '../stepper-index/stepper-index.reducer';
 import { createEntity, reset } from './backup.reducer';
 
-interface BackupUpdateProps {
-  formId: number;
-}
-
-export const BackupUpdate: React.FC<BackupUpdateProps> = ({ formId }) => {
+export const BackupUpdate = () => {
   const dispatch = useAppDispatch();
 
   const forms = useAppSelector(state => state.form.entities);
@@ -20,20 +17,23 @@ export const BackupUpdate: React.FC<BackupUpdateProps> = ({ formId }) => {
   const loading = useAppSelector(state => state.backup.loading);
   const updating = useAppSelector(state => state.backup.updating);
 
-  const lastForm = forms.find(it => it.id.toString() === formId.toString());
+  const lastForm = forms.reduce((maxId, form) => {
+    return form.id > maxId ? form.id : maxId;
+  }, 0);
 
   useEffect(() => {
     dispatch(reset());
     dispatch(getForms({}));
   }, []);
 
-  const saveEntity = values => {
+  const saveEntity = async values => {
     const entity = {
       ...backupEntity,
       ...values,
       form: forms.find(it => it.id.toString() === values.form.toString()),
     };
-    dispatch(createEntity(entity));
+    await dispatch(createEntity(entity));
+    dispatch(incrementIndex(1));
   };
 
   const defaultValues = () =>
@@ -120,14 +120,15 @@ export const BackupUpdate: React.FC<BackupUpdateProps> = ({ formId }) => {
               />
               <ValidatedField
                 id="backup-form"
+                hidden
                 name="form"
                 data-cy="form"
                 label={translate('surveySampleApp.backup.form')}
                 type="select"
                 required
               >
-                <option value={lastForm.id} key={lastForm.id}>
-                  {lastForm.id}
+                <option value={lastForm} key={lastForm}>
+                  {lastForm}
                 </option>
               </ValidatedField>
               &nbsp;

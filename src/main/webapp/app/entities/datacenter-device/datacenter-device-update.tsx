@@ -7,13 +7,10 @@ import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities as getForms } from 'app/entities/form/form.reducer';
 import { DataCenterDeviceType } from 'app/shared/model/enumerations/data-center-device-type.model';
+import { incrementIndex } from '../stepper-index/stepper-index.reducer';
 import { createEntity, reset } from './datacenter-device.reducer';
 
-interface DatacenterDeviceUpdateProps {
-  formId: number;
-}
-
-export const DatacenterDeviceUpdate: React.FC<DatacenterDeviceUpdateProps> = ({ formId }) => {
+export const DatacenterDeviceUpdate = () => {
   const dispatch = useAppDispatch();
 
   const forms = useAppSelector(state => state.form.entities);
@@ -22,20 +19,23 @@ export const DatacenterDeviceUpdate: React.FC<DatacenterDeviceUpdateProps> = ({ 
   const updating = useAppSelector(state => state.datacenterDevice.updating);
   const dataCenterDeviceTypeValues = Object.keys(DataCenterDeviceType);
 
-  const lastForm = forms.find(it => it.id.toString() === formId.toString());
+  const lastForm = forms.reduce((maxId, form) => {
+    return form.id > maxId ? form.id : maxId;
+  }, 0);
 
   useEffect(() => {
     dispatch(reset());
     dispatch(getForms({}));
   }, []);
 
-  const saveEntity = values => {
+  const saveEntity = async values => {
     const entity = {
       ...datacenterDeviceEntity,
       ...values,
       form: forms.find(it => it.id.toString() === values.form.toString()),
     };
-    dispatch(createEntity(entity));
+    await dispatch(createEntity(entity));
+    dispatch(incrementIndex(1));
   };
 
   const defaultValues = () =>
@@ -122,14 +122,15 @@ export const DatacenterDeviceUpdate: React.FC<DatacenterDeviceUpdateProps> = ({ 
               />
               <ValidatedField
                 id="datacenter-device-form"
+                hidden
                 name="form"
                 data-cy="form"
                 label={translate('surveySampleApp.datacenterDevice.form')}
                 type="select"
                 required
               >
-                <option value={lastForm.id} key={lastForm.id}>
-                  {lastForm.id}
+                <option value={lastForm} key={lastForm}>
+                  {lastForm}
                 </option>
               </ValidatedField>
               &nbsp;

@@ -5,11 +5,11 @@ import { useParams } from 'react-router-dom';
 import { Button, Col, Row } from 'reactstrap';
 
 import { useAppDispatch, useAppSelector } from 'app/config/store';
-import { convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
-
 import { getEntities as getOrganizations } from 'app/entities/organization/organization.reducer';
 import { getUsers } from 'app/modules/administration/user-management/user-management.reducer';
 import { FormStatus } from 'app/shared/model/enumerations/form-status.model';
+import { convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
+import { incrementIndex } from '../stepper-index/stepper-index.reducer';
 import { createEntity, reset } from './form.reducer';
 
 export const FormUpdate = () => {
@@ -33,7 +33,7 @@ export const FormUpdate = () => {
     dispatch(getOrganizations({}));
   }, []);
 
-  const saveEntity = values => {
+  const saveEntity = async values => {
     values.createDate = convertDateTimeToServer(values.createDate);
     values.updateDate = convertDateTimeToServer(values.updateDate);
 
@@ -43,7 +43,8 @@ export const FormUpdate = () => {
       user: users.find(it => it.id.toString() === values.user.toString()),
       organization: organizations.find(it => it.id.toString() === values.organization.toString()),
     };
-    dispatch(createEntity(entity));
+    await dispatch(createEntity(entity));
+    dispatch(incrementIndex(1));
   };
 
   const defaultValues = () => ({
@@ -113,6 +114,7 @@ export const FormUpdate = () => {
               />
               <ValidatedField
                 id="form-user"
+                hidden
                 name="user"
                 data-cy="user"
                 label={translate('surveySampleApp.form.user')}
@@ -125,6 +127,7 @@ export const FormUpdate = () => {
               </ValidatedField>
               <ValidatedField
                 id="form-organization"
+                hidden
                 name="organization"
                 data-cy="organization"
                 label={translate('surveySampleApp.form.organization')}

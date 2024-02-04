@@ -1,5 +1,5 @@
-import { useAppSelector } from 'app/config/store';
-import React, { useState } from 'react';
+import { useAppDispatch, useAppSelector } from 'app/config/store';
+import React from 'react';
 import { Stepper } from 'react-form-stepper';
 import BackupUpdate from '../backup/backup-update';
 import DatacenterDeviceUpdate from '../datacenter-device/datacenter-device-update';
@@ -13,13 +13,10 @@ import CompletionPage from './form-completion';
 import FormUpdate from './form-update';
 
 export default function InteractiveSteps() {
-  const forms = useAppSelector(state => state.form.entities);
+  const dispatch = useAppDispatch();
 
-  const lastFormId = forms.reduce((maxId, form) => {
-    return form.id > maxId ? form.id : maxId;
-  }, 0);
+  const activeStep = useAppSelector(state => state.index.stepperIndex);
 
-  const [activeStep, setActiveStep] = useState(0);
   const steps = [
     {
       label: 'Form',
@@ -58,21 +55,21 @@ export default function InteractiveSteps() {
       case 0:
         return <FormUpdate />;
       case 1:
-        return <ServerUpdate formId={lastFormId} />;
+        return <ServerUpdate />;
       case 2:
-        return <SystemUpdate formId={lastFormId} />;
+        return <SystemUpdate />;
       case 3:
-        return <BackupUpdate formId={lastFormId} />;
+        return <BackupUpdate />;
       case 4:
-        return <DatacenterDeviceUpdate formId={lastFormId} />;
+        return <DatacenterDeviceUpdate />;
       case 5:
-        return <InternetUpdate formId={lastFormId} />;
+        return <InternetUpdate />;
       case 6:
-        return <ItDeviceUpdate formId={lastFormId} />;
+        return <ItDeviceUpdate />;
       case 7:
-        return <NetworkConfigCheckListUpdate formId={lastFormId} />;
+        return <NetworkConfigCheckListUpdate />;
       case 8:
-        return <OrgResponsiblePersonUpdate formId={lastFormId} />;
+        return <OrgResponsiblePersonUpdate />;
       case 9:
         return <CompletionPage />;
       default:
@@ -85,7 +82,7 @@ export default function InteractiveSteps() {
       <Stepper steps={steps} activeStep={activeStep} />
       <div style={{ padding: '10px' }}>
         {renderComponent()}
-        {activeStep !== 0 && activeStep !== steps.length - 1 && (
+        {/* {activeStep !== 0 && activeStep !== 1 && activeStep !== steps.length - 1 && (
           <button
             style={{
               backgroundColor: '#007bff',
@@ -98,13 +95,13 @@ export default function InteractiveSteps() {
               height: '38px',
               borderRadius: '3px',
             }}
-            onClick={() => setActiveStep(activeStep - 1)}
+            onClick={() => dispatch(decrementIndex(1))}
           >
             Previous
           </button>
-        )}
+        )} */}
         &nbsp;&nbsp;
-        {activeStep !== steps.length - 1 && (
+        {/* {activeStep !== 0 && activeStep !== steps.length - 1 && (
           <button
             style={{
               backgroundColor: '#007bff',
@@ -117,11 +114,11 @@ export default function InteractiveSteps() {
               height: '38px',
               borderRadius: '3px',
             }}
-            onClick={() => setActiveStep(activeStep + 1)}
+            onClick={() => dispatch(incrementIndex(1))}
           >
             Next
           </button>
-        )}
+        )} */}
       </div>
     </div>
   );
