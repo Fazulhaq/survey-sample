@@ -17,14 +17,14 @@
       "detail": {
         "title": "Organization"
       },
-      "id": "ID",
-      "name": "Name",
-      "code": "Code",
-      "description": "Description",
-      "address": "Address",
-      "createDate": "Create Date",
-      "updateDate": "Update Date",
-      "user": "User"
+      "id": "ID:",
+      "name": "Name:",
+      "code": "Organization Code:",
+      "description": "Description:",
+      "address": "Organization Address:",
+      "createDate": "Created On:",
+      "updateDate": "Edited On:",
+      "user": "Created By:"
     }
   }
 }
