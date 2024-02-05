@@ -19,6 +19,7 @@ export const OrganizationUpdate = () => {
   const isNew = id === undefined;
 
   const users = useAppSelector(state => state.userManagement.users);
+  const account = useAppSelector(state => state.authentication.account);
   const organizationEntity = useAppSelector(state => state.organization.entity);
   const loading = useAppSelector(state => state.organization.loading);
   const updating = useAppSelector(state => state.organization.updating);
@@ -93,6 +94,7 @@ export const OrganizationUpdate = () => {
                 <ValidatedField
                   name="id"
                   required
+                  hidden
                   readOnly
                   id="organization-id"
                   label={translate('global.field.id')}
@@ -139,6 +141,7 @@ export const OrganizationUpdate = () => {
               <ValidatedField
                 label={translate('surveySampleApp.organization.createDate')}
                 id="organization-createDate"
+                hidden
                 name="createDate"
                 data-cy="createDate"
                 type="datetime-local"
@@ -147,6 +150,7 @@ export const OrganizationUpdate = () => {
               <ValidatedField
                 label={translate('surveySampleApp.organization.updateDate')}
                 id="organization-updateDate"
+                hidden
                 name="updateDate"
                 data-cy="updateDate"
                 type="datetime-local"
@@ -155,19 +159,15 @@ export const OrganizationUpdate = () => {
               <ValidatedField
                 id="organization-user"
                 name="user"
+                hidden
                 data-cy="user"
                 label={translate('surveySampleApp.organization.user')}
                 type="select"
                 required
               >
-                <option value="" key="0" />
-                {users
-                  ? users.map(otherEntity => (
-                      <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.login}
-                      </option>
-                    ))
-                  : null}
+                <option value={account.id} key={account.id}>
+                  {account.login}
+                </option>
               </ValidatedField>
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/organization" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />

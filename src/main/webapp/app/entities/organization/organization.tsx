@@ -1,11 +1,10 @@
 import { faSort, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { APP_DATE_FORMAT } from 'app/config/constants';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
 import React, { useEffect, useState } from 'react';
-import { JhiItemCount, JhiPagination, TextFormat, Translate, getPaginationState } from 'react-jhipster';
+import { JhiItemCount, JhiPagination, Translate, getPaginationState } from 'react-jhipster';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
 
@@ -123,14 +122,6 @@ export const Organization = () => {
                   <Translate contentKey="surveySampleApp.organization.address">Address</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('address')} />
                 </th>
-                <th className="hand" onClick={sort('createDate')}>
-                  <Translate contentKey="surveySampleApp.organization.createDate">Create Date</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('createDate')} />
-                </th>
-                <th className="hand" onClick={sort('updateDate')}>
-                  <Translate contentKey="surveySampleApp.organization.updateDate">Update Date</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('updateDate')} />
-                </th>
                 <th>
                   <Translate contentKey="surveySampleApp.organization.user">User</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
@@ -140,21 +131,11 @@ export const Organization = () => {
             <tbody>
               {organizationList.map((organization, i) => (
                 <tr key={`entity-${i}`} data-cy="entityTable">
-                  <td>
-                    <Button tag={Link} to={`/organization/${organization.id}`} color="link" size="sm">
-                      {organization.id}
-                    </Button>
-                  </td>
+                  <td>{organization.id}</td>
                   <td>{organization.name}</td>
                   <td>{organization.code}</td>
                   <td>{organization.description}</td>
                   <td>{organization.address}</td>
-                  <td>
-                    {organization.createDate ? <TextFormat type="date" value={organization.createDate} format={APP_DATE_FORMAT} /> : null}
-                  </td>
-                  <td>
-                    {organization.updateDate ? <TextFormat type="date" value={organization.updateDate} format={APP_DATE_FORMAT} /> : null}
-                  </td>
                   <td>{organization.user ? organization.user.login : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
