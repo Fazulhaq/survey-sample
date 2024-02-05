@@ -5,7 +5,7 @@
         "title": "Backups",
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Backup",
-        "createOrEditLabel": "Create or edit a Backup",
+        "createOrEditLabel": "Backup Information",
         "notFound": "No Backups found"
       },
       "created": "A new Backup is created with identifier {{ param }}",
@@ -18,13 +18,13 @@
         "title": "Backup"
       },
       "id": "ID",
-      "question1": "Question 1",
-      "question2": "Question 2",
-      "question3": "Question 3",
-      "question4": "Question 4",
-      "question5": "Question 5",
-      "question6": "Question 6",
-      "question7": "Question 7",
+      "question1": "What type of Data Center Do you have? dedicated, shared or Hybrid",
+      "question2": "Reliability and Availability(Tier 1, Tier 2, Tier 3, If other (Please specify))",
+      "question3": "Data Storage Location (e.g., Local Server, Cloud Storage)",
+      "question4": "Backup Frequency ",
+      "question5": "Backup Method",
+      "question6": "Backup Testing Frequency",
+      "question7": "Disaster Recovery Plan availability",
       "form": "Form"
     }
   }

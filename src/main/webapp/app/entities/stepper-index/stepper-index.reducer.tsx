@@ -18,9 +18,12 @@ const IndexSlice = createSlice({
     decrementIndex: (state, action: PayloadAction<number>) => {
       state.stepperIndex -= action.payload;
     },
+    resetIndex: (state, action: PayloadAction<number>) => {
+      state.stepperIndex = action.payload;
+    },
   },
 });
 
-export const { incrementIndex, decrementIndex } = IndexSlice.actions;
+export const { incrementIndex, decrementIndex, resetIndex } = IndexSlice.actions;
 
 export default IndexSlice.reducer;

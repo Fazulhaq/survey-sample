@@ -5,7 +5,7 @@
         "title": "Systems",
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new System",
-        "createOrEditLabel": "Create or edit a System",
+        "createOrEditLabel": "Current System Information",
         "notFound": "No Systems found"
       },
       "created": "A new System is created with identifier {{ param }}",
@@ -18,11 +18,11 @@
         "title": "System"
       },
       "id": "ID",
-      "question1": "Question 1",
-      "question2": "Question 2",
-      "question3": "Question 3",
-      "question4": "Question 4",
-      "question5": "Question 5",
+      "question1": "Do you have any department in your organization to monitor in your technological operations",
+      "question2": "How many IT professionals are currently working in your organization, please specify.",
+      "question3": "How much budgets does your organization allocated for maintenance and development of IT departments",
+      "question4": "Do you have any official website for your organization",
+      "question5": "If yes, please specify your organization's official website below",
       "form": "Form"
     }
   }

@@ -5,7 +5,7 @@
         "title": "Organization List",
         "refreshListLabel": "Refresh list",
         "createLabel": "Add Organization",
-        "createOrEditLabel": "Create or edit a Organization",
+        "createOrEditLabel": "Organization Information",
         "notFound": "No Organizations found"
       },
       "created": "A new Organization is created with identifier {{ param }}",

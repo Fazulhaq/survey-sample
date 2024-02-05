@@ -5,7 +5,7 @@
         "title": "Network Config Check Lists",
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Network Config Check List",
-        "createOrEditLabel": "Create or edit a Network Config Check List",
+        "createOrEditLabel": "Network Configuration Check List Information",
         "notFound": "No Network Config Check Lists found"
       },
       "created": "A new Network Config Check List is created with identifier {{ param }}",

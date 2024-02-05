@@ -5,7 +5,7 @@
         "title": "Internets",
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Internet",
-        "createOrEditLabel": "Create or edit a Internet",
+        "createOrEditLabel": "Internet Information",
         "notFound": "No Internets found"
       },
       "created": "A new Internet is created with identifier {{ param }}",
@@ -18,12 +18,12 @@
         "title": "Internet"
       },
       "id": "ID",
-      "question1": "Question 1",
-      "question2": "Question 2",
-      "question3": "Question 3",
-      "question4": "Question 4",
-      "question5": "Question 5",
-      "question6": "Question 6",
+      "question1": "Internet service provider ",
+      "question2": "Connection type (e.g.: DSL, Fiber Optic, P2P, Vast, WiMAX)",
+      "question3": "Download Speed (Mbps)",
+      "question4": "Upload Speed (Mbps)",
+      "question5": "Network Access Control Method (e.g.: Stand alone, WLC)",
+      "question6": "Network Outages (Frequency & Duration)",
       "form": "Form"
     }
   }

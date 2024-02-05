@@ -5,7 +5,7 @@
         "title": "It Devices",
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new It Device",
-        "createOrEditLabel": "Create or edit a It Device",
+        "createOrEditLabel": "IT Devices Information",
         "notFound": "No It Devices found"
       },
       "created": "A new It Device is created with identifier {{ param }}",

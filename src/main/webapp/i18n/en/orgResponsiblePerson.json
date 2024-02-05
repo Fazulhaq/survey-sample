@@ -5,7 +5,7 @@
         "title": "Org Responsible People",
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Org Responsible Person",
-        "createOrEditLabel": "Create or edit a Org Responsible Person",
+        "createOrEditLabel": "Responsible Person Information",
         "notFound": "No Org Responsible People found"
       },
       "created": "A new Org Responsible Person is created with identifier {{ param }}",

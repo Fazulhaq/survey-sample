@@ -5,7 +5,7 @@
         "title": "Servers",
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Server",
-        "createOrEditLabel": "Create or edit a Server",
+        "createOrEditLabel": "Server Information",
         "notFound": "No Servers found"
       },
       "created": "A new Server is created with identifier {{ param }}",
@@ -18,13 +18,13 @@
         "title": "Server"
       },
       "id": "ID",
-      "question1": "Question 1",
-      "question2": "Question 2",
-      "question3": "Question 3",
-      "question4": "Question 4",
-      "question5": "Question 5",
-      "question6": "Question 6",
-      "question7": "Question 7",
+      "question1": "What type of Servers Does your organization have? (On-Premise Servers, Cloud-based Servers, Hybrid Infrastructure)",
+      "question2": "Data Storage Location (e.g.: Local, Servers, Cloud Storage)",
+      "question3": "What is the estimated age of the server's hardware",
+      "question4": "What kind of alerts do you receive and how are they handled?",
+      "question5": "What operating systems are predominantly used on your servers? (e.g., Windows Server, Linux distributions, other)",
+      "question6": "Do you have a system for monitoring server performance and health",
+      "question7": "Do you have a disaster recovery plan in place for server outages or failures",
       "form": "Form"
     }
   }

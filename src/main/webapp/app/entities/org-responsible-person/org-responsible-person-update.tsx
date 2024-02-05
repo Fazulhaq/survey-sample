@@ -6,6 +6,7 @@ import { Button, Col, Row } from 'reactstrap';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { getEntities as getForms } from 'app/entities/form/form.reducer';
+import { convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
 import { incrementIndex } from '../stepper-index/stepper-index.reducer';
 import { createEntity, reset } from './org-responsible-person.reducer';
 
@@ -27,6 +28,8 @@ export const OrgResponsiblePersonUpdate = () => {
   }, []);
 
   const saveEntity = async values => {
+    values.date = convertDateTimeToServer(values.date);
+
     const entity = {
       ...orgResponsiblePersonEntity,
       ...values,
@@ -36,13 +39,9 @@ export const OrgResponsiblePersonUpdate = () => {
     dispatch(incrementIndex(1));
   };
 
-  const defaultValues = () =>
-    true
-      ? {}
-      : {
-          ...orgResponsiblePersonEntity,
-          form: orgResponsiblePersonEntity?.form?.id,
-        };
+  const defaultValues = () => ({
+    date: displayDefaultDateTime(),
+  });
 
   return (
     <div>
@@ -105,12 +104,11 @@ export const OrgResponsiblePersonUpdate = () => {
               <ValidatedField
                 label={translate('surveySampleApp.orgResponsiblePerson.date')}
                 id="org-responsible-person-date"
+                hidden
                 name="date"
                 data-cy="date"
-                type="date"
-                validate={{
-                  required: { value: true, message: translate('entity.validation.required') },
-                }}
+                type="datetime-local"
+                placeholder="YYYY-MM-DD HH:mm"
               />
               <ValidatedField
                 id="org-responsible-person-form"

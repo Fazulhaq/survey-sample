@@ -1,10 +1,14 @@
+import { useAppDispatch } from 'app/config/store';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { resetIndex } from '../stepper-index/stepper-index.reducer';
 
 const CompletionPage: React.FC = () => {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handleClick = () => {
+    dispatch(resetIndex(0));
     navigate('/organization');
   };
 

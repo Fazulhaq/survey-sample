@@ -5,7 +5,7 @@
         "title": "Datacenter Devices",
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Datacenter Device",
-        "createOrEditLabel": "Create or edit a Datacenter Device",
+        "createOrEditLabel": "Datacenter Device Information",
         "notFound": "No Datacenter Devices found"
       },
       "created": "A new Datacenter Device is created with identifier {{ param }}",

@@ -86,6 +86,7 @@ export const FormUpdate = () => {
               <ValidatedField
                 label={translate('surveySampleApp.form.status')}
                 id="form-status"
+                hidden
                 name="status"
                 data-cy="status"
                 type="select"
@@ -100,6 +101,7 @@ export const FormUpdate = () => {
                 label={translate('surveySampleApp.form.createDate')}
                 id="form-createDate"
                 name="createDate"
+                hidden
                 data-cy="createDate"
                 type="datetime-local"
                 placeholder="YYYY-MM-DD HH:mm"
@@ -107,6 +109,7 @@ export const FormUpdate = () => {
               <ValidatedField
                 label={translate('surveySampleApp.form.updateDate')}
                 id="form-updateDate"
+                hidden
                 name="updateDate"
                 data-cy="updateDate"
                 type="datetime-local"
