@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
+import { InputText } from 'primereact/inputtext';
 import React, { useEffect, useState } from 'react';
 import { JhiItemCount, JhiPagination, Translate, getPaginationState } from 'react-jhipster';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -28,6 +29,16 @@ export const Organization = () => {
   const handleClick = () => {
     dispatch(resetIndex(0));
   };
+
+  const [searchString, setSearchString] = useState('');
+
+  const handleChange = event => {
+    setSearchString(event.target.value);
+  };
+
+  const filteredOrganizations = organizationList.filter(organization =>
+    organization.name.toLowerCase().includes(searchString.toLowerCase()),
+  );
 
   const getAllEntities = () => {
     dispatch(
@@ -102,6 +113,14 @@ export const Organization = () => {
           </Link>
         </div>
       </h2>
+      <div className="d-flex">
+        <span className="d-none d-md-inline">
+          <h4>Search: &nbsp;&nbsp;</h4>
+        </span>
+        <span className="p-input-icon-left">
+          <InputText onChange={event => handleChange(event)} placeholder="Type organization name" className="p-inputtext-sm" />
+        </span>
+      </div>
       <div className="table-responsive">
         {organizationList && organizationList.length > 0 ? (
           <Table responsive>
@@ -134,7 +153,7 @@ export const Organization = () => {
               </tr>
             </thead>
             <tbody>
-              {organizationList.map((organization, i) => (
+              {filteredOrganizations.map((organization, i) => (
                 <tr key={`entity-${i}`} data-cy="entityTable">
                   <td>{organization.id}</td>
                   <td>{organization.name}</td>
