@@ -9,6 +9,7 @@ import { JhiItemCount, JhiPagination, TextFormat, Translate, getPaginationState 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
 
+import { InputText } from 'primereact/inputtext';
 import { getEntities } from './form.reducer';
 
 export const Form = () => {
@@ -24,6 +25,14 @@ export const Form = () => {
   const formList = useAppSelector(state => state.form.entities);
   const loading = useAppSelector(state => state.form.loading);
   const totalItems = useAppSelector(state => state.form.totalItems);
+
+  const [searchString, setSearchString] = useState('');
+
+  const handleChange = event => {
+    setSearchString(event.target.value);
+  };
+
+  const filteredForms = formList.filter(form => form.futurePlan.toLowerCase().includes(searchString.toLowerCase()));
 
   const getAllEntities = () => {
     dispatch(
@@ -93,9 +102,16 @@ export const Form = () => {
         <div className="d-flex justify-content-end">
           &nbsp;
           <br />
-          <br />
         </div>
       </h2>
+      <div className="d-flex">
+        <span className="d-none d-md-inline">
+          <h4>Search: &nbsp;&nbsp;</h4>
+        </span>
+        <span className="p-input-icon-left">
+          <InputText onChange={event => handleChange(event)} placeholder="Type priority text" className="p-inputtext-sm" />
+        </span>
+      </div>
       <div className="table-responsive">
         {formList && formList.length > 0 ? (
           <Table responsive>
@@ -130,7 +146,7 @@ export const Form = () => {
               </tr>
             </thead>
             <tbody>
-              {formList.map((form, i) => (
+              {filteredForms.map((form, i) => (
                 <tr key={`entity-${i}`} data-cy="entityTable">
                   <td>{form.id}</td>
                   <td>{form.futurePlan}</td>
