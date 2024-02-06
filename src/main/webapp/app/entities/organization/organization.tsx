@@ -8,6 +8,7 @@ import { JhiItemCount, JhiPagination, Translate, getPaginationState } from 'reac
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
 
+import { resetIndex } from '../stepper-index/stepper-index.reducer';
 import { getEntities } from './organization.reducer';
 
 export const Organization = () => {
@@ -23,6 +24,10 @@ export const Organization = () => {
   const organizationList = useAppSelector(state => state.organization.entities);
   const loading = useAppSelector(state => state.organization.loading);
   const totalItems = useAppSelector(state => state.organization.totalItems);
+
+  const handleClick = () => {
+    dispatch(resetIndex(0));
+  };
 
   const getAllEntities = () => {
     dispatch(
@@ -139,7 +144,14 @@ export const Organization = () => {
                   <td>{organization.user ? organization.user.login : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
-                      <Button tag={Link} to={`/form/new/${organization.id}`} color="primary" size="sm" data-cy="entitySurveyButton">
+                      <Button
+                        onClick={handleClick}
+                        tag={Link}
+                        to={`/form/new/${organization.id}`}
+                        color="primary"
+                        size="sm"
+                        data-cy="entitySurveyButton"
+                      >
                         <FontAwesomeIcon icon="plus" />{' '}
                         <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.addsurvey">Survey</Translate>
