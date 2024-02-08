@@ -119,4 +119,10 @@ public class BackupService {
         log.debug("Request to delete Backup : {}", id);
         backupRepository.deleteById(id);
     }
+
+    @Transactional(readOnly = true)
+    public Optional<Backup> findByFormId(Long id) {
+        log.debug("Request to get Backup : {}", id);
+        return backupRepository.findByFormId(id);
+    }
 }

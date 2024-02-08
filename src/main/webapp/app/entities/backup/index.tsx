@@ -5,7 +5,6 @@ import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 
 import Backup from './backup';
 import BackupDeleteDialog from './backup-delete-dialog';
-import BackupDetail from './backup-detail';
 import BackupUpdate from './backup-update';
 
 const BackupRoutes = () => (
@@ -13,7 +12,7 @@ const BackupRoutes = () => (
     <Route index element={<Backup />} />
     <Route path="new" element={<BackupUpdate />} />
     <Route path=":id">
-      <Route index element={<BackupDetail />} />
+      {/* <Route index element={<BackupDetail />} /> */}
       <Route path="edit" element={<BackupUpdate />} />
       <Route path="delete" element={<BackupDeleteDialog />} />
     </Route>

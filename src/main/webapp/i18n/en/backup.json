@@ -15,7 +15,7 @@
         "question": "Are you sure you want to delete Backup {{ id }}?"
       },
       "detail": {
-        "title": "Backup"
+        "title": "Backup's Information"
       },
       "id": "ID",
       "question1": "What type of Data Center Do you have? dedicated, shared or Hybrid",

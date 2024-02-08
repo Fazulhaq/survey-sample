@@ -1,97 +1,88 @@
-import React, { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Button, Row, Col } from 'reactstrap';
+import React, { useEffect, useState } from 'react';
 import { Translate } from 'react-jhipster';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Col, Row } from 'reactstrap';
 
-import { useAppDispatch, useAppSelector } from 'app/config/store';
+import { IBackup } from 'app/shared/model/backup.model';
+import axios from 'axios';
 
-import { getEntity } from './backup.reducer';
+interface BackupDetailProps {
+  formId: string;
+}
 
-export const BackupDetail = () => {
-  const dispatch = useAppDispatch();
-
-  const { id } = useParams<'id'>();
-
+export const BackupDetail: React.FC<BackupDetailProps> = ({ formId }) => {
+  const [backupEntity, setBackupEntity] = useState<IBackup | null>(null);
   useEffect(() => {
-    dispatch(getEntity(id));
-  }, []);
+    const getBackupEntity = async () => {
+      const apiUrl = 'api/backups/form';
+      const requestUrl = `${apiUrl}/${formId}`;
+      const response = await axios.get<IBackup>(requestUrl);
+      setBackupEntity(response.data);
+    };
+    getBackupEntity();
+  }, [formId]);
 
-  const backupEntity = useAppSelector(state => state.backup.entity);
   return (
-    <Row>
-      <Col md="8">
+    <Row className="justify-content-center">
+      <Col md="1"></Col>
+      <Col md="10">
+        <br />
+        <br />
         <h2 data-cy="backupDetailsHeading">
           <Translate contentKey="surveySampleApp.backup.detail.title">Backup</Translate>
         </h2>
         <dl className="jh-entity-details">
           <dt>
-            <span id="id">
-              <Translate contentKey="global.field.id">ID</Translate>
-            </span>
-          </dt>
-          <dd>{backupEntity.id}</dd>
-          <dt>
+            <br />
             <span id="question1">
               <Translate contentKey="surveySampleApp.backup.question1">Question 1</Translate>
             </span>
           </dt>
-          <dd>{backupEntity.question1}</dd>
+          <dd>{backupEntity?.question1}</dd>
           <dt>
+            <br />
             <span id="question2">
               <Translate contentKey="surveySampleApp.backup.question2">Question 2</Translate>
             </span>
           </dt>
-          <dd>{backupEntity.question2}</dd>
+          <dd>{backupEntity?.question2}</dd>
           <dt>
+            <br />
             <span id="question3">
               <Translate contentKey="surveySampleApp.backup.question3">Question 3</Translate>
             </span>
           </dt>
-          <dd>{backupEntity.question3}</dd>
+          <dd>{backupEntity?.question3}</dd>
           <dt>
+            <br />
             <span id="question4">
               <Translate contentKey="surveySampleApp.backup.question4">Question 4</Translate>
             </span>
           </dt>
-          <dd>{backupEntity.question4}</dd>
+          <dd>{backupEntity?.question4}</dd>
           <dt>
+            <br />
             <span id="question5">
               <Translate contentKey="surveySampleApp.backup.question5">Question 5</Translate>
             </span>
           </dt>
-          <dd>{backupEntity.question5}</dd>
+          <dd>{backupEntity?.question5}</dd>
           <dt>
+            <br />
             <span id="question6">
               <Translate contentKey="surveySampleApp.backup.question6">Question 6</Translate>
             </span>
           </dt>
-          <dd>{backupEntity.question6}</dd>
+          <dd>{backupEntity?.question6}</dd>
           <dt>
+            <br />
             <span id="question7">
               <Translate contentKey="surveySampleApp.backup.question7">Question 7</Translate>
             </span>
           </dt>
-          <dd>{backupEntity.question7}</dd>
-          <dt>
-            <Translate contentKey="surveySampleApp.backup.form">Form</Translate>
-          </dt>
-          <dd>{backupEntity.form ? backupEntity.form.id : ''}</dd>
+          <dd>{backupEntity?.question7}</dd>
         </dl>
-        <Button tag={Link} to="/backup" replace color="info" data-cy="entityDetailsBackButton">
-          <FontAwesomeIcon icon="arrow-left" />{' '}
-          <span className="d-none d-md-inline">
-            <Translate contentKey="entity.action.back">Back</Translate>
-          </span>
-        </Button>
-        &nbsp;
-        <Button tag={Link} to={`/backup/${backupEntity.id}/edit`} replace color="primary">
-          <FontAwesomeIcon icon="pencil-alt" />{' '}
-          <span className="d-none d-md-inline">
-            <Translate contentKey="entity.action.edit">Edit</Translate>
-          </span>
-        </Button>
       </Col>
+      <Col md="1"></Col>
     </Row>
   );
 };

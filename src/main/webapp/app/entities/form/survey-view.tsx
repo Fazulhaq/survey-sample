@@ -4,6 +4,7 @@ import React from 'react';
 import { Translate } from 'react-jhipster';
 import { Link, useParams } from 'react-router-dom';
 import { Button, Col, Row } from 'reactstrap';
+import BackupDetail from '../backup/backup-detail';
 import ServerDetail from '../server/server-detail';
 import SystemDetail from '../system/system-detail';
 import FormDetail from './form-detail';
@@ -25,7 +26,8 @@ export const SurveyView = () => {
         <Divider />
         <SystemDetail formId={id} />
         <Divider />
-        <br />
+        <BackupDetail formId={id} />
+        <Divider />
         <br />
         <Button tag={Link} to="/form" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}
