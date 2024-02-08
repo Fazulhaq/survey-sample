@@ -15,7 +15,7 @@
         "question": "Are you sure you want to delete Server {{ id }}?"
       },
       "detail": {
-        "title": "Server"
+        "title": "Server's Information"
       },
       "id": "ID",
       "question1": "What type of Servers Does your organization have? (On-Premise Servers, Cloud-based Servers, Hybrid Infrastructure)",

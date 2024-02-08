@@ -119,4 +119,10 @@ public class ServerService {
         log.debug("Request to delete Server : {}", id);
         serverRepository.deleteById(id);
     }
+
+    @Transactional(readOnly = true)
+    public Optional<Server> findByFormId(Long id) {
+        log.debug("Request to get Server : {}", id);
+        return serverRepository.findByFormId(id);
+    }
 }

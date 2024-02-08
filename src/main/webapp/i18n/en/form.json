@@ -15,10 +15,11 @@
         "question": "Are you sure you want to delete Form {{ id }}?"
       },
       "detail": {
-        "title": "Form"
+        "title": "Primary Data",
+        "maintitle": "Survey Details"
       },
       "id": "ID",
-      "futurePlan": "Your priorities for IT development in the next 1-3-5 years?",
+      "futurePlan": "Survey Unique Title",
       "status": "Status",
       "createDate": "Create Date",
       "updateDate": "Update Date",

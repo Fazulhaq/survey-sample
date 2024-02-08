@@ -5,7 +5,6 @@ import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 
 import Server from './server';
 import ServerDeleteDialog from './server-delete-dialog';
-import ServerDetail from './server-detail';
 import ServerUpdate from './server-update';
 
 const ServerRoutes = () => (
@@ -13,7 +12,7 @@ const ServerRoutes = () => (
     <Route index element={<Server />} />
     <Route path="new" element={<ServerUpdate />} />
     <Route path=":id">
-      <Route index element={<ServerDetail />} />
+      {/* <Route index element={<ServerDetail />} /> */}
       <Route path="edit" element={<ServerUpdate />} />
       <Route path="delete" element={<ServerDeleteDialog />} />
     </Route>
