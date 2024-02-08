@@ -5,6 +5,7 @@ import { Translate } from 'react-jhipster';
 import { Link, useParams } from 'react-router-dom';
 import { Button, Col, Row } from 'reactstrap';
 import ServerDetail from '../server/server-detail';
+import SystemDetail from '../system/system-detail';
 import FormDetail from './form-detail';
 
 export const SurveyView = () => {
@@ -21,6 +22,8 @@ export const SurveyView = () => {
         <FormDetail formId={id} />
         <Divider />
         <ServerDetail formId={id} />
+        <Divider />
+        <SystemDetail formId={id} />
         <Divider />
         <br />
         <br />

@@ -15,7 +15,7 @@
         "question": "Are you sure you want to delete System {{ id }}?"
       },
       "detail": {
-        "title": "System"
+        "title": "System's Information"
       },
       "id": "ID",
       "question1": "Do you have any department in your organization to monitor in your technological operations",

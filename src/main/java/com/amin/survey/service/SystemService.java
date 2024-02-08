@@ -113,4 +113,10 @@ public class SystemService {
         log.debug("Request to delete System : {}", id);
         systemRepository.deleteById(id);
     }
+
+    @Transactional(readOnly = true)
+    public Optional<System> findByFormId(Long id) {
+        log.debug("Request to get System : {}", id);
+        return systemRepository.findByFormId(id);
+    }
 }
