@@ -12,13 +12,13 @@ interface DatacenterDeviceDetailProps {
 export const DatacenterDeviceDetail: React.FC<DatacenterDeviceDetailProps> = ({ formId }) => {
   const [datacenterDeviceEntity, setDatacenterDeviceEntity] = useState<IDatacenterDevice | null>(null);
   useEffect(() => {
-    const getBackupEntity = async () => {
+    const getDatacenterDeviceEntity = async () => {
       const apiUrl = 'api/datacenter-devices/form';
       const requestUrl = `${apiUrl}/${formId}`;
       const response = await axios.get<IDatacenterDevice>(requestUrl);
       setDatacenterDeviceEntity(response.data);
     };
-    getBackupEntity();
+    getDatacenterDeviceEntity();
   }, [formId]);
 
   return (

@@ -1,91 +1,81 @@
-import React, { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Button, Row, Col } from 'reactstrap';
+import React, { useEffect, useState } from 'react';
 import { Translate } from 'react-jhipster';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Col, Row } from 'reactstrap';
 
-import { useAppDispatch, useAppSelector } from 'app/config/store';
+import { IInternet } from 'app/shared/model/internet.model';
+import axios from 'axios';
 
-import { getEntity } from './internet.reducer';
+interface IntenetDetailProps {
+  formId: string;
+}
 
-export const InternetDetail = () => {
-  const dispatch = useAppDispatch();
-
-  const { id } = useParams<'id'>();
-
+export const InternetDetail: React.FC<IntenetDetailProps> = ({ formId }) => {
+  const [internetEntity, setInternetEntity] = useState<IInternet | null>(null);
   useEffect(() => {
-    dispatch(getEntity(id));
-  }, []);
+    const getInternetEntity = async () => {
+      const apiUrl = 'api/internets/form';
+      const requestUrl = `${apiUrl}/${formId}`;
+      const response = await axios.get<IInternet>(requestUrl);
+      setInternetEntity(response.data);
+    };
+    getInternetEntity();
+  }, [formId]);
 
-  const internetEntity = useAppSelector(state => state.internet.entity);
   return (
-    <Row>
-      <Col md="8">
-        <h2 data-cy="internetDetailsHeading">
+    <Row className="justify-content-center">
+      <Col md="1"></Col>
+      <Col md="10">
+        <br />
+        <br />
+        <h3 data-cy="internetDetailsHeading">
           <Translate contentKey="surveySampleApp.internet.detail.title">Internet</Translate>
-        </h2>
+        </h3>
         <dl className="jh-entity-details">
           <dt>
-            <span id="id">
-              <Translate contentKey="global.field.id">ID</Translate>
-            </span>
-          </dt>
-          <dd>{internetEntity.id}</dd>
-          <dt>
+            <br />
             <span id="question1">
               <Translate contentKey="surveySampleApp.internet.question1">Question 1</Translate>
             </span>
           </dt>
-          <dd>{internetEntity.question1}</dd>
+          <dd>{internetEntity?.question1}</dd>
           <dt>
+            <br />
             <span id="question2">
               <Translate contentKey="surveySampleApp.internet.question2">Question 2</Translate>
             </span>
           </dt>
-          <dd>{internetEntity.question2}</dd>
+          <dd>{internetEntity?.question2}</dd>
           <dt>
+            <br />
             <span id="question3">
               <Translate contentKey="surveySampleApp.internet.question3">Question 3</Translate>
             </span>
           </dt>
-          <dd>{internetEntity.question3}</dd>
+          <dd>{internetEntity?.question3}</dd>
           <dt>
+            <br />
             <span id="question4">
               <Translate contentKey="surveySampleApp.internet.question4">Question 4</Translate>
             </span>
           </dt>
-          <dd>{internetEntity.question4}</dd>
+          <dd>{internetEntity?.question4}</dd>
           <dt>
+            <br />
             <span id="question5">
               <Translate contentKey="surveySampleApp.internet.question5">Question 5</Translate>
             </span>
           </dt>
-          <dd>{internetEntity.question5}</dd>
+          <dd>{internetEntity?.question5}</dd>
           <dt>
+            <br />
             <span id="question6">
               <Translate contentKey="surveySampleApp.internet.question6">Question 6</Translate>
             </span>
           </dt>
-          <dd>{internetEntity.question6}</dd>
-          <dt>
-            <Translate contentKey="surveySampleApp.internet.form">Form</Translate>
-          </dt>
-          <dd>{internetEntity.form ? internetEntity.form.id : ''}</dd>
+          <dd>{internetEntity?.question6}</dd>
         </dl>
-        <Button tag={Link} to="/internet" replace color="info" data-cy="entityDetailsBackButton">
-          <FontAwesomeIcon icon="arrow-left" />{' '}
-          <span className="d-none d-md-inline">
-            <Translate contentKey="entity.action.back">Back</Translate>
-          </span>
-        </Button>
-        &nbsp;
-        <Button tag={Link} to={`/internet/${internetEntity.id}/edit`} replace color="primary">
-          <FontAwesomeIcon icon="pencil-alt" />{' '}
-          <span className="d-none d-md-inline">
-            <Translate contentKey="entity.action.edit">Edit</Translate>
-          </span>
-        </Button>
       </Col>
+      <Col md="1"></Col>
     </Row>
   );
 };

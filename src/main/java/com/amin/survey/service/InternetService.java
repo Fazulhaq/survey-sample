@@ -116,4 +116,10 @@ public class InternetService {
         log.debug("Request to delete Internet : {}", id);
         internetRepository.deleteById(id);
     }
+
+    @Transactional(readOnly = true)
+    public Optional<Internet> findByFormId(Long id) {
+        log.debug("Request to get Internet : {}", id);
+        return internetRepository.findByFormId(id);
+    }
 }
