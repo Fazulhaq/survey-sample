@@ -1,91 +1,81 @@
-import React, { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Button, Row, Col } from 'reactstrap';
+import React, { useEffect, useState } from 'react';
 import { Translate } from 'react-jhipster';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Col, Row } from 'reactstrap';
 
-import { useAppDispatch, useAppSelector } from 'app/config/store';
+import { IDatacenterDevice } from 'app/shared/model/datacenter-device.model';
+import axios from 'axios';
 
-import { getEntity } from './datacenter-device.reducer';
+interface DatacenterDeviceDetailProps {
+  formId: string;
+}
 
-export const DatacenterDeviceDetail = () => {
-  const dispatch = useAppDispatch();
-
-  const { id } = useParams<'id'>();
-
+export const DatacenterDeviceDetail: React.FC<DatacenterDeviceDetailProps> = ({ formId }) => {
+  const [datacenterDeviceEntity, setDatacenterDeviceEntity] = useState<IDatacenterDevice | null>(null);
   useEffect(() => {
-    dispatch(getEntity(id));
-  }, []);
+    const getBackupEntity = async () => {
+      const apiUrl = 'api/datacenter-devices/form';
+      const requestUrl = `${apiUrl}/${formId}`;
+      const response = await axios.get<IDatacenterDevice>(requestUrl);
+      setDatacenterDeviceEntity(response.data);
+    };
+    getBackupEntity();
+  }, [formId]);
 
-  const datacenterDeviceEntity = useAppSelector(state => state.datacenterDevice.entity);
   return (
-    <Row>
-      <Col md="8">
-        <h2 data-cy="datacenterDeviceDetailsHeading">
+    <Row className="justify-content-center">
+      <Col md="1"></Col>
+      <Col md="10">
+        <br />
+        <br />
+        <h3 data-cy="datacenterDeviceDetailsHeading">
           <Translate contentKey="surveySampleApp.datacenterDevice.detail.title">DatacenterDevice</Translate>
-        </h2>
+        </h3>
         <dl className="jh-entity-details">
           <dt>
-            <span id="id">
-              <Translate contentKey="global.field.id">ID</Translate>
-            </span>
-          </dt>
-          <dd>{datacenterDeviceEntity.id}</dd>
-          <dt>
+            <br />
             <span id="deviceType">
               <Translate contentKey="surveySampleApp.datacenterDevice.deviceType">Device Type</Translate>
             </span>
           </dt>
-          <dd>{datacenterDeviceEntity.deviceType}</dd>
+          <dd>{datacenterDeviceEntity?.deviceType}</dd>
           <dt>
+            <br />
             <span id="quantity">
               <Translate contentKey="surveySampleApp.datacenterDevice.quantity">Quantity</Translate>
             </span>
           </dt>
-          <dd>{datacenterDeviceEntity.quantity}</dd>
+          <dd>{datacenterDeviceEntity?.quantity}</dd>
           <dt>
+            <br />
             <span id="brandAndModel">
               <Translate contentKey="surveySampleApp.datacenterDevice.brandAndModel">Brand And Model</Translate>
             </span>
           </dt>
-          <dd>{datacenterDeviceEntity.brandAndModel}</dd>
+          <dd>{datacenterDeviceEntity?.brandAndModel}</dd>
           <dt>
+            <br />
             <span id="age">
               <Translate contentKey="surveySampleApp.datacenterDevice.age">Age</Translate>
             </span>
           </dt>
-          <dd>{datacenterDeviceEntity.age}</dd>
+          <dd>{datacenterDeviceEntity?.age}</dd>
           <dt>
+            <br />
             <span id="purpose">
               <Translate contentKey="surveySampleApp.datacenterDevice.purpose">Purpose</Translate>
             </span>
           </dt>
-          <dd>{datacenterDeviceEntity.purpose}</dd>
+          <dd>{datacenterDeviceEntity?.purpose}</dd>
           <dt>
+            <br />
             <span id="currentStatus">
               <Translate contentKey="surveySampleApp.datacenterDevice.currentStatus">Current Status</Translate>
             </span>
           </dt>
-          <dd>{datacenterDeviceEntity.currentStatus}</dd>
-          <dt>
-            <Translate contentKey="surveySampleApp.datacenterDevice.form">Form</Translate>
-          </dt>
-          <dd>{datacenterDeviceEntity.form ? datacenterDeviceEntity.form.id : ''}</dd>
+          <dd>{datacenterDeviceEntity?.currentStatus}</dd>
         </dl>
-        <Button tag={Link} to="/datacenter-device" replace color="info" data-cy="entityDetailsBackButton">
-          <FontAwesomeIcon icon="arrow-left" />{' '}
-          <span className="d-none d-md-inline">
-            <Translate contentKey="entity.action.back">Back</Translate>
-          </span>
-        </Button>
-        &nbsp;
-        <Button tag={Link} to={`/datacenter-device/${datacenterDeviceEntity.id}/edit`} replace color="primary">
-          <FontAwesomeIcon icon="pencil-alt" />{' '}
-          <span className="d-none d-md-inline">
-            <Translate contentKey="entity.action.edit">Edit</Translate>
-          </span>
-        </Button>
       </Col>
+      <Col md="1"></Col>
     </Row>
   );
 };

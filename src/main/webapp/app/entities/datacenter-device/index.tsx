@@ -5,7 +5,6 @@ import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 
 import DatacenterDevice from './datacenter-device';
 import DatacenterDeviceDeleteDialog from './datacenter-device-delete-dialog';
-import DatacenterDeviceDetail from './datacenter-device-detail';
 import DatacenterDeviceUpdate from './datacenter-device-update';
 
 const DatacenterDeviceRoutes = () => (
@@ -13,7 +12,7 @@ const DatacenterDeviceRoutes = () => (
     <Route index element={<DatacenterDevice />} />
     <Route path="new" element={<DatacenterDeviceUpdate />} />
     <Route path=":id">
-      <Route index element={<DatacenterDeviceDetail />} />
+      {/* <Route index element={<DatacenterDeviceDetail />} /> */}
       <Route path="edit" element={<DatacenterDeviceUpdate />} />
       <Route path="delete" element={<DatacenterDeviceDeleteDialog />} />
     </Route>

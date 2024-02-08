@@ -27,9 +27,9 @@ export const BackupDetail: React.FC<BackupDetailProps> = ({ formId }) => {
       <Col md="10">
         <br />
         <br />
-        <h2 data-cy="backupDetailsHeading">
+        <h3 data-cy="backupDetailsHeading">
           <Translate contentKey="surveySampleApp.backup.detail.title">Backup</Translate>
-        </h2>
+        </h3>
         <dl className="jh-entity-details">
           <dt>
             <br />

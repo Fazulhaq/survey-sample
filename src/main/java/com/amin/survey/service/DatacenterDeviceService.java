@@ -116,4 +116,10 @@ public class DatacenterDeviceService {
         log.debug("Request to delete DatacenterDevice : {}", id);
         datacenterDeviceRepository.deleteById(id);
     }
+
+    @Transactional(readOnly = true)
+    public Optional<DatacenterDevice> findByFormId(Long id) {
+        log.debug("Request to get DatacenterDevice : {}", id);
+        return datacenterDeviceRepository.findByFormId(id);
+    }
 }

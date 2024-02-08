@@ -27,9 +27,9 @@ export const SystemDetail: React.FC<SystemDetailProps> = ({ formId }) => {
       <Col md="10">
         <br />
         <br />
-        <h2 data-cy="systemDetailsHeading">
+        <h3 data-cy="systemDetailsHeading">
           <Translate contentKey="surveySampleApp.system.detail.title">System</Translate>
-        </h2>
+        </h3>
         <dl className="jh-entity-details">
           <dt>
             <br />
