@@ -116,4 +116,10 @@ public class ItDeviceService {
         log.debug("Request to delete ItDevice : {}", id);
         itDeviceRepository.deleteById(id);
     }
+
+    @Transactional(readOnly = true)
+    public Optional<ItDevice> findByFormId(Long id) {
+        log.debug("Request to get ItDevice : {}", id);
+        return itDeviceRepository.findByFormId(id);
+    }
 }

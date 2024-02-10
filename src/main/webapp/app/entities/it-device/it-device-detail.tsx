@@ -1,91 +1,81 @@
-import React, { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Button, Row, Col } from 'reactstrap';
+import React, { useEffect, useState } from 'react';
 import { Translate } from 'react-jhipster';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Col, Row } from 'reactstrap';
 
-import { useAppDispatch, useAppSelector } from 'app/config/store';
+import { IItDevice } from 'app/shared/model/it-device.model';
+import axios from 'axios';
 
-import { getEntity } from './it-device.reducer';
+interface ItDeviceDetailProps {
+  formId: string;
+}
 
-export const ItDeviceDetail = () => {
-  const dispatch = useAppDispatch();
-
-  const { id } = useParams<'id'>();
-
+export const ItDeviceDetail: React.FC<ItDeviceDetailProps> = ({ formId }) => {
+  const [itDeviceEntity, setItDeviceEntity] = useState<IItDevice | null>(null);
   useEffect(() => {
-    dispatch(getEntity(id));
-  }, []);
+    const getItDeviceEntity = async () => {
+      const apiUrl = 'api/it-devices/form';
+      const requestUrl = `${apiUrl}/${formId}`;
+      const response = await axios.get<IItDevice>(requestUrl);
+      setItDeviceEntity(response.data);
+    };
+    getItDeviceEntity();
+  }, [formId]);
 
-  const itDeviceEntity = useAppSelector(state => state.itDevice.entity);
   return (
-    <Row>
-      <Col md="8">
+    <Row className="justify-content-center">
+      <Col md="1"></Col>
+      <Col md="10">
+        <br />
+        <br />
         <h2 data-cy="itDeviceDetailsHeading">
           <Translate contentKey="surveySampleApp.itDevice.detail.title">ItDevice</Translate>
         </h2>
         <dl className="jh-entity-details">
           <dt>
-            <span id="id">
-              <Translate contentKey="global.field.id">ID</Translate>
-            </span>
-          </dt>
-          <dd>{itDeviceEntity.id}</dd>
-          <dt>
+            <br />
             <span id="deviceType">
               <Translate contentKey="surveySampleApp.itDevice.deviceType">Device Type</Translate>
             </span>
           </dt>
-          <dd>{itDeviceEntity.deviceType}</dd>
+          <dd>{itDeviceEntity?.deviceType}</dd>
           <dt>
+            <br />
             <span id="quantity">
               <Translate contentKey="surveySampleApp.itDevice.quantity">Quantity</Translate>
             </span>
           </dt>
-          <dd>{itDeviceEntity.quantity}</dd>
+          <dd>{itDeviceEntity?.quantity}</dd>
           <dt>
+            <br />
             <span id="brandAndModel">
               <Translate contentKey="surveySampleApp.itDevice.brandAndModel">Brand And Model</Translate>
             </span>
           </dt>
-          <dd>{itDeviceEntity.brandAndModel}</dd>
+          <dd>{itDeviceEntity?.brandAndModel}</dd>
           <dt>
+            <br />
             <span id="age">
               <Translate contentKey="surveySampleApp.itDevice.age">Age</Translate>
             </span>
           </dt>
-          <dd>{itDeviceEntity.age}</dd>
+          <dd>{itDeviceEntity?.age}</dd>
           <dt>
+            <br />
             <span id="purpose">
               <Translate contentKey="surveySampleApp.itDevice.purpose">Purpose</Translate>
             </span>
           </dt>
-          <dd>{itDeviceEntity.purpose}</dd>
+          <dd>{itDeviceEntity?.purpose}</dd>
           <dt>
+            <br />
             <span id="currentStatus">
               <Translate contentKey="surveySampleApp.itDevice.currentStatus">Current Status</Translate>
             </span>
           </dt>
-          <dd>{itDeviceEntity.currentStatus}</dd>
-          <dt>
-            <Translate contentKey="surveySampleApp.itDevice.form">Form</Translate>
-          </dt>
-          <dd>{itDeviceEntity.form ? itDeviceEntity.form.id : ''}</dd>
+          <dd>{itDeviceEntity?.currentStatus}</dd>
         </dl>
-        <Button tag={Link} to="/it-device" replace color="info" data-cy="entityDetailsBackButton">
-          <FontAwesomeIcon icon="arrow-left" />{' '}
-          <span className="d-none d-md-inline">
-            <Translate contentKey="entity.action.back">Back</Translate>
-          </span>
-        </Button>
-        &nbsp;
-        <Button tag={Link} to={`/it-device/${itDeviceEntity.id}/edit`} replace color="primary">
-          <FontAwesomeIcon icon="pencil-alt" />{' '}
-          <span className="d-none d-md-inline">
-            <Translate contentKey="entity.action.edit">Edit</Translate>
-          </span>
-        </Button>
       </Col>
+      <Col md="1"></Col>
     </Row>
   );
 };
