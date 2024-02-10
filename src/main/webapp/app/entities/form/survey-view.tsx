@@ -9,6 +9,7 @@ import DatacenterDeviceDetail from '../datacenter-device/datacenter-device-detai
 import InternetDetail from '../internet/internet-detail';
 import ItDeviceDetail from '../it-device/it-device-detail';
 import NetworkConfigCheckListDetail from '../network-config-check-list/network-config-check-list-detail';
+import OrgResponsiblePersonDetail from '../org-responsible-person/org-responsible-person-detail';
 import ServerDetail from '../server/server-detail';
 import SystemDetail from '../system/system-detail';
 import FormDetail from './form-detail';
@@ -40,18 +41,13 @@ export const SurveyView = () => {
         <Divider />
         <NetworkConfigCheckListDetail formId={id} />
         <Divider />
+        <OrgResponsiblePersonDetail formId={id} />
+        <Divider />
         <br />
         <Button tag={Link} to="/form" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}
           <span className="d-none d-md-inline">
-            <Translate contentKey="entity.action.back">Back</Translate>
-          </span>
-        </Button>
-        &nbsp;
-        <Button tag={Link} to={'/form'} replace color="primary">
-          <FontAwesomeIcon icon="pencil-alt" />{' '}
-          <span className="d-none d-md-inline">
-            <Translate contentKey="entity.action.edit">Edit</Translate>
+            <Translate contentKey="entity.action.surveylist">Back to Survey List</Translate>
           </span>
         </Button>
       </Col>

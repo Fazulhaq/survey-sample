@@ -15,7 +15,7 @@
         "question": "Are you sure you want to delete Org Responsible Person {{ id }}?"
       },
       "detail": {
-        "title": "Org Responsible Person"
+        "title": "Organization's Responsible Person"
       },
       "id": "ID",
       "fullName": "Full Name",

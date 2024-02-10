@@ -110,4 +110,10 @@ public class OrgResponsiblePersonService {
         log.debug("Request to delete OrgResponsiblePerson : {}", id);
         orgResponsiblePersonRepository.deleteById(id);
     }
+
+    @Transactional(readOnly = true)
+    public Optional<OrgResponsiblePerson> findByFormId(Long id) {
+        log.debug("Request to get OrgResponsiblePerson : {}", id);
+        return orgResponsiblePersonRepository.findByFormId(id);
+    }
 }
