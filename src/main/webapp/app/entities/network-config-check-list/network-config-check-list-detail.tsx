@@ -1,169 +1,181 @@
-import React, { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Button, Row, Col } from 'reactstrap';
+import React, { useEffect, useState } from 'react';
 import { Translate } from 'react-jhipster';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Col, Row } from 'reactstrap';
 
-import { useAppDispatch, useAppSelector } from 'app/config/store';
+import { INetworkConfigCheckList } from 'app/shared/model/network-config-check-list.model';
+import axios from 'axios';
 
-import { getEntity } from './network-config-check-list.reducer';
+interface NetworkConfigCheckListDetailProps {
+  formId: string;
+}
 
-export const NetworkConfigCheckListDetail = () => {
-  const dispatch = useAppDispatch();
-
-  const { id } = useParams<'id'>();
-
+export const NetworkConfigCheckListDetail: React.FC<NetworkConfigCheckListDetailProps> = ({ formId }) => {
+  const [networkConfigCheckListEntity, setNetworkConfigCheckListEntity] = useState<INetworkConfigCheckList | null>(null);
   useEffect(() => {
-    dispatch(getEntity(id));
-  }, []);
+    const getnetworkConfigCheckListEntity = async () => {
+      const apiUrl = 'api/network-config-check-lists/form';
+      const requestUrl = `${apiUrl}/${formId}`;
+      const response = await axios.get<INetworkConfigCheckList>(requestUrl);
+      setNetworkConfigCheckListEntity(response.data);
+    };
+    getnetworkConfigCheckListEntity();
+  }, [formId]);
 
-  const networkConfigCheckListEntity = useAppSelector(state => state.networkConfigCheckList.entity);
   return (
-    <Row>
-      <Col md="8">
-        <h2 data-cy="networkConfigCheckListDetailsHeading">
-          <Translate contentKey="surveySampleApp.networkConfigCheckList.detail.title">NetworkConfigCheckList</Translate>
-        </h2>
+    <Row className="justify-content-center">
+      <Col md="2"></Col>
+      <br />
+      <br />
+      <h2 data-cy="networkConfigCheckListDetailsHeading">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Translate contentKey="surveySampleApp.networkConfigCheckList.detail.title">NetworkConfigCheckList</Translate>
+      </h2>
+      <Col md="3">
         <dl className="jh-entity-details">
           <dt>
-            <span id="id">
-              <Translate contentKey="global.field.id">ID</Translate>
-            </span>
-          </dt>
-          <dd>{networkConfigCheckListEntity.id}</dd>
-          <dt>
+            <br />
             <span id="dhcp">
               <Translate contentKey="surveySampleApp.networkConfigCheckList.dhcp">Dhcp</Translate>
             </span>
           </dt>
-          <dd>{networkConfigCheckListEntity.dhcp ? 'true' : 'false'}</dd>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.dhcp} />
           <dt>
+            <br />
             <span id="dns">
               <Translate contentKey="surveySampleApp.networkConfigCheckList.dns">Dns</Translate>
             </span>
           </dt>
-          <dd>{networkConfigCheckListEntity.dns ? 'true' : 'false'}</dd>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.dns} />
           <dt>
-            <span id="activeDirectory">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.activeDirectory">Active Directory</Translate>
-            </span>
-          </dt>
-          <dd>{networkConfigCheckListEntity.activeDirectory ? 'true' : 'false'}</dd>
-          <dt>
-            <span id="sharedDrives">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.sharedDrives">Shared Drives</Translate>
-            </span>
-          </dt>
-          <dd>{networkConfigCheckListEntity.sharedDrives ? 'true' : 'false'}</dd>
-          <dt>
-            <span id="mailServer">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.mailServer">Mail Server</Translate>
-            </span>
-          </dt>
-          <dd>{networkConfigCheckListEntity.mailServer ? 'true' : 'false'}</dd>
-          <dt>
-            <span id="firewalls">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.firewalls">Firewalls</Translate>
-            </span>
-          </dt>
-          <dd>{networkConfigCheckListEntity.firewalls ? 'true' : 'false'}</dd>
-          <dt>
-            <span id="loadBalancing">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.loadBalancing">Load Balancing</Translate>
-            </span>
-          </dt>
-          <dd>{networkConfigCheckListEntity.loadBalancing ? 'true' : 'false'}</dd>
-          <dt>
-            <span id="networkMonitoring">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.networkMonitoring">Network Monitoring</Translate>
-            </span>
-          </dt>
-          <dd>{networkConfigCheckListEntity.networkMonitoring ? 'true' : 'false'}</dd>
-          <dt>
-            <span id="antivirus">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.antivirus">Antivirus</Translate>
-            </span>
-          </dt>
-          <dd>{networkConfigCheckListEntity.antivirus ? 'true' : 'false'}</dd>
-          <dt>
-            <span id="integratedSystems">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.integratedSystems">Integrated Systems</Translate>
-            </span>
-          </dt>
-          <dd>{networkConfigCheckListEntity.integratedSystems ? 'true' : 'false'}</dd>
-          <dt>
-            <span id="antiSpam">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.antiSpam">Anti Spam</Translate>
-            </span>
-          </dt>
-          <dd>{networkConfigCheckListEntity.antiSpam ? 'true' : 'false'}</dd>
-          <dt>
-            <span id="wpa">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.wpa">Wpa</Translate>
-            </span>
-          </dt>
-          <dd>{networkConfigCheckListEntity.wpa ? 'true' : 'false'}</dd>
-          <dt>
-            <span id="autoBackup">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.autoBackup">Auto Backup</Translate>
-            </span>
-          </dt>
-          <dd>{networkConfigCheckListEntity.autoBackup ? 'true' : 'false'}</dd>
-          <dt>
-            <span id="physicalSecurity">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.physicalSecurity">Physical Security</Translate>
-            </span>
-          </dt>
-          <dd>{networkConfigCheckListEntity.physicalSecurity ? 'true' : 'false'}</dd>
-          <dt>
-            <span id="storageServer">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.storageServer">Storage Server</Translate>
-            </span>
-          </dt>
-          <dd>{networkConfigCheckListEntity.storageServer ? 'true' : 'false'}</dd>
-          <dt>
+            <br />
             <span id="securityAudit">
               <Translate contentKey="surveySampleApp.networkConfigCheckList.securityAudit">Security Audit</Translate>
             </span>
           </dt>
-          <dd>{networkConfigCheckListEntity.securityAudit ? 'true' : 'false'}</dd>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.securityAudit} />
           <dt>
-            <span id="disasterRecovery">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.disasterRecovery">Disaster Recovery</Translate>
+            <br />
+            <span id="activeDirectory">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.activeDirectory">Active Directory</Translate>
             </span>
           </dt>
-          <dd>{networkConfigCheckListEntity.disasterRecovery ? 'true' : 'false'}</dd>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.activeDirectory} />
           <dt>
-            <span id="proxyServer">
-              <Translate contentKey="surveySampleApp.networkConfigCheckList.proxyServer">Proxy Server</Translate>
+            <br />
+            <span id="sharedDrives">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.sharedDrives">Shared Drives</Translate>
             </span>
           </dt>
-          <dd>{networkConfigCheckListEntity.proxyServer ? 'true' : 'false'}</dd>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.sharedDrives} />
           <dt>
+            <br />
+            <span id="mailServer">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.mailServer">Mail Server</Translate>
+            </span>
+          </dt>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.mailServer} />
+          <dt>
+            <br />
             <span id="wdsServer">
               <Translate contentKey="surveySampleApp.networkConfigCheckList.wdsServer">Wds Server</Translate>
             </span>
           </dt>
-          <dd>{networkConfigCheckListEntity.wdsServer ? 'true' : 'false'}</dd>
-          <dt>
-            <Translate contentKey="surveySampleApp.networkConfigCheckList.form">Form</Translate>
-          </dt>
-          <dd>{networkConfigCheckListEntity.form ? networkConfigCheckListEntity.form.id : ''}</dd>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.wdsServer} />
         </dl>
-        <Button tag={Link} to="/network-config-check-list" replace color="info" data-cy="entityDetailsBackButton">
-          <FontAwesomeIcon icon="arrow-left" />{' '}
-          <span className="d-none d-md-inline">
-            <Translate contentKey="entity.action.back">Back</Translate>
-          </span>
-        </Button>
-        &nbsp;
-        <Button tag={Link} to={`/network-config-check-list/${networkConfigCheckListEntity.id}/edit`} replace color="primary">
-          <FontAwesomeIcon icon="pencil-alt" />{' '}
-          <span className="d-none d-md-inline">
-            <Translate contentKey="entity.action.edit">Edit</Translate>
-          </span>
-        </Button>
       </Col>
+      <Col md="3">
+        <dl className="jh-entity-details">
+          <dt>
+            <br />
+            <span id="loadBalancing">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.loadBalancing">Load Balancing</Translate>
+            </span>
+          </dt>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.loadBalancing} />
+          <dt>
+            <br />
+            <span id="firewalls">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.firewalls">Firewalls</Translate>
+            </span>
+          </dt>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.firewalls} />
+          <dt>
+            <br />
+            <span id="physicalSecurity">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.physicalSecurity">Physical Security</Translate>
+            </span>
+          </dt>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.physicalSecurity} />
+          <dt>
+            <br />
+            <span id="disasterRecovery">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.disasterRecovery">Disaster Recovery</Translate>
+            </span>
+          </dt>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.disasterRecovery} />
+          <dt>
+            <br />
+            <span id="networkMonitoring">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.networkMonitoring">Network Monitoring</Translate>
+            </span>
+          </dt>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.networkMonitoring} />
+          <dt>
+            <br />
+            <span id="antivirus">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.antivirus">Antivirus</Translate>
+            </span>
+          </dt>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.antivirus} />
+        </dl>
+      </Col>
+      <Col md="3">
+        <dl className="jh-entity-details">
+          <dt>
+            <br />
+            <span id="autoBackup">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.autoBackup">Auto Backup</Translate>
+            </span>
+          </dt>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.autoBackup} />
+          <dt>
+            <br />
+            <span id="integratedSystems">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.integratedSystems">Integrated Systems</Translate>
+            </span>
+          </dt>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.integratedSystems} />
+          <dt>
+            <br />
+            <span id="antiSpam">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.antiSpam">Anti Spam</Translate>
+            </span>
+          </dt>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.antiSpam} />
+          <dt>
+            <br />
+            <span id="proxyServer">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.proxyServer">Proxy Server</Translate>
+            </span>
+          </dt>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.proxyServer} />
+          <dt>
+            <br />
+            <span id="wpa">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.wpa">Wpa</Translate>
+            </span>
+          </dt>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.wpa} />
+          <dt>
+            <br />
+            <span id="storageServer">
+              <Translate contentKey="surveySampleApp.networkConfigCheckList.storageServer">Storage Server</Translate>
+            </span>
+          </dt>
+          <input type="checkbox" disabled checked={networkConfigCheckListEntity?.storageServer} />
+        </dl>
+      </Col>
+      <Col md="1"></Col>
     </Row>
   );
 };

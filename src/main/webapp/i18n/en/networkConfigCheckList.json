@@ -15,7 +15,7 @@
         "question": "Are you sure you want to delete Network Config Check List {{ id }}?"
       },
       "detail": {
-        "title": "Network Config Check List"
+        "title": "Network Configuration Check List Information"
       },
       "id": "ID",
       "dhcp": "Dhcp",

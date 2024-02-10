@@ -24,7 +24,7 @@ export const DatacenterDeviceDetail: React.FC<DatacenterDeviceDetailProps> = ({ 
   return (
     <Row className="justify-content-center">
       <Col md="1"></Col>
-      <Col md="10">
+      <Col md="5">
         <br />
         <br />
         <h3 data-cy="datacenterDeviceDetailsHeading">
@@ -52,7 +52,15 @@ export const DatacenterDeviceDetail: React.FC<DatacenterDeviceDetailProps> = ({ 
             </span>
           </dt>
           <dd>{datacenterDeviceEntity?.brandAndModel}</dd>
+        </dl>
+      </Col>
+      <Col md="5">
+        <dl>
           <dt>
+            <br />
+            <br />
+            <br />
+            <br />
             <br />
             <span id="age">
               <Translate contentKey="surveySampleApp.datacenterDevice.age">Age</Translate>

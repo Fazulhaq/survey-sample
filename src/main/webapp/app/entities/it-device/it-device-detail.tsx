@@ -24,7 +24,7 @@ export const ItDeviceDetail: React.FC<ItDeviceDetailProps> = ({ formId }) => {
   return (
     <Row className="justify-content-center">
       <Col md="1"></Col>
-      <Col md="10">
+      <Col md="5">
         <br />
         <br />
         <h2 data-cy="itDeviceDetailsHeading">
@@ -52,7 +52,15 @@ export const ItDeviceDetail: React.FC<ItDeviceDetailProps> = ({ formId }) => {
             </span>
           </dt>
           <dd>{itDeviceEntity?.brandAndModel}</dd>
+        </dl>
+      </Col>
+      <Col md="5">
+        <dl>
           <dt>
+            <br />
+            <br />
+            <br />
+            <br />
             <br />
             <span id="age">
               <Translate contentKey="surveySampleApp.itDevice.age">Age</Translate>

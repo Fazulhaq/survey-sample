@@ -155,4 +155,10 @@ public class NetworkConfigCheckListService {
         log.debug("Request to delete NetworkConfigCheckList : {}", id);
         networkConfigCheckListRepository.deleteById(id);
     }
+
+    @Transactional(readOnly = true)
+    public Optional<NetworkConfigCheckList> findByFormId(Long id) {
+        log.debug("Request to get NetworkConfigCheckList : {}", id);
+        return networkConfigCheckListRepository.findByFormId(id);
+    }
 }
