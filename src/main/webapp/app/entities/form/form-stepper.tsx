@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from 'app/config/store';
+import { useAppSelector } from 'app/config/store';
 import React from 'react';
 import { Stepper } from 'react-form-stepper';
 import BackupUpdate from '../backup/backup-update';
@@ -13,8 +13,6 @@ import CompletionPage from './form-completion';
 import FormUpdate from './form-update';
 
 export default function InteractiveSteps() {
-  const dispatch = useAppDispatch();
-
   const activeStep = useAppSelector(state => state.index.stepperIndex);
 
   const steps = [

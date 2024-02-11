@@ -27,9 +27,9 @@ export const ItDeviceDetail: React.FC<ItDeviceDetailProps> = ({ formId }) => {
       <Col md="5">
         <br />
         <br />
-        <h2 data-cy="itDeviceDetailsHeading">
+        <h3 data-cy="itDeviceDetailsHeading">
           <Translate contentKey="surveySampleApp.itDevice.detail.title">ItDevice</Translate>
-        </h2>
+        </h3>
         <dl className="jh-entity-details">
           <dt>
             <br />

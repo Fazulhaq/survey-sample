@@ -23,9 +23,9 @@ export const OrganizationDetail = () => {
     <Row className="justify-content-center">
       <Col md="2"></Col>
       <Col md="4">
-        <h2 data-cy="organizationDetailsHeading">
+        <h3 data-cy="organizationDetailsHeading">
           <Translate contentKey="surveySampleApp.organization.detail.title">Organization</Translate>
-        </h2>
+        </h3>
         <dl className="jh-entity-details">
           <dt>
             <br />

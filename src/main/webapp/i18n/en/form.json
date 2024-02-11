@@ -16,7 +16,9 @@
       },
       "detail": {
         "title": "Primary Data",
-        "maintitle": "Survey Details"
+        "maintitle": "Survey Details",
+        "backstep": "Previous",
+        "nextstep": "Next"
       },
       "id": "ID",
       "futurePlan": "Survey Unique Title",

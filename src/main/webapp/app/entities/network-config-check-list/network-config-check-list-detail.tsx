@@ -26,10 +26,10 @@ export const NetworkConfigCheckListDetail: React.FC<NetworkConfigCheckListDetail
       <Col md="2"></Col>
       <br />
       <br />
-      <h2 data-cy="networkConfigCheckListDetailsHeading">
+      <h3 data-cy="networkConfigCheckListDetailsHeading">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Translate contentKey="surveySampleApp.networkConfigCheckList.detail.title">NetworkConfigCheckList</Translate>
-      </h2>
+      </h3>
       <Col md="3">
         <dl className="jh-entity-details">
           <dt>
