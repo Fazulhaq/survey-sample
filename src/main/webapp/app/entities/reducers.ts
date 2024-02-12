@@ -8,6 +8,7 @@ import orgResponsiblePerson from 'app/entities/org-responsible-person/org-respon
 import organization from 'app/entities/organization/organization.reducer';
 import server from 'app/entities/server/server.reducer';
 import system from 'app/entities/system/system.reducer';
+import surveyeditindex from './form/survey-edit-index-reducer';
 import index from './stepper-index/stepper-index.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
@@ -21,6 +22,7 @@ const entitiesReducers = {
   networkConfigCheckList,
   datacenterDevice,
   itDevice,
+  surveyeditindex,
   index,
   system,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */

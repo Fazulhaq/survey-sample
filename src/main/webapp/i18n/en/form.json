@@ -17,6 +17,7 @@
       "detail": {
         "title": "Primary Data",
         "maintitle": "Survey Details",
+        "editsurveytitle": "Update Survey Details",
         "backstep": "Previous",
         "nextstep": "Next"
       },

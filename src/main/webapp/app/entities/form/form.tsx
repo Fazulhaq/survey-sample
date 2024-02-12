@@ -11,6 +11,7 @@ import { Button, Table } from 'reactstrap';
 
 import { InputText } from 'primereact/inputtext';
 import { getEntities } from './form.reducer';
+import { resetEditIndex } from './survey-edit-index-reducer';
 
 export const Form = () => {
   const dispatch = useAppDispatch();
@@ -30,6 +31,10 @@ export const Form = () => {
 
   const handleChange = event => {
     setSearchString(event.target.value);
+  };
+
+  const handleClick = () => {
+    dispatch(resetEditIndex(0));
   };
 
   const filteredForms = formList.filter(form => form.futurePlan.toLowerCase().includes(searchString.toLowerCase()));
@@ -124,10 +129,6 @@ export const Form = () => {
                   <Translate contentKey="surveySampleApp.form.futurePlan">Future Plan</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('futurePlan')} />
                 </th>
-                <th className="hand" onClick={sort('status')}>
-                  <Translate contentKey="surveySampleApp.form.status">Status</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('status')} />
-                </th>
                 <th className="hand" onClick={sort('createDate')}>
                   <Translate contentKey="surveySampleApp.form.createDate">Create Date</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('createDate')} />
@@ -150,13 +151,10 @@ export const Form = () => {
                 <tr key={`entity-${i}`} data-cy="entityTable">
                   <td>{form.id}</td>
                   <td>{form.futurePlan}</td>
-                  <td>
-                    <Translate contentKey={`surveySampleApp.FormStatus.${form.status}`} />
-                  </td>
                   <td>{form.createDate ? <TextFormat type="date" value={form.createDate} format={APP_DATE_FORMAT} /> : null}</td>
                   <td>{form.updateDate ? <TextFormat type="date" value={form.updateDate} format={APP_DATE_FORMAT} /> : null}</td>
                   <td>{form.user ? form.user.login : ''}</td>
-                  <td>{form.organization ? <Link to={`/organization/${form.organization.id}`}>{form.organization.name}</Link> : ''}</td>
+                  <td> {form.organization ? form.organization.name : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`/form/${form.id}`} color="info" size="sm" data-cy="entityDetailsButton">
@@ -167,8 +165,9 @@ export const Form = () => {
                       </Button>
                       <Button
                         tag={Link}
-                        to={`/form/${form.id}/edit?page=${paginationState.activePage}&sort=${paginationState.sort},${paginationState.order}`}
+                        to={`/form/${form.id}/edit`}
                         color="primary"
+                        onClick={handleClick}
                         size="sm"
                         data-cy="entityEditButton"
                       >

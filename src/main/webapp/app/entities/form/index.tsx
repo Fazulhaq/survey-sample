@@ -6,7 +6,7 @@ import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 import Form from './form';
 import FormDeleteDialog from './form-delete-dialog';
 import InteractiveSteps from './form-stepper';
-import FormUpdate from './form-update';
+import SurveyEditPage from './survey-edit-page';
 import SurveyView from './survey-view';
 
 const FormRoutes = () => (
@@ -15,7 +15,7 @@ const FormRoutes = () => (
     <Route path="new/:id" element={<InteractiveSteps />} />
     <Route path=":id">
       <Route index element={<SurveyView />} />
-      <Route path="edit" element={<FormUpdate />} />
+      <Route path="edit" element={<SurveyEditPage />} />
       <Route path="delete" element={<FormDeleteDialog />} />
     </Route>
   </ErrorBoundaryRoutes>
