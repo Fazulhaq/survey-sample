@@ -109,6 +109,7 @@
       "addsurvey": "Survey",
       "open": "Open",
       "save": "Save & Next",
+      "updatenext": "Update & Next",
       "view": "View",
       "show": "Show {{otherEntity}}"
     },

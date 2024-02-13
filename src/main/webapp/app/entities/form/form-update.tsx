@@ -79,6 +79,7 @@ export const FormUpdate = () => {
               <ValidatedField
                 label={translate('surveySampleApp.form.futurePlan')}
                 id="form-futurePlan"
+                required
                 name="futurePlan"
                 data-cy="futurePlan"
                 type="text"

@@ -6,6 +6,7 @@ import { Step, Stepper } from 'react-form-stepper';
 import { Translate } from 'react-jhipster';
 import { Link, useParams } from 'react-router-dom';
 import { Button, Col, Row } from 'reactstrap';
+import ServerSurveyUpdate from '../server/server-survey-update';
 import { decrementEditIndex, incrementEditIndex, resetEditIndex } from './survey-edit-index-reducer';
 import SurveyUpdate from './survey-update';
 
@@ -49,6 +50,7 @@ export const SurveyEditPage = () => {
         <Divider />
         <br />
         {activeStep === 0 && <SurveyUpdate formId={id} />}
+        {activeStep === 1 && <ServerSurveyUpdate formId={id} />}
         <br />
         <Divider />
         <br />

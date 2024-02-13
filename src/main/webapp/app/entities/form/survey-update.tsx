@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect } from 'react';
 import { Translate, ValidatedField, ValidatedForm, translate } from 'react-jhipster';
 import { Button, Col, Row } from 'reactstrap';
@@ -123,9 +122,7 @@ export const SurveyUpdate: React.FC<SurveyUpdateProps> = ({ formId }) => {
                 </option>
               </ValidatedField>
               <Button color="primary" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
-                <FontAwesomeIcon icon="save" />
-                &nbsp;
-                <Translate contentKey="entity.action.save">Save</Translate>
+                <Translate contentKey="entity.action.updatenext">edit next</Translate>
               </Button>
             </ValidatedForm>
           )}
