@@ -10,6 +10,7 @@ import BackupSurveyUpdate from '../backup/backup-survey-update';
 import DatacenterDeviceSurveyUpdate from '../datacenter-device/datacenter-survey-update';
 import InternetSurveyUpdate from '../internet/internet-survey-update';
 import ItDeviceSurveyUpdate from '../it-device/it-device-survey-update';
+import NetworkConfigCheckListSurveyUpdate from '../network-config-check-list/net-config-survey-update';
 import ServerSurveyUpdate from '../server/server-survey-update';
 import SystemSurveyUpdate from '../system/system-survey-update';
 import { decrementEditIndex, incrementEditIndex, resetEditIndex } from './survey-edit-index-reducer';
@@ -61,6 +62,7 @@ export const SurveyEditPage = () => {
         {activeStep === 4 && <DatacenterDeviceSurveyUpdate formId={id} />}
         {activeStep === 5 && <InternetSurveyUpdate formId={id} />}
         {activeStep === 6 && <ItDeviceSurveyUpdate formId={id} />}
+        {activeStep === 7 && <NetworkConfigCheckListSurveyUpdate formId={id} />}
         <br />
         <Divider />
         <br />
