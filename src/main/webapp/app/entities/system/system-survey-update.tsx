@@ -128,7 +128,6 @@ export const SystemSurveyUpdate: React.FC<SystemSurveyUpdateProps> = ({ formId }
                   {formId}
                 </option>
               </ValidatedField>
-              &nbsp;
               <Button color="primary" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
                 <Translate contentKey="entity.action.updatenext">edit next</Translate>
               </Button>

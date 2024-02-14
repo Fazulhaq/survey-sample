@@ -1,45 +1,43 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Translate, ValidatedField, ValidatedForm, translate } from 'react-jhipster';
 import { Button, Col, Row } from 'reactstrap';
 
 import { useAppDispatch, useAppSelector } from 'app/config/store';
-import { IServer } from 'app/shared/model/server.model';
+
+import { IBackup } from 'app/shared/model/backup.model';
 import axios from 'axios';
 import { incrementEditIndex } from '../form/survey-edit-index-reducer';
-import { createEntity, updateEntity } from './server.reducer';
+import { createEntity, updateEntity } from './backup.reducer';
 
-interface ServerSurveyUpdateProps {
+interface BackupSurveyUpdateProps {
   formId: string;
 }
 
-export const ServerSurveyUpdate: React.FC<ServerSurveyUpdateProps> = ({ formId }) => {
-  const [serverEntity, setServerEntity] = useState<IServer | null>(null);
-
+export const BackupSurveyUpdate: React.FC<BackupSurveyUpdateProps> = ({ formId }) => {
+  const dispatch = useAppDispatch();
+  const [backupEntity, setBackupEntity] = useState<IBackup | null>(null);
   useEffect(() => {
-    const getServerEntity = async () => {
-      const apiUrl = 'api/servers/form';
+    const getBackupEntity = async () => {
+      const apiUrl = 'api/backups/form';
       const requestUrl = `${apiUrl}/${formId}`;
-      const response = await axios.get<IServer>(requestUrl);
-      setServerEntity(response.data);
+      const response = await axios.get<IBackup>(requestUrl);
+      setBackupEntity(response.data);
     };
-
-    getServerEntity();
+    getBackupEntity();
   }, [formId]);
 
-  const dispatch = useAppDispatch();
-
   const forms = useAppSelector(state => state.form.entities);
-  const loading = useAppSelector(state => state.server.loading);
-  const updating = useAppSelector(state => state.server.updating);
+  const loading = useAppSelector(state => state.backup.loading);
+  const updating = useAppSelector(state => state.backup.updating);
 
   const saveEntity = values => {
     const entity = {
-      ...serverEntity,
+      ...backupEntity,
       ...values,
       form: forms.find(it => it.id.toString() === values.form.toString()),
     };
-
-    if (serverEntity === null) {
+    if (backupEntity === null) {
       dispatch(createEntity(entity));
       dispatch(incrementEditIndex(1));
     } else {
@@ -49,10 +47,10 @@ export const ServerSurveyUpdate: React.FC<ServerSurveyUpdateProps> = ({ formId }
   };
 
   const defaultValues = () =>
-    serverEntity === null
+    backupEntity === null
       ? {}
       : {
-          ...serverEntity,
+          ...backupEntity,
           form: formId,
         };
 
@@ -60,9 +58,9 @@ export const ServerSurveyUpdate: React.FC<ServerSurveyUpdateProps> = ({ formId }
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="surveySampleApp.server.home.createOrEditLabel" data-cy="ServerCreateUpdateHeading">
-            <Translate contentKey="surveySampleApp.server.home.createOrEditLabel">Create or edit a Server</Translate>
-          </h2>
+          <h3 id="surveySampleApp.backup.home.createOrEditLabel" data-cy="BackupCreateUpdateHeading">
+            <Translate contentKey="surveySampleApp.backup.home.createOrEditLabel">Create or edit a Backup</Translate>
+          </h3>
         </Col>
       </Row>
       <Row className="justify-content-center">
@@ -76,66 +74,66 @@ export const ServerSurveyUpdate: React.FC<ServerSurveyUpdateProps> = ({ formId }
                   name="id"
                   required
                   readOnly
-                  id="server-id"
+                  id="backup-id"
                   label={translate('global.field.id')}
                   validate={{ required: true }}
                 />
               ) : null}
               <ValidatedField
-                label={translate('surveySampleApp.server.question1')}
-                id="server-question1"
+                label={translate('surveySampleApp.backup.question1')}
+                id="backup-question1"
                 name="question1"
                 data-cy="question1"
                 type="text"
               />
               <ValidatedField
-                label={translate('surveySampleApp.server.question2')}
-                id="server-question2"
+                label={translate('surveySampleApp.backup.question2')}
+                id="backup-question2"
                 name="question2"
                 data-cy="question2"
                 type="text"
               />
               <ValidatedField
-                label={translate('surveySampleApp.server.question3')}
-                id="server-question3"
+                label={translate('surveySampleApp.backup.question3')}
+                id="backup-question3"
                 name="question3"
                 data-cy="question3"
                 type="text"
               />
               <ValidatedField
-                label={translate('surveySampleApp.server.question4')}
-                id="server-question4"
+                label={translate('surveySampleApp.backup.question4')}
+                id="backup-question4"
                 name="question4"
                 data-cy="question4"
                 type="text"
               />
               <ValidatedField
-                label={translate('surveySampleApp.server.question5')}
-                id="server-question5"
+                label={translate('surveySampleApp.backup.question5')}
+                id="backup-question5"
                 name="question5"
                 data-cy="question5"
                 type="text"
               />
               <ValidatedField
-                label={translate('surveySampleApp.server.question6')}
-                id="server-question6"
+                label={translate('surveySampleApp.backup.question6')}
+                id="backup-question6"
                 name="question6"
                 data-cy="question6"
                 type="text"
               />
               <ValidatedField
-                label={translate('surveySampleApp.server.question7')}
-                id="server-question7"
+                label={translate('surveySampleApp.backup.question7')}
+                id="backup-question7"
                 name="question7"
                 data-cy="question7"
                 type="text"
               />
               <ValidatedField
-                id="server-form"
+                id="backup-form"
                 hidden
                 name="form"
                 data-cy="form"
-                label={translate('surveySampleApp.server.form')}
+                label={translate('surveySampleApp.backup.form')}
                 type="select"
                 required
               >
@@ -144,7 +142,9 @@ export const ServerSurveyUpdate: React.FC<ServerSurveyUpdateProps> = ({ formId }
                 </option>
               </ValidatedField>
               <Button color="primary" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
-                <Translate contentKey="entity.action.updatenext">edit next</Translate>
+                <FontAwesomeIcon icon="save" />
+                &nbsp;
+                <Translate contentKey="entity.action.save">Save</Translate>
               </Button>
             </ValidatedForm>
           )}
@@ -154,4 +154,4 @@ export const ServerSurveyUpdate: React.FC<ServerSurveyUpdateProps> = ({ formId }
   );
 };
 
-export default ServerSurveyUpdate;
+export default BackupSurveyUpdate;
