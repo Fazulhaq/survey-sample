@@ -1,11 +1,24 @@
 package com.amin.survey.domain;
 
 import com.amin.survey.domain.enumeration.FormStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.List;
 
 /**
  * A Form.
@@ -44,6 +57,38 @@ public class Form implements Serializable {
     @NotNull
     @JsonIgnoreProperties(value = { "user" }, allowSetters = true)
     private Organization organization;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "form", cascade = CascadeType.ALL)
+    private List<Backup> backups;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "form", cascade = CascadeType.ALL)
+    private List<OrgResponsiblePerson> orgResponsiblePersons;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "form", cascade = CascadeType.ALL)
+    private List<Server> servers;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "form", cascade = CascadeType.ALL)
+    private List<Internet> internets;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "form", cascade = CascadeType.ALL)
+    private List<System> systems;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "form", cascade = CascadeType.ALL)
+    private List<NetworkConfigCheckList> networkConfigCheckLists;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "form", cascade = CascadeType.ALL)
+    private List<ItDevice> itDevices;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "form", cascade = CascadeType.ALL)
+    private List<DatacenterDevice> datacenterDevices;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 

@@ -176,12 +176,14 @@ export const Organization = () => {
                           <Translate contentKey="entity.action.addsurvey">Survey</Translate>
                         </span>
                       </Button>
+                      &nbsp;
                       <Button tag={Link} to={`/organization/${organization.id}`} color="info" size="sm" data-cy="entityDetailsButton">
                         <FontAwesomeIcon icon="eye" />{' '}
                         <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.view">View</Translate>
                         </span>
                       </Button>
+                      &nbsp;
                       <Button
                         tag={Link}
                         to={`/organization/${organization.id}/edit?page=${paginationState.activePage}&sort=${paginationState.sort},${paginationState.order}`}

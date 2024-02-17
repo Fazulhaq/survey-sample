@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
-import { Translate } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect, useState } from 'react';
+import { Translate } from 'react-jhipster';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 
 import { useAppDispatch, useAppSelector } from 'app/config/store';
-import { getEntity, deleteEntity } from './form.reducer';
+import { deleteEntity, getEntity } from './form.reducer';
 
 export const FormDeleteDialog = () => {
   const dispatch = useAppDispatch();
@@ -35,8 +35,9 @@ export const FormDeleteDialog = () => {
     }
   }, [updateSuccess]);
 
-  const confirmDelete = () => {
-    dispatch(deleteEntity(formEntity.id));
+  const confirmDelete = async () => {
+    await dispatch(deleteEntity(formEntity.id));
+    navigate('/form' + pageLocation.search);
   };
 
   return (
