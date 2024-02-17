@@ -110,6 +110,7 @@
       "open": "Open",
       "save": "Save & Next",
       "updatenext": "Update & Next",
+      "updatefinish": "Update & Finish",
       "view": "View",
       "show": "Show {{otherEntity}}"
     },
