@@ -2,22 +2,22 @@
   "surveySampleApp": {
     "networkConfigCheckList": {
       "home": {
-        "title": "Network Config Check Lists",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Network Config Check List",
-        "createOrEditLabel": "Create or edit a Network Config Check List",
-        "notFound": "No Network Config Check Lists found"
+        "title": "چک لیست از عیارسازی وسایل",
+        "refreshListLabel": "تازه کردن لیست",
+        "createLabel": "ایجاد چک لیست جدید",
+        "createOrEditLabel": "ایجاد و ویرایش چک لیست جدید برای شبکه",
+        "notFound": "چک لیست شبکه یافت نشد"
       },
-      "created": "A new Network Config Check List is created with identifier {{ param }}",
-      "updated": "A Network Config Check List is updated with identifier {{ param }}",
-      "deleted": "A Network Config Check List is deleted with identifier {{ param }}",
+      "created": "موفقانه ایجاد گردید",
+      "updated": "موفقانه ویرایش گردید",
+      "deleted": "موفقانه حذف گردید",
       "delete": {
-        "question": "Are you sure you want to delete Network Config Check List {{ id }}?"
+        "question": "آیا میخواهید چک لیست حذف گردد {{ id }}?"
       },
       "detail": {
-        "title": "Network Config Check List"
+        "title": "چک لیست از عیارسازی وسایل"
       },
-      "id": "ID",
+      "id": "شماره",
       "dhcp": "Dhcp",
       "dns": "Dns",
       "activeDirectory": "Active Directory",
@@ -35,9 +35,9 @@
       "storageServer": "Storage Server",
       "securityAudit": "Security Audit",
       "disasterRecovery": "Disaster Recovery",
-      "proxyServer": "Proxy Server",
-      "wdsServer": "Wds Server",
-      "form": "Form"
+      "proxyServe": "Proxy Serve",
+      "wdsServe": "Wds Serve",
+      "form": "فورم"
     }
   }
 }

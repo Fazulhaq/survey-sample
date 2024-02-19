@@ -2,28 +2,28 @@
   "surveySampleApp": {
     "system": {
       "home": {
-        "title": "Systems",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new System",
-        "createOrEditLabel": "Create or edit a System",
-        "notFound": "No Systems found"
+        "title": "سیستم‌ها",
+        "refreshListLabel": "تازه کردن لیست",
+        "createLabel": "ایجاد سیستم‌ جدید",
+        "createOrEditLabel": "ایجاد و ویرایش سیستم‌",
+        "notFound": "سیستم‌ یافت نشد"
       },
-      "created": "A new System is created with identifier {{ param }}",
-      "updated": "A System is updated with identifier {{ param }}",
-      "deleted": "A System is deleted with identifier {{ param }}",
+      "created": "موفقانه ایجاد گردید",
+      "updated": "موفقانه ویرایش گردید",
+      "deleted": "موفقانه حذف گردید",
       "delete": {
-        "question": "Are you sure you want to delete System {{ id }}?"
+        "question": "آیا میخواهید سیستم‌ حذف گردد {{ id }}?"
       },
       "detail": {
-        "title": "System"
+        "title": "معلومات سیستم ها"
       },
-      "id": "ID",
-      "question1": "Question 1",
-      "question2": "Question 2",
-      "question3": "Question 3",
-      "question4": "Question 4",
-      "question5": "Question 5",
-      "form": "Form"
+      "id": "شماره",
+      "question1": "آیا اداره شما یک بخش تکنالوژی معلوماتی یا نقش معادل آن برای نظارت بر عملیات تکنالوژی معلوماتی دارد",
+      "question2": "چه  تعداد کارکنان تکنالوژی معلوماتی (حرفوی) در اداره شما موجود است، مشخص کنید",
+      "question3": "آیا در اداره شما، بودجه مشخصی به منظور پیشبرد و توسعه تکنالوژی معلوماتی و سیستم های معلوماتی اختصاص داده شده است",
+      "question4": "آیا وزارت/ اداره شما وب سایت رسمی دارد",
+      "question5": "اگر جواب تان بلی باشد، پس (URL)  وب سایت وزارت/ اداره خود را ذکر کنید.",
+      "form": "فورم"
     }
   }
 }

@@ -2,29 +2,31 @@
   "surveySampleApp": {
     "organization": {
       "home": {
-        "title": "Organizations",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Organization",
-        "createOrEditLabel": "Create or edit a Organization",
-        "notFound": "No Organizations found"
+        "title": "لیست ارگان ها",
+        "orgsearchtitle": "جستجو:",
+        "orgsearchname": "نام اداره تانرا تایپ کنید",
+        "refreshListLabel": "تازه کردن لیست",
+        "createLabel": "ایجاد ارگان جدید",
+        "createOrEditLabel": "ایجاد یا ویرایش ارگان",
+        "notFound": "پیدا نشد"
       },
-      "created": "A new Organization is created with identifier {{ param }}",
-      "updated": "A Organization is updated with identifier {{ param }}",
-      "deleted": "A Organization is deleted with identifier {{ param }}",
+      "created": "موفقانه ایجاد گردید",
+      "updated": "موفقانه ویرایش گردید",
+      "deleted": "موفقانه حذف گردید",
       "delete": {
-        "question": "Are you sure you want to delete Organization {{ id }}?"
+        "question": "آیا مطمئین هستید میخواهید حذف کنید؟"
       },
       "detail": {
-        "title": "Organization"
+        "title": "اداره"
       },
-      "id": "ID",
-      "name": "Name",
-      "code": "Code",
-      "description": "Description",
-      "address": "Address",
-      "createDate": "Create Date",
-      "updateDate": "Update Date",
-      "user": "User"
+      "id": "شماره",
+      "name": "نام اداره",
+      "code": "کود",
+      "description": "تشریحات",
+      "address": "آدرس",
+      "createDate": "تاریخ ایجاد",
+      "updateDate": "تاریخ ویرایش",
+      "user": "کاربر"
     }
   }
 }

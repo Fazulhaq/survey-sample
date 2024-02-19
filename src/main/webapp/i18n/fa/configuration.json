@@ -1,8 +1,7 @@
 {
   "configuration": {
     "title": "پیکربندی",
-    "filter": "Filter (by prefix)",
-    "filter": "فیلتر (با پیشوند)",
+    "filter": "جدا سازی بر اساس پیشوند",
     "table": {
       "prefix": "پیشوند",
       "properties": "خواص"

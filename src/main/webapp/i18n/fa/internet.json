@@ -2,29 +2,29 @@
   "surveySampleApp": {
     "internet": {
       "home": {
-        "title": "Internets",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Internet",
-        "createOrEditLabel": "Create or edit a Internet",
-        "notFound": "No Internets found"
+        "title": "انترنت",
+        "refreshListLabel": "تازه کردن لیست",
+        "createLabel": "انترنت جدید اضافه کنید",
+        "createOrEditLabel": "انترنت جدید را اضافه یا ویرایش کنید",
+        "notFound": "انترنت ها یافت نشد"
       },
-      "created": "A new Internet is created with identifier {{ param }}",
-      "updated": "A Internet is updated with identifier {{ param }}",
-      "deleted": "A Internet is deleted with identifier {{ param }}",
+      "created": "موفقانه ایجاد گردید",
+      "updated": "موفقانه ویرایش گردید",
+      "deleted": "موفقانه حذف گردید",
       "delete": {
-        "question": "Are you sure you want to delete Internet {{ id }}?"
+        "question": "آیا میخواهید انترنت ذیل حذف گردد {{ id }}?"
       },
       "detail": {
-        "title": "Internet"
+        "title": "شبکه انترنت"
       },
       "id": "ID",
-      "question1": "Question 1",
-      "question2": "Question 2",
-      "question3": "Question 3",
-      "question4": "Question 4",
-      "question5": "Question 5",
-      "question6": "Question 6",
-      "form": "Form"
+      "question1": "ارایه کننده انترنت",
+      "question2": "نوع ارتباط (e.g.: DSL, Fiber Optic, P2P, Vast, WiMAX)",
+      "question3": "سرعت دانلود (Mbps)",
+      "question4": "سرعت اپلود (Mbps)",
+      "question5": "Network Access Control Method (e.g.: Stand alone, WLC)",
+      "question6": "Network Outages (Frequency & Duration)",
+      "form": "فورم"
     }
   }
 }

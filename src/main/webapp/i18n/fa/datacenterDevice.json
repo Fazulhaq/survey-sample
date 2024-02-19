@@ -2,29 +2,29 @@
   "surveySampleApp": {
     "datacenterDevice": {
       "home": {
-        "title": "Datacenter Devices",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Datacenter Device",
-        "createOrEditLabel": "Create or edit a Datacenter Device",
-        "notFound": "No Datacenter Devices found"
+        "title": "وسایل دیتا سنتر",
+        "refreshListLabel": "تازه کردن لیست",
+        "createLabel": "ایجاد وسیله جدید برای دیتا سنتر",
+        "createOrEditLabel": "ایجاد و ویرایش یک وسیله دیتا سنتر",
+        "notFound": "وسایل دیتا سنتر یافت نشد"
       },
-      "created": "A new Datacenter Device is created with identifier {{ param }}",
-      "updated": "A Datacenter Device is updated with identifier {{ param }}",
-      "deleted": "A Datacenter Device is deleted with identifier {{ param }}",
+      "created": "موفقانه ایجاد گردید",
+      "updated": "موفقانه ویرایش گردید",
+      "deleted": "موفقانه حذف گردید",
       "delete": {
-        "question": "Are you sure you want to delete Datacenter Device {{ id }}?"
+        "question": "آیا مطمین هستید که وسیله دیتا سنتر حذف گردد {{ id }}?"
       },
       "detail": {
-        "title": "Datacenter Device"
+        "title": "وسایل دیتا سنتر"
       },
-      "id": "ID",
-      "deviceType": "Device Type",
-      "quantity": "Quantity",
-      "brandAndModel": "Brand And Model",
-      "age": "Age",
-      "purpose": "Purpose",
-      "currentStatus": "Current Status",
-      "form": "Form"
+      "id": "شماره",
+      "deviceType": "نوعیت وسیله",
+      "quantity": "مقدار",
+      "brandAndModel": "مودل",
+      "age": "مدت زمان قابل استفاده",
+      "purpose": "هدف",
+      "currentStatus": "حالت فعلی",
+      "form": "فورم"
     }
   }
 }

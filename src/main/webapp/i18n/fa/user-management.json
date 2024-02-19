@@ -2,7 +2,7 @@
   "userManagement": {
     "home": {
       "title": "کاربران",
-      "refreshListLabel": "Refresh list",
+      "refreshListLabel": "تازه کردن",
       "createLabel": "ایجاد یک کاربر جدید",
       "createOrEditLabel": "ایجاد و یا ویرایش یک کاربر"
     },

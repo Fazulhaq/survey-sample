@@ -1,156 +1,161 @@
 {
   "global": {
-    "title": "Survey-sample",
-    "browsehappy": "شما از مرورگر <strong>قدیمی</strong> استفاده می‌کنید. لطفا <a href=\"http://browsehappy.com/?locale=en\">مرورگر خود را به روز کنید</a>",
+    "title": "پروژه سروی",
+    "browsehappy": "شما از یک مرورگر <strong> قدیمی</strong> استفاده می کنید. لطفاً برای بهبود تجربه خود <a href=\"http://browsehappy.com/?locale=en\">مرورگر خود را ارتقا دهید</a>.",
     "menu": {
       "home": "خانه",
-      "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+      "jhipster-needle-menu-add-element": "JHipster ورودی های منوی اضافی را در اینجا اضافه می کند (ترجمه نکنید!)",
       "entities": {
-        "main": "ماهیت ها",
-        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
-        "organization": "Organization",
-        "form": "Form",
-        "orgResponsiblePerson": "Org Responsible Person",
-        "server": "Server",
-        "internet": "Internet",
-        "backup": "Backup",
-        "networkConfigCheckList": "Network Config Check List",
-        "datacenterDevice": "Datacenter Device",
-        "itDevice": "It Device",
-        "system": "System"
+        "main": "خدمات",
+        "jhipster-needle-menu-add-entry": "JHipster ورودی های منوی اضافی را در اینجا اضافه می کند (ترجمه نکنید!)",
+        "organization": "ارگان",
+        "form": "سروی",
+        "orgResponsiblePerson": "شخص مسول",
+        "server": "سرور",
+        "internet": "انترنت",
+        "backup": "بکپ",
+        "networkConfigCheckList": "چک لیست شبکه",
+        "datacenterDevice": "وسایل دیتاسنتر",
+        "itDevice": "وسایل آی تی",
+        "system": "سیستم"
       },
       "account": {
         "main": "حساب",
         "settings": "تنظیمات",
-        "password": "رمزعبور",
-        "sessions": "نشست ها",
+        "password": "رمز عبور",
+        "sessions": "جلسات",
         "login": "ورود",
         "logout": "خروج",
-        "register": "ثبت نام"
+        "register": "راجستر"
       },
       "admin": {
-        "main": "مدیریت برتر",
+        "main": "مدیریت",
         "userManagement": "مدیریت کاربر",
-        "tracker": "ردیاب کاربر",
-        "metrics": "معیارها",
-        "health": "سلامتی",
-        "configuration": "پیکربندی",
-        "logs": "وقایع ثبت شده",
-        "apidocs": "ای‌پی‌آی",
-        "database": "پایگاه داده",
+        "tracker": "پیگیری کاربر",
+        "metrics": "اندازه گیری ها",
+        "health": "صحت",
+        "configuration": "ساختار ها",
+        "logs": "گزارش های سیستم",
+        "apidocs": "API",
+        "database": "دیتابیس",
         "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
       },
       "language": "زبان"
     },
     "form": {
-      "username.label": "نام کاربری",
-      "username.placeholder": "نام کاربری شما",
-      "currentpassword.label": "Current password",
-      "currentpassword.placeholder": "Current password",
-      "newpassword.label": "رمزعبور جدید",
-      "newpassword.placeholder": "رمزعبور جدید",
-      "confirmpassword.label": "تصدیق رمزعبور جدید",
-      "confirmpassword.placeholder": "تصدیق رمزعبور جدید",
-      "email.label": "رایانامه",
-      "email.placeholder": "آدرس رایانامه شما"
+      "username.label": "کاربر",
+      "username.placeholder": "نام کاربری",
+      "currentpassword.label": "رمز فعلی",
+      "currentpassword.placeholder": "رمز فعلی",
+      "newpassword.label": "رمز جدید",
+      "newpassword.placeholder": "رمز جدید",
+      "confirmpassword.label": "تایید رمز جدید",
+      "confirmpassword.placeholder": "تایید رمز جدید",
+      "email.label": "ایمیل",
+      "email.placeholder": "ایمیل شما"
     },
     "messages": {
       "info": {
         "authenticated": {
-          "prefix": "اگر شما می‌خواهید",
+          "prefix": "اگر میخواهید ",
           "link": "ورود",
-          "suffix": ", می‌توانید از حساب پایه:<br/>- مدیریت برتر (login=\"admin\" and password=\"admin\") <br/>- کاربر (login=\"user\" and password=\"user\")."
+          "suffix": ", you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\")."
         },
         "register": {
-          "noaccount": "آیا هنوز حساب کاربری ندارید؟",
-          "link": "ثبت نام حساب کاربری جدید"
+          "noaccount": "هنوز حساب کاربری ندارید؟",
+          "link": "حساب جدید باز کنید"
         }
       },
       "error": {
-        "dontmatch": "رمزعبور و تصدیق رمزعبور یکی نیستند!"
+        "dontmatch": "رمز عبور و تایید آن مطابقت ندارد!"
       },
       "validate": {
         "newpassword": {
-          "required": "رمزعبور شما ضروری است",
-          "minlength": "رمزعبور شما باید حداقل ۴ کرکتر باشد",
-          "maxlength": "رمز عبور شما نمی‌تواند بیش از ۵۰ کرکتر باشد.",
-          "strength": "قدرتمندی رمزعبور:"
+          "required": "رمز عبور شما مورد نیاز است.",
+          "minlength": "رمز عبور شما باید حداقل 4 کاراکتر باشد.",
+          "maxlength": "رمز عبور شما نمی تواند بیش از 50 کاراکتر باشد.",
+          "strength": "قدرت رمز عبور:"
         },
         "confirmpassword": {
-          "required": "تصدیق رمزعبور شما ضروری است",
-          "minlength": "تصدیق رمزعبور شما باید حداقل ۴ کرکتر باشد",
-          "maxlength": "تصدیق رمز عبور شما نمی‌تواند بیش از ۵۰ کرکتر باشد."
+          "required": "رمز عبور تأیید شما مورد نیاز است.",
+          "minlength": "رمز عبور تأیید شما باید حداقل 4 کاراکتر باشد.",
+          "maxlength": "رمز عبور تأیید شما نمی تواند بیش از 50 کاراکتر باشد."
         },
         "email": {
-          "required": "آدرس ایمیل شما ضروری است",
-          "invalid": "آدرس ایمیل شما نامعتبر است",
-          "minlength": "آدرس ایمیل شما حداقل باید ۵ کرکتر باشد",
-          "maxlength": "آدرس ایمیل شما نمی‌تواند بیش از ۵۰ کرکتر باشد."
+          "required": "ایمیل شما الزامی است.",
+          "invalid": "ایمیل شما نامعتبر است",
+          "minlength": "ایمیل شما باید حداقل 5 کاراکتر باشد.",
+          "maxlength": "ایمیل شما نباید بیشتر از 50 کاراکتر باشد."
         }
       }
     },
     "field": {
-      "id": "شناسه"
+      "id": "شماره"
     },
     "ribbon": {
-      "dev": "در حال توسعه"
+      "dev": "توسعه"
     },
     "item-count": "نمایش {{first}} - {{second}} از {{total}} مورد."
   },
   "entity": {
     "action": {
-      "addblob": "اضافه کردن فایل",
-      "addimage": "اضافه کردن تصویر",
-      "back": "برگشت",
+      "addblob": "بلاب اضافه کنید",
+      "addimage": "افزودن عکس",
+      "back": "قبلی",
+      "surveylist": "لیست سروی",
       "cancel": "انصراف",
       "delete": "حذف",
       "edit": "ویرایش",
-      "open": "باز",
-      "save": "ذخیره",
-      "view": "مشاهده",
-      "show": "Show {{otherEntity}}"
+      "addsurvey": "سروی",
+      "open": "باز کردن",
+      "save": "ثبت و بعدی",
+      "updatenext": "ویرایش و بعدی",
+      "updatefinish": "ویرایش و تمام",
+      "view": "نمایش",
+      "show": "نمایش {{otherEntity}}"
     },
     "detail": {
-      "field": "فیلد",
+      "field": "بخش",
       "value": "مقدار"
     },
     "delete": {
-      "title": "تصدیق عملیات حذف"
+      "title": "تایید عملیه حذف"
     },
     "validation": {
-      "required": "وارد کردن این فیلد ضروری است",
-      "minlength": "این فیلد باید حداقل {{ min }} کراکتر باشد.",
-      "maxlength": "این فیلد نمی‌تواند بیشتر از {{ max }} کرکتر باشد",
-      "min": "این فیلد باید بیشتر از {{ min }} باشد.",
-      "max": "این فیلد نمی‌تواند بیش از {{ max }} باشد.",
-      "minbytes": "این فیلد باید بیش از {{ min }} بایت باشد.",
-      "maxbytes": "این فیلد نمی‌تواند بیش از {{ max }} بایت باشد.",
-      "pattern": "این فیلد باید بر طبق این الگو {{ pattern }} باشد.",
-      "number": "این فیلد باید عدد باشد.",
-      "datetimelocal": "این فیلد باید زمان باشد."
+      "required": "این فیلد الزامی است.",
+      "minlength": "این فیلد باید حداقل {{ min }} کاراکتر باشد.",
+      "maxlength": "این فیلد نمی تواند بیشتر از {{ max }} کاراکتر باشد.",
+      "min": "این فیلد باید حداقل {{ min }} باشد.",
+      "max": "این فیلد نمی تواند بیشتر از {{ max }} باشد.",
+      "minbytes": "این فیلد باید حداقل {{ min }} بایت باشد.",
+      "maxbytes": "این فیلد نمی تواند بیشتر از {{ max }} بایت باشد.",
+      "pattern": "این فیلد باید از الگوی {{ pattern }} پیروی کند.",
+      "number": "این فیلد باید یک عدد باشد.",
+      "datetimelocal": "این فیلد باید تاریخ و ساعت باشد.",
+      "patternLogin": "این قسمت فقط می تواند شامل حروف، ارقام و آدرس های ایمیل باشد."
     },
     "filters": {
-      "set": "Following filters are set",
-      "clear": "Clear filter",
-      "clearAll": "Clear all filters"
+      "set": "فیلترهای زیر تنظیم شده است",
+      "clear": "فیلتر را پاک کنید",
+      "clearAll": "تمام فیلترها را پاک کنید"
     }
   },
   "error": {
-    "internalServerError": "خطای داخلی در سرور",
-    "server.not.reachable": "سرور در دسترس نیست",
-    "url.not.found": "پیدا نشد",
-    "NotNull": "فیلد {{ fieldName }} نمی‌تواند خالی باشد!",
-    "Size": "فیلد{{ fieldName }} نیازمندی‌های حداقل/حداکثر را ندارد!",
-    "userexists": "این نام کاربر در سیستم وجود دارد!",
-    "emailexists": "این آدرس ایمیل در سیستم وجود دارد!",
-    "idexists": "موجودیت جدید {{ entityName }} نمی‌تواند شناسه داشته‌باشد.",
-    "idnull": "Invalid ID",
-    "idinvalid": "Invalid Id",
-    "idnotfound": "ID cannot be found",
+    "internalServerError": "خطای سرور داخلی",
+    "server.not.reachable": "سرور قابل دسترسی نیست",
+    "url.not.found": "یافت نشد",
+    "NotNull": "فیلد {{ fieldName }} نمیتواند خالی باشد!",
+    "Size": "فیلد {{ fieldName }} بیرون از لمیت است!",
+    "userexists": "نام ورود قبلا استفاده شده است!",
+    "emailexists": "ایمیل در حال حاضر در حال استفاده!",
+    "idexists": "یک {{ entityName }} جدید نمی تواند آی دی داشته باشد",
+    "idnull": "آی دی اشتباه",
+    "idinvalid": "آی دی اشتباه",
+    "idnotfound": "آی دی یافت نشد",
     "file": {
-      "could.not.extract": "Could not extract file",
-      "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
+      "could.not.extract": "فایل اکسترکت نمیشود",
+      "not.image": "انتظار می‌رفت فایل یک تصویر باشد، اما پیدا شد \"{{ fileType }}\""
     }
   },
-  "footer": "این پاورقی است"
+  "footer": "محل پایین صفحه شما"
 }

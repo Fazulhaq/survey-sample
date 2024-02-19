@@ -2,30 +2,30 @@
   "surveySampleApp": {
     "server": {
       "home": {
-        "title": "Servers",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Server",
-        "createOrEditLabel": "Create or edit a Server",
-        "notFound": "No Servers found"
+        "title": "سرور‌ها",
+        "refreshListLabel": "تازه کردن لیست",
+        "createLabel": "ایجاد سرور جدید",
+        "createOrEditLabel": "ویرایش و ایجاد سرور",
+        "notFound": "سرور یافت نشد"
       },
-      "created": "A new Server is created with identifier {{ param }}",
-      "updated": "A Server is updated with identifier {{ param }}",
-      "deleted": "A Server is deleted with identifier {{ param }}",
+      "created": "موفقانه ایجاد گردید",
+      "updated": "موفقانه ویرایش گردید",
+      "deleted": "موفقانه حذف گردید",
       "delete": {
-        "question": "Are you sure you want to delete Server {{ id }}?"
+        "question": "آیا میخواهید سرور حذف گردد {{ id }}?"
       },
       "detail": {
-        "title": "Server"
+        "title": "معلومات سرور ها"
       },
-      "id": "ID",
-      "question1": "Question 1",
-      "question2": "Question 2",
-      "question3": "Question 3",
-      "question4": "Question 4",
-      "question5": "Question 5",
-      "question6": "Question 6",
-      "question7": "Question 7",
-      "form": "Form"
+      "id": "شماره",
+      "question1": "از کدام نوع سرور ها استفاده میکنید. (On-Premise Servers, Cloud-based Servers, Hybrid Infrastructure)",
+      "question2": "موقعیت ذخیره اطلاعات تان (e.g.: Local, Servers, Cloud Storage)",
+      "question3": "عمر تخمینی برای هاردویر سرور تان",
+      "question4": "چگونه هشدار های دریافت میکنید و چگونه حل میگردد",
+      "question5": "معمولا از کدام سیستم عامل ها استفاده میکنید",
+      "question6": "آیا سیستم برای نظارت از اجراات و صحت سرور های تان دارید",
+      "question7": "آیا ریکاوری پلان دارید",
+      "form": "فورم"
     }
   }
 }

@@ -2,8 +2,8 @@
   "surveySampleApp": {
     "FormStatus": {
       "null": "",
-      "INPROGRESS": "INPROGRESS",
-      "SUBMITTED": "SUBMITTED"
+      "INPROGRESS": "در جریان",
+      "SUBMITTED": "ارسال شده"
     }
   }
 }

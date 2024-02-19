@@ -2,28 +2,32 @@
   "surveySampleApp": {
     "form": {
       "home": {
-        "title": "Forms",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Form",
-        "createOrEditLabel": "Create or edit a Form",
-        "notFound": "No Forms found"
+        "title": "فورم",
+        "refreshListLabel": "تازه کردن لیست",
+        "createLabel": "ایجاد فورم جدید",
+        "createOrEditLabel": "ایجاد و ویرایش فورم",
+        "notFound": "فورم ها دریافت نشد"
       },
-      "created": "A new Form is created with identifier {{ param }}",
-      "updated": "A Form is updated with identifier {{ param }}",
-      "deleted": "A Form is deleted with identifier {{ param }}",
+      "created": "موفقانه ایجاد گردید",
+      "updated": "موفقانه ویرایش گردید",
+      "deleted": "موفقانه حذف گردید",
       "delete": {
-        "question": "Are you sure you want to delete Form {{ id }}?"
+        "question": "آیا مطمین هستید که فورم حذف گردد {{ id }}?"
       },
       "detail": {
-        "title": "Form"
+        "title": "معلومات اولیه",
+        "maintitle": "جزییات سروی",
+        "editsurveytitle": "جزییات ویرایش سروی",
+        "backstep": "قبلی",
+        "nextstep": "بعدی"
       },
-      "id": "ID",
-      "futurePlan": "Future Plan",
-      "status": "Status",
-      "createDate": "Create Date",
-      "updateDate": "Update Date",
-      "user": "User",
-      "organization": "Organization"
+      "id": "شماره",
+      "futurePlan": "پلان آینده",
+      "status": "حالت",
+      "createDate": "تاریخ ایجاد",
+      "updateDate": "تاریخ ویرایش",
+      "user": "کاربر",
+      "organization": "ارگان"
     }
   }
 }

@@ -2,29 +2,29 @@
   "surveySampleApp": {
     "itDevice": {
       "home": {
-        "title": "It Devices",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new It Device",
-        "createOrEditLabel": "Create or edit a It Device",
-        "notFound": "No It Devices found"
+        "title": "وسایل آی تی",
+        "refreshListLabel": "تازه کردن لیست",
+        "createLabel": "ایجاد وسیله جدید",
+        "createOrEditLabel": "ایجاد و ویرایش وسیله جدید",
+        "notFound": "وسایل آی تی یافت نشد"
       },
-      "created": "A new It Device is created with identifier {{ param }}",
-      "updated": "A It Device is updated with identifier {{ param }}",
-      "deleted": "A It Device is deleted with identifier {{ param }}",
+      "created": "موفقانه ایجاد گردید",
+      "updated": "موفقانه ویرایش گردید",
+      "deleted": "موفقانه حذف گردید",
       "delete": {
-        "question": "Are you sure you want to delete It Device {{ id }}?"
+        "question": "آیا میخواهید وسیله آی تی حذف گردد {{ id }}?"
       },
       "detail": {
-        "title": "It Device"
+        "title": "وسایل آی تی"
       },
-      "id": "ID",
-      "deviceType": "Device Type",
-      "quantity": "Quantity",
-      "brandAndModel": "Brand And Model",
-      "age": "Age",
+      "id": "شماره",
+      "deviceType": "نوعیت وسیله",
+      "quantity": "تعداد",
+      "brandAndModel": "مودل",
+      "age": "طول عمر",
       "purpose": "Purpose",
-      "currentStatus": "Current Status",
-      "form": "Form"
+      "currentStatus": "حالت فعلی",
+      "form": "فورم"
     }
   }
 }

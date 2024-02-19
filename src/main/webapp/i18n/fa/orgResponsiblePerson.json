@@ -2,27 +2,27 @@
   "surveySampleApp": {
     "orgResponsiblePerson": {
       "home": {
-        "title": "Org Responsible People",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Org Responsible Person",
-        "createOrEditLabel": "Create or edit a Org Responsible Person",
-        "notFound": "No Org Responsible People found"
+        "title": "مسئول اداره",
+        "refreshListLabel": "تازه کردن لیست",
+        "createLabel": "ایجاد مسئول جدید",
+        "createOrEditLabel": "ویرایش و ایجاد مسئول",
+        "notFound": "مسئول یافت نشد"
       },
-      "created": "A new Org Responsible Person is created with identifier {{ param }}",
-      "updated": "A Org Responsible Person is updated with identifier {{ param }}",
-      "deleted": "A Org Responsible Person is deleted with identifier {{ param }}",
+      "created": "موفقانه ایجاد گردید",
+      "updated": "موفقانه ویرایش گردید",
+      "deleted": "موفقانه حذف گردید",
       "delete": {
-        "question": "Are you sure you want to delete Org Responsible Person {{ id }}?"
+        "question": "آیا میخواهید مسئول حذف گردد {{ id }}?"
       },
       "detail": {
-        "title": "Org Responsible Person"
+        "title": "مسئول اداره"
       },
-      "id": "ID",
-      "fullName": "Full Name",
-      "position": "Position",
-      "contact": "Contact",
-      "date": "Date",
-      "form": "Form"
+      "id": "شماره",
+      "fullName": "نام مکمل",
+      "position": "وظیفه",
+      "contact": "شماره ارتباطی",
+      "date": "تاریخ",
+      "form": "فورم"
     }
   }
 }

@@ -115,10 +115,13 @@ export const Organization = () => {
       </h2>
       <div className="d-flex">
         <span className="d-none d-md-inline">
-          <h4>Search: &nbsp;&nbsp;</h4>
+          <h4>
+            <Translate contentKey="surveySampleApp.organization.home.orgsearchtitle">Search:</Translate>
+            &nbsp;&nbsp;
+          </h4>
         </span>
         <span className="p-input-icon-left">
-          <InputText onChange={event => handleChange(event)} placeholder="Type organization name" className="p-inputtext-sm" />
+          <InputText onChange={event => handleChange(event)} placeholder="Organization Name" className="p-inputtext-sm" />
         </span>
       </div>
       <div className="table-responsive">

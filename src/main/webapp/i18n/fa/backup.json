@@ -2,30 +2,30 @@
   "surveySampleApp": {
     "backup": {
       "home": {
-        "title": "Backups",
-        "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Backup",
-        "createOrEditLabel": "Create or edit a Backup",
-        "notFound": "No Backups found"
+        "title": "سیستم پشتیبان",
+        "refreshListLabel": "لیست تازه",
+        "createLabel": "ایجاد سیستم پشتیبان جدید",
+        "createOrEditLabel": "ایجاد و یا ویرایش سیستم پشتیبان",
+        "notFound": "سیستم پشتیبان دریافت نشد"
       },
-      "created": "A new Backup is created with identifier {{ param }}",
-      "updated": "A Backup is updated with identifier {{ param }}",
-      "deleted": "A Backup is deleted with identifier {{ param }}",
+      "created": "موفقانه ایجاد گردید",
+      "updated": "موفقانه ویرایش گردید",
+      "deleted": "موفقانه حذف گردید",
       "delete": {
-        "question": "Are you sure you want to delete Backup {{ id }}?"
+        "question": "آیا مطمین هستید که سیستم پشتیبان حذف گردد {{ id }}?"
       },
       "detail": {
-        "title": "Backup"
+        "title": "سیستم پشتیبان"
       },
       "id": "ID",
-      "question1": "Question 1",
-      "question2": "Question 2",
-      "question3": "Question 3",
-      "question4": "Question 4",
-      "question5": "Question 5",
-      "question6": "Question 6",
-      "question7": "Question 7",
-      "form": "Form"
+      "question1": "شما از کدام نوع دیتاسنتر استفاده میکنید؟ اختصاصی، اشتراکی و یا مختلط",
+      "question2": "قابل اعتبار و قابل دسترس (Tier 1, Tier 2, Tier 3, اگر دیگر مشخص سازید)",
+      "question3": "موقعیت ذخیره اطلاعات (e.g., Local Server, Cloud Storage)",
+      "question4": "فریکونسی پشتیبان",
+      "question5": "رویش پشتیبان",
+      "question6": "فریکونسی تست برای پشتیبان",
+      "question7": "پلان و دسترسی به برگردان اطلاعات",
+      "form": "فورم"
     }
   }
 }
