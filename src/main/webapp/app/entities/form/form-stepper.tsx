@@ -11,6 +11,7 @@ import ServerUpdate from '../server/server-update';
 import SystemUpdate from '../system/system-update';
 import CompletionPage from './form-completion';
 import FormUpdate from './form-update';
+import { translate } from 'react-jhipster';
 
 export default function InteractiveSteps() {
   const activeStep = useAppSelector(state => state.index.stepperIndex);
@@ -80,43 +81,7 @@ export default function InteractiveSteps() {
       <Stepper steps={steps} activeStep={activeStep} />
       <div style={{ padding: '10px' }}>
         {renderComponent()}
-        {/* {activeStep !== 0 && activeStep !== 1 && activeStep !== steps.length - 1 && (
-          <button
-            style={{
-              backgroundColor: '#007bff',
-              color: '#ffffff',
-              border: 'none',
-              cursor: 'pointer',
-              fontSize: '16px',
-              padding: '10px 20pxs',
-              width: '80px',
-              height: '38px',
-              borderRadius: '3px',
-            }}
-            onClick={() => dispatch(decrementIndex(1))}
-          >
-            Previous
-          </button>
-        )} */}
         &nbsp;&nbsp;
-        {/* {activeStep !== 0 && activeStep !== steps.length - 1 && (
-          <button
-            style={{
-              backgroundColor: '#007bff',
-              color: '#ffffff',
-              border: 'none',
-              cursor: 'pointer',
-              fontSize: '16px',
-              padding: '10px 20pxs',
-              width: '80px',
-              height: '38px',
-              borderRadius: '3px',
-            }}
-            onClick={() => dispatch(incrementIndex(1))}
-          >
-            Next
-          </button>
-        )} */}
       </div>
     </div>
   );

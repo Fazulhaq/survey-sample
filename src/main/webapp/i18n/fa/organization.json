@@ -3,8 +3,8 @@
     "organization": {
       "home": {
         "title": "لیست ارگان ها",
-        "orgsearchtitle": "جستجو:",
-        "orgsearchname": "نام اداره تانرا تایپ کنید",
+        "orgsearchtitle": "جستجو: ",
+        "orgsearchname": "نام اداره را بنویسید",
         "refreshListLabel": "تازه کردن لیست",
         "createLabel": "ایجاد ارگان جدید",
         "createOrEditLabel": "ایجاد یا ویرایش ارگان",

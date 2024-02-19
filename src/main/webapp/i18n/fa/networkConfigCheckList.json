@@ -35,8 +35,8 @@
       "storageServer": "Storage Server",
       "securityAudit": "Security Audit",
       "disasterRecovery": "Disaster Recovery",
-      "proxyServe": "Proxy Serve",
-      "wdsServe": "Wds Serve",
+      "proxyServer": "Proxy Server",
+      "wdsServer": "Wds Server",
       "form": "فورم"
     }
   }

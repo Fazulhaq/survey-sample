@@ -39,7 +39,7 @@ export const ItDeviceUpdate = () => {
   };
 
   const defaultValues = () =>
-    true
+    itDeviceEntity === null
       ? {}
       : {
           deviceType: 'DesktopComputers',
@@ -62,7 +62,7 @@ export const ItDeviceUpdate = () => {
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!itDeviceEntity === null ? (
                 <ValidatedField
                   name="id"
                   required

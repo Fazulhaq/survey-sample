@@ -2,6 +2,7 @@ import { useAppDispatch } from 'app/config/store';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { resetIndex } from '../stepper-index/stepper-index.reducer';
+import { Translate } from 'react-jhipster';
 
 const CompletionPage: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -15,7 +16,9 @@ const CompletionPage: React.FC = () => {
   return (
     <div style={{ textAlign: 'center', alignItems: 'center' }}>
       <br /> <br /> <br /> <br />
-      <h2>Congratulations! You have completed the survey.</h2>
+      <h2>
+        <Translate contentKey="surveySampleApp.form.home.formcongrates">Congrates</Translate>
+      </h2>
       <button
         style={{
           backgroundColor: '#007bff',
@@ -30,7 +33,7 @@ const CompletionPage: React.FC = () => {
         }}
         onClick={handleClick}
       >
-        Start New Survey
+        <Translate contentKey="surveySampleApp.form.home.formcongratesbtn">Start New Survey</Translate>
       </button>
     </div>
   );

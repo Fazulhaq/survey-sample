@@ -6,7 +6,9 @@
         "refreshListLabel": "تازه کردن لیست",
         "createLabel": "ایجاد فورم جدید",
         "createOrEditLabel": "ایجاد و ویرایش فورم",
-        "notFound": "فورم ها دریافت نشد"
+        "notFound": "فورم ها دریافت نشد",
+        "formcongrates": "تبریک! سروی شما موفقانه انجام شد.",
+        "formcongratesbtn": "سروی جدید"
       },
       "created": "موفقانه ایجاد گردید",
       "updated": "موفقانه ویرایش گردید",
@@ -22,7 +24,7 @@
         "nextstep": "بعدی"
       },
       "id": "شماره",
-      "futurePlan": "پلان آینده",
+      "futurePlan": "عنوان فورم",
       "status": "حالت",
       "createDate": "تاریخ ایجاد",
       "updateDate": "تاریخ ویرایش",

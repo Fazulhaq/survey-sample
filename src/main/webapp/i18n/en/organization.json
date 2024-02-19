@@ -3,8 +3,8 @@
     "organization": {
       "home": {
         "title": "Organization List",
-        "orgsearchtitle": "Search:",
-        "orgsearchname": "Type your organization name",
+        "orgsearchtitle": "Search: ",
+        "orgsearchname": "Type organization name",
         "refreshListLabel": "Refresh list",
         "createLabel": "Add Organization",
         "createOrEditLabel": "Organization Information",

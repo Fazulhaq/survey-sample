@@ -5,14 +5,15 @@ import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-u
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
 import { InputText } from 'primereact/inputtext';
 import React, { useEffect, useState } from 'react';
-import { JhiItemCount, JhiPagination, Translate, getPaginationState } from 'react-jhipster';
+import { JhiItemCount, JhiPagination, Translate, getPaginationState, translate } from 'react-jhipster';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
-
+import { useTranslation } from 'react-i18next';
 import { resetIndex } from '../stepper-index/stepper-index.reducer';
 import { getEntities } from './organization.reducer';
 
 export const Organization = () => {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
   const pageLocation = useLocation();
@@ -115,13 +116,17 @@ export const Organization = () => {
       </h2>
       <div className="d-flex">
         <span className="d-none d-md-inline">
-          <h4>
+          <h5>
             <Translate contentKey="surveySampleApp.organization.home.orgsearchtitle">Search:</Translate>
             &nbsp;&nbsp;
-          </h4>
+          </h5>
         </span>
         <span className="p-input-icon-left">
-          <InputText onChange={event => handleChange(event)} placeholder="Organization Name" className="p-inputtext-sm" />
+          <InputText
+            onChange={event => handleChange(event)}
+            placeholder={translate('surveySampleApp.organization.home.orgsearchname')}
+            className="p-inputtext-sm"
+          />
         </span>
       </div>
       <div className="table-responsive">

@@ -37,7 +37,7 @@ export const NetworkConfigCheckListUpdate = () => {
   };
 
   const defaultValues = () =>
-    true
+    networkConfigCheckListEntity === null
       ? {}
       : {
           ...networkConfigCheckListEntity,
@@ -61,7 +61,7 @@ export const NetworkConfigCheckListUpdate = () => {
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!networkConfigCheckListEntity === null ? (
                 <ValidatedField
                   name="id"
                   required

@@ -3,10 +3,13 @@
     "form": {
       "home": {
         "title": "Survey List",
+        "formname": "Form",
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Form",
         "createOrEditLabel": "Start New Survey",
-        "notFound": "No Forms found"
+        "notFound": "No Forms found",
+        "formcongrates": "Congratulations! You have completed the survey.",
+        "formcongratesbtn": "Start New Survey"
       },
       "created": "A new Form is created with identifier {{ param }}",
       "updated": "A Form is updated with identifier {{ param }}",
