@@ -3,7 +3,16 @@
     "form": {
       "home": {
         "title": "Survey List",
-        "formname": "Form",
+        "step1": "Start",
+        "step2": "Server",
+        "step3": "System",
+        "step4": "Backup",
+        "step5": "DataCenter",
+        "step6": "Internet",
+        "step7": "IT Devices",
+        "step8": "Net Checklist",
+        "step9": "Responsible",
+        "step10": "Completed",
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Form",
         "createOrEditLabel": "Start New Survey",

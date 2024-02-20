@@ -18,34 +18,34 @@ export default function InteractiveSteps() {
 
   const steps = [
     {
-      label: 'Form',
+      label: translate('surveySampleApp.form.home.step1'),
     },
     {
-      label: 'Server',
+      label: translate('surveySampleApp.form.home.step2'),
     },
     {
-      label: 'System',
+      label: translate('surveySampleApp.form.home.step3'),
     },
     {
-      label: 'Backup',
+      label: translate('surveySampleApp.form.home.step4'),
     },
     {
-      label: 'DataCenter Devices',
+      label: translate('surveySampleApp.form.home.step5'),
     },
     {
-      label: 'Internet',
+      label: translate('surveySampleApp.form.home.step6'),
     },
     {
-      label: 'IT Devices',
+      label: translate('surveySampleApp.form.home.step7'),
     },
     {
-      label: 'Network Checklist',
+      label: translate('surveySampleApp.form.home.step8'),
     },
     {
-      label: 'Responsible',
+      label: translate('surveySampleApp.form.home.step9'),
     },
     {
-      label: 'Completed',
+      label: translate('surveySampleApp.form.home.step10'),
     },
   ];
 
