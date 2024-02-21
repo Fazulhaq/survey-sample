@@ -34,7 +34,7 @@ export const SurveyView = () => {
         <h2 data-cy="formDetailsHeading">
           <Translate contentKey="surveySampleApp.form.detail.maintitle">Survey Details</Translate>
         </h2>
-        <Stepper activeStep={activeStep}>
+        <Stepper activeStep={activeStep} hideConnectors={true}>
           <Step label={translate('surveySampleApp.form.home.step1')} />
           <Step label={translate('surveySampleApp.form.home.step2')} />
           <Step label={translate('surveySampleApp.form.home.step3')} />

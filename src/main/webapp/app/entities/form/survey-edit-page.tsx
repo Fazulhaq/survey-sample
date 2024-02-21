@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { Divider } from 'primereact/divider';
 import React from 'react';
 import { Step, Stepper } from 'react-form-stepper';
-import { Translate } from 'react-jhipster';
+import { Translate, translate } from 'react-jhipster';
 import { Link, useParams } from 'react-router-dom';
 import { Button, Col, Row } from 'reactstrap';
 import BackupSurveyUpdate from '../backup/backup-survey-update';
@@ -43,16 +43,16 @@ export const SurveyEditPage = () => {
         <h2 data-cy="formDetailsHeading">
           <Translate contentKey="surveySampleApp.form.detail.editsurveytitle">Survey Details</Translate>
         </h2>
-        <Stepper activeStep={activeStep}>
-          <Step label="Primary" />
-          <Step label="Server" />
-          <Step label="System" />
-          <Step label="Backup" />
-          <Step label="Data Center" />
-          <Step label="Internet" />
-          <Step label="IT Devices" />
-          <Step label="Configurations" />
-          <Step label="Responsible" />
+        <Stepper activeStep={activeStep} hideConnectors={true}>
+          <Step label={translate('surveySampleApp.form.home.step1')} />
+          <Step label={translate('surveySampleApp.form.home.step2')} />
+          <Step label={translate('surveySampleApp.form.home.step3')} />
+          <Step label={translate('surveySampleApp.form.home.step4')} />
+          <Step label={translate('surveySampleApp.form.home.step5')} />
+          <Step label={translate('surveySampleApp.form.home.step6')} />
+          <Step label={translate('surveySampleApp.form.home.step7')} />
+          <Step label={translate('surveySampleApp.form.home.step8')} />
+          <Step label={translate('surveySampleApp.form.home.step9')} />
         </Stepper>
         <Divider />
         <br />

@@ -78,7 +78,7 @@ export default function InteractiveSteps() {
 
   return (
     <div className="card flex justify-content-center">
-      <Stepper steps={steps} activeStep={activeStep} />
+      <Stepper steps={steps} activeStep={activeStep} hideConnectors={true} />
       <div style={{ padding: '10px' }}>
         {renderComponent()}
         &nbsp;&nbsp;
