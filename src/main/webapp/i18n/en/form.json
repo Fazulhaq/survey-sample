@@ -18,7 +18,9 @@
         "createOrEditLabel": "Start New Survey",
         "notFound": "No Forms found",
         "formcongrates": "Congratulations! You have completed the survey.",
-        "formcongratesbtn": "Start New Survey"
+        "formcongratesbtn": "Start New Survey",
+        "formsearchtitle": "Search: ",
+        "formsearchname": "Type survey title"
       },
       "created": "A new Form is created with identifier {{ param }}",
       "updated": "A Form is updated with identifier {{ param }}",

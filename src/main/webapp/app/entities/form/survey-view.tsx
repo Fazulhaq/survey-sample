@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Divider } from 'primereact/divider';
 import React, { useState } from 'react';
 import { Step, Stepper } from 'react-form-stepper';
-import { Translate } from 'react-jhipster';
+import { Translate, translate } from 'react-jhipster';
 import { Link, useParams } from 'react-router-dom';
 import { Button, Col, Row } from 'reactstrap';
 import BackupDetail from '../backup/backup-detail';
@@ -35,15 +35,15 @@ export const SurveyView = () => {
           <Translate contentKey="surveySampleApp.form.detail.maintitle">Survey Details</Translate>
         </h2>
         <Stepper activeStep={activeStep}>
-          <Step label="Primary" />
-          <Step label="Server" />
-          <Step label="System" />
-          <Step label="Backup" />
-          <Step label="Data Center" />
-          <Step label="Internet" />
-          <Step label="IT Devices" />
-          <Step label="Configurations" />
-          <Step label="Responsible" />
+          <Step label={translate('surveySampleApp.form.home.step1')} />
+          <Step label={translate('surveySampleApp.form.home.step2')} />
+          <Step label={translate('surveySampleApp.form.home.step3')} />
+          <Step label={translate('surveySampleApp.form.home.step4')} />
+          <Step label={translate('surveySampleApp.form.home.step5')} />
+          <Step label={translate('surveySampleApp.form.home.step6')} />
+          <Step label={translate('surveySampleApp.form.home.step7')} />
+          <Step label={translate('surveySampleApp.form.home.step8')} />
+          <Step label={translate('surveySampleApp.form.home.step9')} />
         </Stepper>
         <Divider />
         {activeStep === 0 && <FormDetail formId={id} />}

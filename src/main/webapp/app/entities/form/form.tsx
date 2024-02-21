@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
 import React, { useEffect, useState } from 'react';
-import { JhiItemCount, JhiPagination, TextFormat, Translate, getPaginationState } from 'react-jhipster';
+import { JhiItemCount, JhiPagination, TextFormat, Translate, getPaginationState, translate } from 'react-jhipster';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
 
@@ -111,10 +111,17 @@ export const Form = () => {
       </h2>
       <div className="d-flex">
         <span className="d-none d-md-inline">
-          <h4>Search: &nbsp;&nbsp;</h4>
+          <h5>
+            <Translate contentKey="surveySampleApp.form.home.formsearchtitle">Search:</Translate>
+            &nbsp;&nbsp;
+          </h5>
         </span>
         <span className="p-input-icon-left">
-          <InputText onChange={event => handleChange(event)} placeholder="Type priority text" className="p-inputtext-sm" />
+          <InputText
+            onChange={event => handleChange(event)}
+            placeholder={translate('surveySampleApp.form.home.formsearchname')}
+            className="p-inputtext-sm"
+          />
         </span>
       </div>
       <div className="table-responsive">

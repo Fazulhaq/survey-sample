@@ -2,7 +2,7 @@
   "surveySampleApp": {
     "form": {
       "home": {
-        "title": "فورم",
+        "title": "لیست سروی ها",
         "step1": "شروع",
         "step2": "سرور",
         "step3": "سیستم ها",
@@ -18,7 +18,9 @@
         "createOrEditLabel": "ایجاد و ویرایش فورم",
         "notFound": "فورم ها دریافت نشد",
         "formcongrates": "تبریک! سروی شما موفقانه انجام شد.",
-        "formcongratesbtn": "سروی جدید"
+        "formcongratesbtn": "سروی جدید",
+        "formsearchtitle": "جستجو: ",
+        "formsearchname": "عنوان سروی را بنویسید"
       },
       "created": "موفقانه ایجاد گردید",
       "updated": "موفقانه ویرایش گردید",
