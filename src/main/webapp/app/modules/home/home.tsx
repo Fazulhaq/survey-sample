@@ -17,35 +17,32 @@ export const Home = () => {
       <Col md="12">
         <div style={{ textAlign: 'justify' }}>
           <br />
-          <h4>Dear Participant,</h4>
+          <h4>
+            <Translate contentKey="home.Welcomesub">Dear Participant,</Translate>
+          </h4>
           <br />
           <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thank you for taking the time to join our survey and sharing your valuable insights
-            with us. Your participation is essential in helping us understand and improve our products/services to better cater to your
-            needs. At MCIT, we believe in continuously enhancing the experiences we provide to our customers. Your feedback plays a vital
-            role in shaping our future endeavors, and we are grateful for your input. This survey aims to gather your thoughts, opinions,
-            and suggestions regarding software requirements survey. By sharing your honest feedback, you will help us gain a deeper
-            understanding of what matters most to you, enabling us to serve you better in the future.
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Translate contentKey="home.paragraph1">first paragraph</Translate>
           </p>
           <Divider />
           <br />
           <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The survey should take approximately 10 minutes to complete. We understand your time
-            is valuable, so we greatly appreciate your willingness to participate. To access the survey, please click on the following link.
-            If you encounter any technical issues or have any questions, please feel free to reach out to our dedicated support team at
-            info@mcit.gov.af. Once again, thank you for your involvement. Your feedback is invaluable to us, and we genuinely appreciate
-            your contribution. We look forward to hearing your thoughts and working towards creating an even better experience for you.
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Translate contentKey="home.paragraph2">second paragraph</Translate>
           </p>
           <br />
           <Divider />
           <br />
           <br />
-          <h6>Best regards,</h6>
-          Survey Team
+          <h6>
+            <Translate contentKey="home.regardtext">Best regards,</Translate>
+          </h6>
+          <Translate contentKey="home.teamname">Survey team</Translate>
           <br />
-          System Development Directorate
+          <Translate contentKey="home.directoratename">System Development Directorate</Translate>
           <br />
-          Ministry of Communication and Information Technology
+          <Translate contentKey="home.ministryname">Ministry of Communication and Information Technology</Translate>
           <br />
         </div>
       </Col>
