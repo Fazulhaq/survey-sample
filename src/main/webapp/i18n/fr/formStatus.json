@@ -1,9 +1,9 @@
 {
-  "surveySampleApp": {
+  "surveyApp": {
     "FormStatus": {
       "null": "",
-      "INPROGRESS": "INPROGRESS",
-      "SUBMITTED": "SUBMITTED"
+      "INPROGRESS": "د پرمختګ په حال کې",
+      "SUBMITTED": "سپارل شوی"
     }
   }
 }

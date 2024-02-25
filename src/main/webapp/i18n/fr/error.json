@@ -1,14 +1,14 @@
 {
   "error": {
-    "title": "Page d'erreur !",
+    "title": "تېروتنه پاڼه!",
     "http": {
-      "400": "Mauvaise requête.",
-      "403": "Vous n'avez pas les droits pour accéder à cette page.",
-      "404": "La page n'existe pas.",
-      "405": "Le verbe HTTP que vous avez utilisé n'est pas reconnu par cet URL.",
-      "500": "Erreur interne du serveur."
+      "400": "ناوړه غوښتنه.",
+      "403": "تاسو دې پاڼې ته د لاسرسي اجازه نه لرئ.",
+      "404": "پاڼه شتون نلري.",
+      "405": "د HTTP فعل چې تاسو کارولی د دې URL لپاره ملاتړ نه کوي.",
+      "500": "د داخلي سرور تېروتنه."
     },
-    "concurrencyFailure": "Un autre utilisateur a modifié ces données en même temps que vous. Vos changements n'ont pas été sauvegardés.",
-    "validation": "Erreur de validation côté serveur."
+    "concurrencyFailure": "بل کارونکي دا معلومات په ورته وخت کې ستاسو په څیر بدل کړي. ستاسو بدلونونه رد شول.",
+    "validation": "په سرور کې د تایید کولو تېروتنه."
   }
 }

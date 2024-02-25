@@ -1,31 +1,31 @@
 {
   "health": {
-    "title": "Diagnostics",
-    "refresh.button": "Rafraîchir",
+    "title": "د روغتیا معاینات",
+    "refresh.button": "تازه کړئ",
     "stacktrace": "Stacktrace",
     "details": {
-      "details": "Détails",
-      "properties": "Propriétés",
-      "name": "Nom",
-      "value": "Valeur",
-      "error": "Erreur"
+      "details": "جزیات",
+      "properties": "ملکیتونه",
+      "name": "نوم",
+      "value": "مقدار",
+      "error": "تېروتنه"
     },
     "indicator": {
-      "diskSpace": "Espace disque",
-      "mail": "Email",
-      "livenessState": "Liveness state",
-      "readinessState": "Readiness state",
-      "ping": "Application",
-      "db": "Base de données"
+      "diskSpace": "دیسک اندازه",
+      "mail": "ایمیل",
+      "livenessState": "د ژوندانه حالت",
+      "readinessState": "د چمتووالي حالت",
+      "ping": "غوښتنلیک",
+      "db": "دیتابیس"
     },
     "table": {
-      "service": "Nom du service",
-      "status": "État"
+      "service": "سرویس نوم",
+      "status": "حالت"
     },
     "status": {
-      "UNKNOWN": "INCONNU",
-      "UP": "DISPONIBLE",
-      "DOWN": "HORS SERVICE"
+      "UNKNOWN": "نامعلوم",
+      "UP": "UP",
+      "DOWN": "DOWN"
     }
   }
 }

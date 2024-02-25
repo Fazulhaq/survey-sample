@@ -2,27 +2,27 @@
   "surveySampleApp": {
     "orgResponsiblePerson": {
       "home": {
-        "title": "OrgResponsiblePeople",
-        "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Org Responsible Person",
-        "createOrEditLabel": "Créer ou éditer un Org Responsible Person",
-        "notFound": "Aucun Org Responsible Person trouvé"
+        "title": "د سازمان مسول کس",
+        "refreshListLabel": "لیست تازه کړئ",
+        "createLabel": "د سازمان یو نوی مسؤل کس جوړ کړئ",
+        "createOrEditLabel": "د سازمان مسؤل کس جوړ یا ایډیټ کړئ",
+        "notFound": "هیڅ سازمان مسؤل خلک ونه موندل شول"
       },
-      "created": "Un nouveau Org Responsible Person a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Org Responsible Person avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Org Responsible Person avec l'identifiant {{ param }} a été supprimé",
+      "created": "په بریالیتوب سره جوړ شو",
+      "updated": "په بریالیتوب سره تازه شوی",
+      "deleted": "په بریالیتوب سره ړنګ شو",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Org Responsible Person {{ id }} ?"
+        "question": "ایا تاسو ډاډه یاست چې تاسو غواړئ د سازمان مسؤل شخص حذف کړئ {{ id }}?"
       },
       "detail": {
-        "title": "Org Responsible Person"
+        "title": "د سازمان مسؤل شخص"
       },
-      "id": "ID",
-      "fullName": "Full Name",
-      "position": "Position",
-      "contact": "Contact",
-      "date": "Date",
-      "form": "Form"
+      "id": "شمیره",
+      "fullName": "مکمل نوم",
+      "position": "موقف",
+      "contact": "اړیکه",
+      "date": "تاریخ",
+      "form": "فورم"
     }
   }
 }

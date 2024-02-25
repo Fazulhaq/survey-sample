@@ -1,91 +1,91 @@
 {
   "global": {
-    "title": "Survey-sample",
-    "browsehappy": "Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=\"http://browsehappy.com/?locale=fr\">mettre à jour votre navigateur</a> pour une meilleure expérience.",
+    "title": "سروی پروژه",
+    "browsehappy": "تاسو یو <strong>زاړه</strong> براوزر کاروئ. مهرباني وکړئ <a href=\"http://browsehappy.com/?locale=en\">خپل براوزر لوړ کړئ</a> ترڅو خپله تجربه ښه کړي.",
     "menu": {
-      "home": "Accueil",
-      "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+      "home": "کور",
+      "jhipster-needle-menu-add-element": "JHipster به دلته اضافي مینو ننوتنې اضافه کړي (ژباړه مه کوئ!)",
       "entities": {
-        "main": "Entités",
-        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
-        "organization": "Organization",
-        "form": "Form",
-        "orgResponsiblePerson": "Org Responsible Person",
-        "server": "Server",
-        "internet": "Internet",
-        "backup": "Backup",
-        "networkConfigCheckList": "Network Config Check List",
-        "datacenterDevice": "Datacenter Device",
-        "itDevice": "It Device",
-        "system": "System"
+        "main": "خدمتونه",
+        "jhipster-needle-menu-add-entry": "JHipster به دلته اضافي ادارې اضافه کړي (ژباړه مه کوئ!)",
+        "organization": "سازمان",
+        "form": "سروی",
+        "orgResponsiblePerson": "مسول کس",
+        "server": "سرور",
+        "internet": "انترنت",
+        "backup": "بک اپ",
+        "networkConfigCheckList": "چک لیست",
+        "datacenterDevice": "دیتاسنتر وسیله",
+        "itDevice": "آی تی وسیله",
+        "system": "سیستم"
       },
       "account": {
-        "main": "Compte",
-        "settings": "Profil",
-        "password": "Mot de passe",
-        "sessions": "Sessions",
-        "login": "S'authentifier",
-        "logout": "Déconnexion",
-        "register": "Créer un compte"
+        "main": "حساب",
+        "settings": "ترتیبات",
+        "password": "رمز",
+        "sessions": "غونډې",
+        "login": "ننوزئ",
+        "logout": "وتون",
+        "register": "راجستر"
       },
       "admin": {
-        "main": "Administration",
-        "userManagement": "Gestion des utilisateurs",
-        "tracker": "Suivi des utilisateurs",
-        "metrics": "Métriques",
-        "health": "Diagnostics",
-        "configuration": "Configuration",
+        "main": "مدیریت",
+        "userManagement": "د کارن مدیریت",
+        "tracker": "د کارونکي تعقیبونکی",
+        "metrics": "میټریکونه",
+        "health": "روغتیا",
+        "configuration": "ترتیب",
         "logs": "Logs",
         "apidocs": "API",
-        "database": "Base de données",
-        "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
+        "database": "ډیټابیس",
+        "jhipster-needle-menu-add-admin-element": "JHipster به دلته اضافي مینو ننوتنې اضافه کړي (ژباړه مه کوئ!)"
       },
-      "language": "Langue"
+      "language": "ژبه"
     },
     "form": {
-      "username.label": "Nom d'utilisateur",
-      "username.placeholder": "Votre nom d'utilisateur",
-      "currentpassword.label": "Mot de passe actuel",
-      "currentpassword.placeholder": "Mot de passe actuel",
-      "newpassword.label": "Nouveau mot de passe",
-      "newpassword.placeholder": "Nouveau mot de passe",
-      "confirmpassword.label": "Confirmation du nouveau mot de passe",
-      "confirmpassword.placeholder": "Confirmation du nouveau mot de passe",
-      "email.label": "Email",
-      "email.placeholder": "Votre email"
+      "username.label": "کارن نوم",
+      "username.placeholder": "ستاسو کارن نوم",
+      "currentpassword.label": "اوسنی رمز",
+      "currentpassword.placeholder": "اوسنی رمز",
+      "newpassword.label": "نوئ پټ نوم",
+      "newpassword.placeholder": "نوئ پټ نوم",
+      "confirmpassword.label": "د نوي پټنوم تایید",
+      "confirmpassword.placeholder": "د نوي پټنوم تایید",
+      "email.label": "ایمیل",
+      "email.placeholder": "ستا برېښنالیک"
     },
     "messages": {
       "info": {
         "authenticated": {
-          "prefix": "Si vous voulez vous ",
-          "link": "connecter",
-          "suffix": ", vous pouvez utiliser les comptes par défaut : <br/> - Administrateur (nom d'utilisateur=\"admin\" et mot de passe =\"admin\") <br/> - Utilisateur (nom d'utilisateur=\"user\" et mot de passe =\"user\")."
+          "prefix": "که تاسو غواړی ",
+          "link": "ننوزئ",
+          "suffix": ", تاسو کولی شئ د ډیفالټ حسابونو هڅه وکړئ:<br/>- مدیر (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\" کارن \")."
         },
         "register": {
-          "noaccount": "Vous n'avez pas encore de compte ?",
-          "link": "Créer un compte"
+          "noaccount": "تاسو تراوسه حساب نلرئ؟",
+          "link": "یو نوی حساب راجستر کړئ"
         }
       },
       "error": {
-        "dontmatch": "Le nouveau mot de passe et sa confirmation ne sont pas égaux !"
+        "dontmatch": "پټنوم او د هغې تایید سره سمون نلري!"
       },
       "validate": {
         "newpassword": {
-          "required": "Votre mot de passe est requis.",
-          "minlength": "Votre mot de passe doit comporter au moins 4 caractères.",
-          "maxlength": "Votre mot de passe ne doit pas comporter plus de 50 caractères.",
-          "strength": "Robustesse du mot de passe :"
+          "required": "ستاسو پټنوم ته اړتیا ده.",
+          "minlength": "ستاسو پټنوم باید لږترلږه 4 حروف وي.",
+          "maxlength": "ستاسو پټنوم د 50 حروف څخه زیات نشي کیدی.",
+          "strength": "د پاسورډ ځواک:"
         },
         "confirmpassword": {
-          "required": "Votre confirmation du mot de passe est requise.",
-          "minlength": "Votre confirmation du mot de passe doit comporter au moins 4 caractères.",
-          "maxlength": "Votre confirmation du mot de passe ne doit pas comporter plus de 50 caractères."
+          "required": "ستاسو د تایید پاسورډ ته اړتیا ده.",
+          "minlength": "ستاسو د تایید پټنوم باید لږترلږه 4 حروف وي.",
+          "maxlength": "ستاسو د تایید پټنوم د 50 حروف څخه زیات نشي کیدی."
         },
         "email": {
-          "required": "Votre email est requis.",
-          "minlength": "Votre email doit comporter au moins 5 caractères.",
-          "maxlength": "Votre email ne doit pas comporter plus de 50 caractères.",
-          "invalid": "Votre email n'est pas valide."
+          "required": "ستاسو بریښنالیک اړین دی.",
+          "invalid": "ستاسو بریښنالیک ناسم دی.",
+          "minlength": "ستاسو بریښنالیک اړین دی چې لږترلږه 5 حروف ولري.",
+          "maxlength": "ستاسو بریښنالیک له 50 حروف څخه اوږد نشي."
         }
       }
     },
@@ -93,65 +93,69 @@
       "id": "ID"
     },
     "ribbon": {
-      "dev": "Développement"
+      "dev": "پراختیا"
     },
-    "item-count": "Affichage {{first}} - {{second}} de {{total}} items."
+    "item-count": "د {{total}} توکو څخه {{first}} - {{second}} ښودل."
   },
   "entity": {
     "action": {
-      "addblob": "Ajouter blob",
-      "addimage": "Ajouter image",
-      "back": "Retour",
-      "cancel": "Annuler",
-      "edit": "Editer",
-      "delete": "Supprimer",
-      "open": "Ouvrir",
-      "save": "Sauvegarder",
-      "view": "Voir",
-      "show": "Show {{otherEntity}}"
+      "addblob": "بلاب اضافه کول",
+      "addimage": "تصویر اضافه کول",
+      "back": "مخیکنی",
+      "surveylist": "سروی لیست",
+      "cancel": "کنسل",
+      "delete": "ختمول",
+      "edit": "سمون",
+      "addsurvey": "سروې",
+      "open": "خلاص",
+      "save": "ثبت کول او بعدی",
+      "updatenext": "تغییرول او بعدی",
+      "updatefinish": "تغییرول او ختمول",
+      "view": "ښودل",
+      "show": "ښودل {{otherEntity}}"
     },
     "detail": {
-      "field": "Champs",
-      "value": "Valeur"
+      "field": "فیلد",
+      "value": "مقدار"
     },
     "delete": {
-      "title": "Confirmation de suppression"
+      "title": "د حذف کولو عملیات تایید کړئ"
     },
     "validation": {
-      "required": "Ce champ est obligatoire.",
-      "minlength": "Ce champ doit faire au minimum {{min}} caractères.",
-      "maxlength": "Ce champ doit faire moins de {{max}} caractères.",
-      "min": "Ce champ doit être supérieur à {{min}}.",
-      "max": "Ce champ doit être inférieur à {{max}}.",
-      "minbytes": "Ce champ doit être supérieur à {{min}} bytes.",
-      "maxbytes": "Ce champ doit être inférieur à {{max}} bytes.",
-      "pattern": "Ce champ doit suivre l'expression régulière {{pattern}}.",
-      "number": "Ce champ doit être un nombre.",
-      "datetimelocal": "Ce champ doit être une date et une heure.",
-      "patternLogin": "Ce champ ne peut contenir que des lettres, des chiffres ou des adresses e-mail."
+      "required": "دغه سیمی ته اړتیا ده.",
+      "minlength": "دا ساحه لږ تر لږه {{ min }} حروف ته اړتیا لري.",
+      "maxlength": "دا ساحه له {{ max }} حروف څخه اوږده نشي.",
+      "min": "دا ساحه باید لږ تر لږه {{ min }} وي.",
+      "max": "دا ساحه له {{ max }} څخه زیاته نه وي.",
+      "minbytes": "دا ساحه باید لږ تر لږه {{ min }} بایټه وي.",
+      "maxbytes": "دا ساحه له {{ max }} بایټ څخه زیاته نشي.",
+      "pattern": "دا ساحه باید د نمونې تعقیب کړي {{ pattern }}.",
+      "number": "دا ساحه باید یو شمیر وي.",
+      "datetimelocal": "دا ساحه باید نیټه او وخت وي.",
+      "patternLogin": "دا ساحه یوازې لیکونه، عددونه او بریښنالیک پتې لري."
     },
     "filters": {
-      "set": "Following filters are set",
-      "clear": "Clear filter",
-      "clearAll": "Clear all filters"
+      "set": "لاندې فلټرونه ترتیب شوي دي",
+      "clear": "فلټر پاک کړئ",
+      "clearAll": "ټول فلټرونه پاک کړئ"
     }
   },
   "error": {
-    "internalServerError": "Erreur interne du serveur",
-    "server.not.reachable": "Serveur inaccessible",
-    "url.not.found": "Non trouvé",
-    "NotNull": "Le champ {{fieldName}} ne peut pas être vide !",
-    "Size": "Le champ {{fieldName}} ne respecte pas les critères minimum et maximum !",
-    "userexists": "Login déjà utilisé !",
-    "emailexists": "Email déjà utilisé !",
-    "idexists": "Une nouvelle entité {{entityName}} ne peut pas avoir d'identifiant !",
-    "idnull": "Identifiant invalide",
-    "idinvalid": "Invalid Id",
-    "idnotfound": "ID cannot be found",
+    "internalServerError": "د داخلي سرور تېروتنه",
+    "server.not.reachable": "سرور د لاسرسي وړ نه دی",
+    "url.not.found": "پیدا نشو",
+    "NotNull": "ساحه {{ fieldName }} خالي نه وي!",
+    "Size": "ساحه {{ fieldName }} د دقیقې/ اعظمي اندازې اړتیاوې نه پوره کوي!",
+    "userexists": "د ننوتلو نوم لا دمخه کارول شوی!",
+    "emailexists": "بریښنالیک لا دمخه کارول کیږي!",
+    "idexists": "یو نوی {{ entityName }} لا دمخه ID نه لري",
+    "idnull": "ناسم ID",
+    "idinvalid": "ناسم ID",
+    "idnotfound": "ID نشي موندلی",
     "file": {
-      "could.not.extract": "Impossible d'extraire le fichier",
-      "not.image": "Le fichier doit être une image et non du type \"{{ fileType }}\""
+      "could.not.extract": "دوتنې استخراج نشو کولی",
+      "not.image": "د دوتنې تمه کیده چې یو انځور وي مګر وموندل شو چې \"{{ fileType }}\" وي"
     }
   },
-  "footer": "Ceci est votre pied de page"
+  "footer": "دا ستاسو فوټر دی"
 }

@@ -1,9 +1,9 @@
 {
   "activate": {
-    "title": "Activation",
+    "title": "فعالول",
     "messages": {
-      "success": "<strong>Votre compte utilisateur a été activé.</strong> Merci de vous ",
-      "error": "<strong>Votre compte utilisateur n'a pas pu être activé.</strong> Utilisez le formulaire d'enregistrement pour en créer un nouveau."
+      "success": "<strong>ستاسو حساب فعال شوی دی.</strong> لطفا ",
+      "error": "<strong>ستاسو کارن فعال نشي کیدی.</strong> مهرباني وکړئ د راجستریشن لپاره د راجستریشن فورمه وکاروئ."
     }
   }
 }

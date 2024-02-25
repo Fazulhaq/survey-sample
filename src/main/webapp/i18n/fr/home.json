@@ -1,19 +1,26 @@
 {
   "home": {
-    "title": "Bienvenue, Java Hipster !",
-    "subtitle": "Ceci est votre page d'accueil",
+    "title": "شه راغلاست, Java Hipster!",
+    "subtitle": "دا ستاسو کورپاڼه ده",
+    "Welcomesub": "ګرانه برخه اخیستونکی،",
+    "paragraph1": "زموږ په سروې کې د ګډون لپاره د وخت اخیستو او خپل ارزښتناک نظرونه موږ سره شریکولو لپاره مننه. ستاسو ګډون زموږ د محصولاتو / خدماتو په پوهیدو او ښه کولو کې مرسته کولو کې اړینه ده ترڅو ستاسو اړتیاوې په ښه توګه پوره کړي. په MCIT کې، موږ په دوامداره توګه د هغو تجربو په لوړولو باور لرو چې موږ خپلو پیرودونکو ته وړاندې کوو. ستاسو نظر زموږ د راتلونکو هڅو په جوړولو کې مهم رول لوبوي، او موږ ستاسو د نظر څخه مننه کوو. د دې سروې هدف د سافټویر اړتیاو سروې په اړه ستاسو فکرونه، نظرونه او وړاندیزونه راټولول دي. ستاسو د صادقانه نظرونو په شریکولو سره، تاسو به موږ سره د هغه څه په اړه ژوره پوهه ترلاسه کولو کې مرسته وکړو چې ستاسو لپاره خورا مهم دي، موږ ته دا توان راکوي چې په راتلونکي کې تاسو ته ښه خدمت وکړو.",
+    "paragraph2": "سروې باید د بشپړیدو لپاره شاوخوا 10 دقیقې وخت ونیسي. موږ پوهیږو چې ستاسو وخت ارزښتناک دی، نو موږ د ګډون لپاره ستاسو د لیوالتیا ډیره ستاینه کوو. سروې ته د لاسرسي لپاره، مهرباني وکړئ لاندې لینک باندې کلیک وکړئ. که تاسو له کومې تخنیکي ستونزې سره مخ یاست یا کومه پوښتنه لرئ، نو مهرباني وکړئ زموږ د وقف شوي ملاتړ ټیم سره په info@mcit.gov.af کې اړیکه ونیسئ. یو ځل بیا، ستاسو د ګډون لپاره مننه. ستاسو نظر زموږ لپاره ارزښتناک دی، او موږ په ریښتیا ستاسو د ونډې ستاینه کوو. موږ ستاسو د افکارو اوریدو او ستاسو لپاره د حتی غوره تجربې رامینځته کولو لپاره کار کولو ته سترګې په لار یو.",
+    "regardtext": "غوره احترامات،",
+    "teamname": "سروی تیم",
+    "directoratename": "د سیستم پراختیا ریاست",
+    "ministryname": "د مخابراتو او معلوماتي ټکنالوجۍ وزارت",
     "logged": {
-      "message": "Vous êtes connecté en tant que \"{{username}}\"."
+      "message": "تاسو د کارونکي په توګه ننوتل یاست \"{{username}}\"."
     },
-    "question": "Si vous avez des questions à propos de JHipster :",
+    "question": "که تاسو د JHipster په اړه کومه پوښتنه لرئ:",
     "link": {
-      "homepage": "Page d'accueil de JHipster",
-      "stackoverflow": "JHipster sur Stack Overflow",
+      "homepage": "JHipster homepage",
+      "stackoverflow": "JHipster on Stack Overflow",
       "bugtracker": "JHipster bug tracker",
       "chat": "JHipster public chat room",
-      "follow": "Suivez @jhipster sur Twitter"
+      "follow": "follow @jhipster on Twitter"
     },
-    "like": "Si vous aimez JHipster, donnez nous une étoile sur",
-    "github": "GitHub "
+    "like": "If you like JHipster, don't forget to give us a star on",
+    "github": "GitHub"
   }
 }

@@ -1,23 +1,23 @@
 {
   "register": {
-    "title": "Création de compte utilisateur",
+    "title": "نوم لیکنه",
     "form": {
-      "button": "Enregistrement"
+      "button": "راجستر"
     },
     "messages": {
       "validate": {
         "login": {
-          "required": "Votre nom d'utilisateur est obligatoire.",
-          "minlength": "Votre nom d'utilisateur doit contenir plus d'un caractère.",
-          "maxlength": "Votre nom d'utilisateur ne peut pas contenir plus de 50 caractères.",
-          "pattern": "Votre nom d'utilisateur est invalide."
+          "required": "ستاسو کارن نوم اړین دی.",
+          "minlength": "ستاسو کارن-نوم باید لږ تر لږه 1 حرف وي.",
+          "maxlength": "ستاسو کارن-نوم د 50 حروفو څخه زیات نشي کیدی.",
+          "pattern": "ستاسو کارن-نوم ناسم دی."
         }
       },
-      "success": "<strong>Compte enregistré !</strong> Merci de vérifier votre email de confirmation.",
+      "success": "<strong>نوم لیکنه خوندي شوه!</strong> مهرباني وکړئ د تایید لپاره خپل بریښنالیک وګورئ.",
       "error": {
-        "fail": "<strong>Compte non créé !</strong> Merci d'essayer à nouveau plus tard.",
-        "userexists": "<strong>Ce compte utilisateur existe déjà !</strong> Veuillez en choisir un autre.",
-        "emailexists": "<strong>Cet email est déjà utilisé !</strong> Veuillez en choisir un autre."
+        "fail": "<strong>نوم لیکنه ناکامه شوه!</strong> مهرباني وکړئ وروسته بیا هڅه وکړئ.",
+        "userexists": "<strong>د ننوتلو نوم لا دمخه ثبت شوی!</strong> مهرباني وکړئ یو بل غوره کړئ.",
+        "emailexists": "<strong>بریښنالیک لا دمخه کارول کیږي!</strong> مهرباني وکړئ یو بل غوره کړئ."
       }
     }
   }

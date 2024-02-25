@@ -2,29 +2,31 @@
   "surveySampleApp": {
     "organization": {
       "home": {
-        "title": "Organizations",
-        "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Organization",
-        "createOrEditLabel": "Créer ou éditer un Organization",
-        "notFound": "Aucun Organization trouvé"
+        "title": "سازمانونه",
+        "orgsearchtitle": "سازمان: ",
+        "orgsearchname": "د سازمان نوم ولیکئ",
+        "refreshListLabel": "لیست تازه کړئ",
+        "createLabel": "یو نوی سازمان جوړ کړئ",
+        "createOrEditLabel": "یو سازمان جوړ یا ترمیم کړئ",
+        "notFound": "هیڅ سازمان ونه موندل شو"
       },
-      "created": "Un nouveau Organization a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Organization avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Organization avec l'identifiant {{ param }} a été supprimé",
+      "created": "په بریالیتوب سره جوړ شو",
+      "updated": "په بریالیتوب سره تازه شوی",
+      "deleted": "په بریالیتوب سره ړنګ شو",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Organization {{ id }} ?"
+        "question": "ایا تاسو ډاډه یاست چې تاسو تنظیم کول غواړئ {{ id }}?"
       },
       "detail": {
-        "title": "Organization"
+        "title": "سازمان"
       },
-      "id": "ID",
-      "name": "Name",
-      "code": "Code",
-      "description": "Description",
-      "address": "Address",
-      "createDate": "Create Date",
-      "updateDate": "Update Date",
-      "user": "User"
+      "id": "شمیره",
+      "name": "نوم",
+      "code": "کود",
+      "description": "تفصیل",
+      "address": "پته",
+      "createDate": "تاریخ جوړ کړئ",
+      "updateDate": "د تازه کولو نیټه",
+      "user": "کارن"
     }
   }
 }

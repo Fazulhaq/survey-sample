@@ -1,19 +1,19 @@
 {
   "login": {
-    "title": "Authentification",
+    "title": "ننوزئ",
     "form": {
-      "password": "Mot de passe",
-      "password.placeholder": "Votre mot de passe",
-      "rememberme": "Garder la session ouverte",
-      "button": "Connexion"
+      "password": "پسورد",
+      "password.placeholder": "ستاسو پټنوم",
+      "rememberme": "ما په یاد ولره",
+      "button": "ننوزئ"
     },
     "messages": {
       "error": {
-        "authentication": "<strong>Erreur d'authentification !</strong> Veuillez vérifier vos identifiants de connexion."
+        "authentication": "<strong>په ننوتلو کې پاتې راغلی!</strong> مهرباني وکړئ خپل اسناد وګورئ او بیا هڅه وکړئ."
       }
     },
     "password": {
-      "forgot": "Avez-vous oublié votre mot de passe ?"
+      "forgot": "ایا تاسو خپل پټنوم هیر کړی؟?"
     }
   }
 }

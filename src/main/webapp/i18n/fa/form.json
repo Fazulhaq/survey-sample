@@ -36,12 +36,12 @@
         "nextstep": "بعدی"
       },
       "id": "شماره",
-      "futurePlan": "عنوان فورم",
+      "futurePlan": "عنوان سروی",
       "status": "حالت",
       "createDate": "تاریخ ایجاد",
       "updateDate": "تاریخ ویرایش",
       "user": "کاربر",
-      "organization": "ارگان"
+      "organization": "اداره"
     }
   }
 }

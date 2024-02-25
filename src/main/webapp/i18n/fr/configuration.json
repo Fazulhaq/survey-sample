@@ -1,10 +1,10 @@
 {
   "configuration": {
-    "title": "Configuration",
-    "filter": "Filtrer (par préfixe)",
+    "title": "ترتیب",
+    "filter": "فلټر (د مخکینۍ په واسطه)",
     "table": {
-      "prefix": "Préfixe",
-      "properties": "Propriétés"
+      "prefix": "مخفف",
+      "properties": "ملکیتونه"
     }
   }
 }

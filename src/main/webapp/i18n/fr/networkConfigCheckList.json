@@ -2,20 +2,20 @@
   "surveySampleApp": {
     "networkConfigCheckList": {
       "home": {
-        "title": "NetworkConfigCheckLists",
-        "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Network Config Check List",
-        "createOrEditLabel": "Créer ou éditer un Network Config Check List",
-        "notFound": "Aucun Network Config Check List trouvé"
+        "title": "د شبکې کنفیګ چیک لیست",
+        "refreshListLabel": "لیست تازه کړئ",
+        "createLabel": "یو نوی د شبکې کنفیګ چیک لیست جوړ کړئ",
+        "createOrEditLabel": "د شبکې کنفیګ چیک لیست جوړ کړئ یا ایډیټ کړئ",
+        "notFound": "هیڅ د شبکې کنفیګ چیک لیست ونه موندل شو"
       },
-      "created": "Un nouveau Network Config Check List a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Network Config Check List avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Network Config Check List avec l'identifiant {{ param }} a été supprimé",
+      "created": "په بریالیتوب سره جوړ شو",
+      "updated": "په بریالیتوب سره تازه شوی",
+      "deleted": "په بریالیتوب سره ړنګ شو",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Network Config Check List {{ id }} ?"
+        "question": "ایا تاسو ډاډه یاست چې تاسو غواړئ د شبکې کنفیګ چیک لیست حذف کړئ {{ id }}?"
       },
       "detail": {
-        "title": "Network Config Check List"
+        "title": "د شبکې کنفیګ چیک لیست"
       },
       "id": "ID",
       "dhcp": "Dhcp",

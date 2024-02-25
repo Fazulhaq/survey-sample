@@ -1,11 +1,11 @@
 {
   "logs": {
-    "title": "Logs",
-    "nbloggers": "Total de {{ total }} \"loggers\".",
-    "filter": "Filtrer",
+    "title": "لاگز",
+    "nbloggers": "دلته دي {{ total }} loggers.",
+    "filter": "فیلتر",
     "table": {
-      "name": "Nom",
-      "level": "Niveau"
+      "name": "نوم",
+      "level": "کچه"
     }
   }
 }

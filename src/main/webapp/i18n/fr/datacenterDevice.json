@@ -2,29 +2,29 @@
   "surveySampleApp": {
     "datacenterDevice": {
       "home": {
-        "title": "DatacenterDevices",
-        "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Datacenter Device",
-        "createOrEditLabel": "Créer ou éditer un Datacenter Device",
-        "notFound": "Aucun Datacenter Device trouvé"
+        "title": "د ډیټا سینټر وسایل",
+        "refreshListLabel": "لیست تازه کړئ",
+        "createLabel": "د ډیټا سینټر نوی وسیله جوړه کړئ",
+        "createOrEditLabel": "د ډیټا سینټر وسیله رامینځته کړئ یا ترمیم کړئ",
+        "notFound": "د ډیټا سینټر وسایل ونه موندل شول"
       },
-      "created": "Un nouveau Datacenter Device a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Datacenter Device avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Datacenter Device avec l'identifiant {{ param }} a été supprimé",
+      "created": "په بریالیتوب سره جوړ شو",
+      "updated": "په بریالیتوب سره تازه شوی",
+      "deleted": "په بریالیتوب سره ړنګ شو",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Datacenter Device {{ id }} ?"
+        "question": "ایا تاسو ډاډه یاست چې تاسو غواړئ د ډیټا سینټر وسیله حذف کړئ {{ id }}?"
       },
       "detail": {
-        "title": "Datacenter Device"
+        "title": "د ډیټا سینټر وسیله"
       },
-      "id": "ID",
-      "deviceType": "Device Type",
-      "quantity": "Quantity",
-      "brandAndModel": "Brand And Model",
-      "age": "Age",
-      "purpose": "Purpose",
-      "currentStatus": "Current Status",
-      "form": "Form"
+      "id": "شمیره",
+      "deviceType": "د وسیلې ډول",
+      "quantity": "مقدار",
+      "brandAndModel": "برانډ او ماډل",
+      "age": "عمر",
+      "purpose": "موخه",
+      "currentStatus": "اوسنی حالت",
+      "form": "فورم"
     }
   }
 }

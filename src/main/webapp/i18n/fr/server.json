@@ -2,30 +2,30 @@
   "surveySampleApp": {
     "server": {
       "home": {
-        "title": "Servers",
-        "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Server",
-        "createOrEditLabel": "Créer ou éditer un Server",
-        "notFound": "Aucun Server trouvé"
+        "title": "سرورونه",
+        "refreshListLabel": "لیست تازه کړئ",
+        "createLabel": "یو نوی سرور جوړ کړئ",
+        "createOrEditLabel": "یو سرور جوړ یا ایډیټ کړئ",
+        "notFound": "هیڅ سرور ونه موندل شو"
       },
-      "created": "Un nouveau Server a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Server avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Server avec l'identifiant {{ param }} a été supprimé",
+      "created": "په بریالیتوب سره جوړ شو",
+      "updated": "په بریالیتوب سره تازه شوی",
+      "deleted": "په بریالیتوب سره ړنګ شو",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Server {{ id }} ?"
+        "question": "ایا تاسو ډاډه یاست چې سرور حذف کول غواړئ {{ id }}?"
       },
       "detail": {
-        "title": "Server"
+        "title": "د سرور معلومات"
       },
-      "id": "ID",
-      "question1": "Question 1",
-      "question2": "Question 2",
-      "question3": "Question 3",
-      "question4": "Question 4",
-      "question5": "Question 5",
-      "question6": "Question 6",
-      "question7": "Question 7",
-      "form": "Form"
+      "id": "شمیره",
+      "question1": "ستاسو سازمان کوم ډول سرورونه لري? (On-Premise Servers, Cloud-based Servers, Hybrid Infrastructure)",
+      "question2": "د معلوماتو ذخیره کولو ځای (e.g.: Local, Servers, Cloud Storage)",
+      "question3": "د سرور د هارډویر اټکل شوی عمر څه دی",
+      "question4": "تاسو کوم ډول خبرتیاوې ترلاسه کوئ او دوی څنګه اداره کیږي?",
+      "question5": "کوم عملیاتي سیسټمونه په عمده ډول ستاسو په سرورونو کې کارول کیږي? (e.g., Windows Server, Linux distributions, other)",
+      "question6": "ایا تاسو د سرور فعالیت او روغتیا نظارت لپاره سیسټم لرئ؟",
+      "question7": "ایا تاسو د سرور بندیدو یا ناکامیو لپاره د ناورین د بیا رغونې پلان لرئ",
+      "form": "فورم"
     }
   }
 }

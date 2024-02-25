@@ -2,28 +2,28 @@
   "surveySampleApp": {
     "system": {
       "home": {
-        "title": "Systems",
-        "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau System",
-        "createOrEditLabel": "Créer ou éditer un System",
-        "notFound": "Aucun System trouvé"
+        "title": "سیسټمونه",
+        "refreshListLabel": "لیست تازه کړئ",
+        "createLabel": "یو نوی سیسټم جوړ کړئ",
+        "createOrEditLabel": "یو سیسټم جوړ او ترمیم کړئ",
+        "notFound": "هیڅ سیسټم ونه موندل شو"
       },
-      "created": "Un nouveau System a été créé avec l'identifiant {{ param }}",
-      "updated": "Le System avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le System avec l'identifiant {{ param }} a été supprimé",
+      "created": "په بریالیتوب سره جوړ شو",
+      "updated": "په بریالیتوب سره تازه شوی",
+      "deleted": "په بریالیتوب سره ړنګ شو",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le System {{ id }} ?"
+        "question": "ایا تاسو ډاډه یاست چې تاسو غواړئ سیسټم حذف کړئ {{ id }}?"
       },
       "detail": {
-        "title": "System"
+        "title": "د سیسټم معلومات"
       },
-      "id": "ID",
-      "question1": "Question 1",
-      "question2": "Question 2",
-      "question3": "Question 3",
-      "question4": "Question 4",
-      "question5": "Question 5",
-      "form": "Form"
+      "id": "شمیره",
+      "question1": "ایا تاسو په خپل سازمان کې کومه څانګه لرئ چې ستاسو د تخنیکي عملیاتو څارنه وکړي",
+      "question2": "دا مهال ستاسو په اداره کې څومره د معلوماتي ټیکنالوژۍ متخصصین کار کوي، مهرباني وکړئ مشخص کړئ.",
+      "question3": "ستاسو سازمان د معلوماتي ټیکنالوژۍ څانګو د ساتنې او پراختیا لپاره څومره بودیجه ځانګړې کړې",
+      "question4": "ایا تاسو د خپل سازمان لپاره کوم رسمي ویب پاڼه لرئ",
+      "question5": "که هو، مهرباني وکړئ لاندې د خپل سازمان رسمي ویب پاڼه مشخص کړئ",
+      "form": "فورم"
     }
   }
 }

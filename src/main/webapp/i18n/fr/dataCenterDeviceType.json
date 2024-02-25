@@ -2,12 +2,12 @@
   "surveySampleApp": {
     "DataCenterDeviceType": {
       "null": "",
-      "Racks": "Racks",
-      "Servers": "Servers",
-      "Routers": "Routers",
-      "Switches": "Switches",
-      "Firewalls": "Firewalls",
-      "DataStorage": "DataStorage"
+      "Racks": "ریکونه",
+      "Servers": "سرورونه",
+      "Routers": "روټرونه",
+      "Switches": "سویچونه",
+      "Firewalls": "د اور وژنې",
+      "DataStorage": "ډاټا ذخیره کول"
     }
   }
 }

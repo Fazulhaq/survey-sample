@@ -2,30 +2,30 @@
   "surveySampleApp": {
     "backup": {
       "home": {
-        "title": "Backups",
-        "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Backup",
-        "createOrEditLabel": "Créer ou éditer un Backup",
-        "notFound": "Aucun Backup trouvé"
+        "title": "د بیک اپ سیسټم",
+        "refreshListLabel": "نوی لیست",
+        "createLabel": "یو نوی بیک اپ سیسټم جوړ کړئ",
+        "createOrEditLabel": "د بیک اپ سیسټم رامینځته کول یا ترمیم کول",
+        "notFound": "د بیک اپ سیسټم ندی ترلاسه شوی"
       },
-      "created": "Un nouveau Backup a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Backup avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Backup avec l'identifiant {{ param }} a été supprimé",
+      "created": "په بریالیتوب سره جوړ شو",
+      "updated": "په بریالیتوب سره ترمیم شوی",
+      "deleted": "په بریالیتوب سره ړنګ شو",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Backup {{ id }} ?"
+        "question": "ایا تاسو ډاډه یاست چې د سیسټم بیک اپ به حذف شي؟ {{ id }}?"
       },
       "detail": {
-        "title": "Backup"
+        "title": "د بیک اپ سیسټم"
       },
       "id": "ID",
-      "question1": "Question 1",
-      "question2": "Question 2",
-      "question3": "Question 3",
-      "question4": "Question 4",
-      "question5": "Question 5",
-      "question6": "Question 6",
-      "question7": "Question 7",
-      "form": "Form"
+      "question1": "تاسو کوم ډول ډیټا مرکز لرئ؟ وقف شوي، شریک شوي یا هایبرډ",
+      "question2": "اعتبار او شتون (Tier 1, Tier 2, Tier 3, که نور (مهرباني وکړئ مشخص کړئ))",
+      "question3": "د معلوماتو ذخیره کولو ځای (e.g., Local Server, Cloud Storage)",
+      "question4": "د بیک اپ فریکونسی",
+      "question5": "د بیک اپ طریقه",
+      "question6": "د بیک اپ ازموینې فریکونسی",
+      "question7": "د ناورین د بیا رغونې پلان شتون",
+      "form": "فورم"
     }
   }
 }

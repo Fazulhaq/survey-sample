@@ -1,31 +1,31 @@
 {
   "userManagement": {
     "home": {
-      "title": "Utilisateurs",
-      "refreshListLabel": "Actualiser la liste",
-      "createLabel": "Créer un nouvel utilisateur",
-      "createOrEditLabel": "Créer ou éditer un utilisateur"
+      "title": "کاروونکي",
+      "refreshListLabel": "لیست تازه کړئ",
+      "createLabel": "یو نوی کارن جوړ کړئ",
+      "createOrEditLabel": "یو کارن جوړ کړئ یا ترمیم کړئ"
     },
-    "created": "L'utilisateur {{ param }} a été créé.",
-    "updated": "L'utilisateur {{ param }} a été mis à jour.",
-    "deleted": "L'utilisateur {{ param }} a été supprimé.",
+    "created": "یو نوی کارن د پیژندونکي سره رامینځته کیږي {{ param }}",
+    "updated": "یو کارن د پیژندونکي سره تازه کیږي {{ param }}",
+    "deleted": "یو کارن د پیژندونکي سره حذف کیږي {{ param }}",
     "delete": {
-      "question": "Etes-vous certain de vouloir supprimer l'utilisateur {{ login }} ?"
+      "question": "ایا تاسو ډاډه یاست چې تاسو غواړئ کارن حذف کړئ {{ login }}?"
     },
     "detail": {
-      "title": "Utilisateur"
+      "title": "کارن"
     },
-    "login": "Login",
-    "firstName": "Prénom",
-    "lastName": "Nom",
-    "email": "Email",
-    "activated": "Activé",
-    "deactivated": "Désactivé",
-    "profiles": "Droits",
-    "langKey": "Langue",
-    "createdBy": "Créé par",
-    "createdDate": "Créé le",
-    "lastModifiedBy": "Modifié par",
-    "lastModifiedDate": "Modifié le"
+    "login": "د ننه کیدل",
+    "firstName": "نوم",
+    "lastName": "تخلص",
+    "email": "ایمیل",
+    "activated": "فعال شوی",
+    "deactivated": "غیر فعال شوی",
+    "profiles": "پروفایلونه",
+    "langKey": "ژبه",
+    "createdBy": "لخوا جوړ شوی",
+    "createdDate": "د جوړیدو نیټه",
+    "lastModifiedBy": "لخوا تعدیل شوی",
+    "lastModifiedDate": "تعدیل شوی نیټه"
   }
 }

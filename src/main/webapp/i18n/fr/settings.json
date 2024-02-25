@@ -1,30 +1,30 @@
 {
   "settings": {
-    "title": "Profil de l'utilisateur [<strong>{{username}}</strong>]",
+    "title": "لپاره د کارن ترتیبات [<strong>{{username}}</strong>]",
     "form": {
-      "firstname": "Prénom",
-      "firstname.placeholder": "Votre prénom",
-      "lastname": "Nom",
-      "lastname.placeholder": "Votre nom",
-      "language": "Langue",
-      "button": "Sauvegarder"
+      "firstname": " نوم",
+      "firstname.placeholder": "ستا نوم",
+      "lastname": "تخلص",
+      "lastname.placeholder": "ستا تخلص",
+      "language": "ژبه",
+      "button": "خوندي کړئ"
     },
     "messages": {
       "error": {
-        "fail": "<strong>Une erreur est survenue !</strong> Votre profil n'a pas été sauvegardé.",
-        "emailexists": "<strong>Cet email est déjà utilisé !</strong> Veuillez en choisir un autre."
+        "fail": "<strong>یوه تېروتنه رامنځته شوې ده!</strong> ترتیبات خوندي نه شو.",
+        "emailexists": "<strong>بریښنالیک لا دمخه کارول کیږي!</strong> مهرباني وکړئ یو بل غوره کړئ."
       },
-      "success": "<strong>Votre profil a été sauvegardé !</strong>",
+      "success": "<strong>ترتیبات خوندي شوي!</strong>",
       "validate": {
         "firstname": {
-          "required": "Votre prénom est requis.",
-          "minlength": "Votre prénom doit comporter au moins un caractère.",
-          "maxlength": "Votre prénom ne doit pas comporter plus de 50 caractères."
+          "required": "ستاسو لومړی نوم اړین دی.",
+          "minlength": "ستاسو لومړی نوم باید لږ تر لږه 1 حرف وي",
+          "maxlength": "ستاسو لومړی نوم باید د 50 حروف څخه زیات نه وي"
         },
         "lastname": {
-          "required": "Votre nom est requis.",
-          "minlength": "Votre nom doit comporter au moins un caractère.",
-          "maxlength": "Votre nom ne doit pas comporter plus de 50 caractères."
+          "required": "ستاسو وروستی نوم اړین دی.",
+          "minlength": "ستاسو وروستی نوم باید لږ تر لږه 1 حرف وي",
+          "maxlength": "ستاسو وروستی نوم باید د 50 حروفو څخه زیات نه وي"
         }
       }
     }

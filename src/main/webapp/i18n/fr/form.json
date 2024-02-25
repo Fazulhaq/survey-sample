@@ -2,28 +2,46 @@
   "surveySampleApp": {
     "form": {
       "home": {
-        "title": "Forms",
-        "refreshListLabel": "Actualiser la liste",
-        "createLabel": "Créer un nouveau Form",
-        "createOrEditLabel": "Créer ou éditer un Form",
-        "notFound": "Aucun Form trouvé"
+        "title": "سروی لیست",
+        "step1": "پیل",
+        "step2": "سرور",
+        "step3": "سیستم",
+        "step4": "بیک اپ",
+        "step5": "ډیتاسنتر",
+        "step6": "انترنت",
+        "step7": "آی تی وسیلی",
+        "step8": "نیتورک چکلیست",
+        "step9": "مسول",
+        "step10": "ختم",
+        "refreshListLabel": "لیست تازه کړئ",
+        "createLabel": "یو نوی فورمه جوړه کړئ",
+        "createOrEditLabel": "یوه فورمه جوړه او ترمیم کړئ",
+        "notFound": "هیڅ فورمه ونه موندل شوه",
+        "formcongrates": "! تاسو د سروې اتمام کړل شول",
+        "formcongratesbtn": "نوی سروی پیل کړی",
+        "formsearchtitle": "لتون: ",
+        "formsearchname": "سروی عنوان تایپ کړی"
       },
-      "created": "Un nouveau Form a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Form avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Form avec l'identifiant {{ param }} a été supprimé",
+      "created": "په بریالیتوب سره جوړ شو",
+      "updated": "په بریالیتوب سره تازه شوی",
+      "deleted": "په بریالیتوب سره ړنګ شو",
       "delete": {
-        "question": "Êtes-vous certain de vouloir supprimer le Form {{ id }} ?"
+        "question": "ایا تاسو ډاډه یاست چې فورمه حذف کول غواړئ {{ id }}?"
       },
       "detail": {
-        "title": "Form"
+        "title": "فورمه",
+        "maintitle": "د سروې توضیحات",
+        "editsurveytitle": "د سروې توضیحات تازه کړئ",
+        "backstep": "مخکینی",
+        "nextstep": "بل"
       },
       "id": "ID",
-      "futurePlan": "Future Plan",
-      "status": "Status",
-      "createDate": "Create Date",
-      "updateDate": "Update Date",
-      "user": "User",
-      "organization": "Organization"
+      "futurePlan": "د سروې بې ساري سرلیک",
+      "status": "حالت",
+      "createDate": "تاریخ جوړ کړئ",
+      "updateDate": "د تازه کولو نیټه",
+      "user": "کارن",
+      "organization": "سازمان"
     }
   }
 }

@@ -2,11 +2,11 @@
   "surveySampleApp": {
     "ItDeviceType": {
       "null": "",
-      "DesktopComputers": "DesktopComputers",
-      "Laptops": "Laptops",
-      "Servers": "Servers",
-      "Printers": "Printers",
-      "Scanners": "Scanners"
+      "DesktopComputers": "ډیسټاپ کمپیوټرونه",
+      "Laptops": "لپټاپ",
+      "Servers": "سرورونه",
+      "Printers": "چاپګر",
+      "Scanners": "سکینرونه"
     }
   }
 }
