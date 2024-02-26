@@ -37,9 +37,11 @@ public class Organization implements Serializable {
     private String address;
 
     @Column(name = "create_date")
+    @PastOrPresent
     private Instant createDate;
 
     @Column(name = "update_date")
+    @PastOrPresent
     private Instant updateDate;
 
     @ManyToOne(optional = false)

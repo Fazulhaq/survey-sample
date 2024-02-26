@@ -13,6 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import java.io.Serializable;
 
@@ -34,12 +35,15 @@ public class ItDevice implements Serializable {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "device_type")
+    @NotNull
     private ItDeviceType deviceType;
 
     @Column(name = "quantity")
+    @NotBlank
     private String quantity;
 
     @Column(name = "brand_and_model")
+    @NotBlank
     private String brandAndModel;
 
     @Column(name = "age")

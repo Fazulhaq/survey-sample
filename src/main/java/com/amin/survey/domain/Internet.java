@@ -30,15 +30,19 @@ public class Internet implements Serializable {
     private Long id;
 
     @Column(name = "question_1")
+    @NotNull
     private String question1;
 
     @Column(name = "question_2")
+    @NotNull
     private String question2;
 
     @Column(name = "question_3")
+    @NotNull
     private String question3;
 
     @Column(name = "question_4")
+    @NotNull
     private String question4;
 
     @Column(name = "question_5")

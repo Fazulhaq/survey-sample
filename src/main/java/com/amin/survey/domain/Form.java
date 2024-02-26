@@ -15,7 +15,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.List;
@@ -37,6 +39,7 @@ public class Form implements Serializable {
     private Long id;
 
     @Column(name = "future_plan")
+    @NotBlank
     private String futurePlan;
 
     @Enumerated(EnumType.STRING)
@@ -44,9 +47,11 @@ public class Form implements Serializable {
     private FormStatus status;
 
     @Column(name = "create_date")
+    @PastOrPresent
     private Instant createDate;
 
     @Column(name = "update_date")
+    @PastOrPresent
     private Instant updateDate;
 
     @ManyToOne(optional = false)

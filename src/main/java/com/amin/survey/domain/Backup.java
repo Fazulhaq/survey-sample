@@ -10,6 +10,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import java.io.Serializable;
 
@@ -30,6 +31,7 @@ public class Backup implements Serializable {
     private Long id;
 
     @Column(name = "question_1")
+    @NotBlank
     private String question1;
 
     @Column(name = "question_2")

@@ -10,7 +10,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PastOrPresent;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -32,18 +34,23 @@ public class OrgResponsiblePerson implements Serializable {
 
     @NotNull
     @Column(name = "full_name", nullable = false)
+    @NotBlank
     private String fullName;
 
     @NotNull
     @Column(name = "position", nullable = false)
+    @NotBlank
     private String position;
 
     @NotNull
     @Column(name = "contact", nullable = false)
+    @NotBlank
     private String contact;
 
     @NotNull
     @Column(name = "date", nullable = false)
+    @NotBlank
+    @PastOrPresent
     private LocalDate date;
 
     @ManyToOne(optional = false)
