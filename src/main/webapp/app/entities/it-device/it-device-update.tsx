@@ -19,7 +19,7 @@ export const ItDeviceUpdate = () => {
   const updating = useAppSelector(state => state.itDevice.updating);
   const itDeviceTypeValues = Object.keys(ItDeviceType);
 
-  const lastForm = forms.reduce((maxId, form) => {
+  const lastFormId = forms.reduce((maxId, form) => {
     return form.id > maxId ? form.id : maxId;
   }, 0);
 
@@ -38,14 +38,7 @@ export const ItDeviceUpdate = () => {
     dispatch(incrementIndex(1));
   };
 
-  const defaultValues = () =>
-    itDeviceEntity === null
-      ? {}
-      : {
-          deviceType: 'DesktopComputers',
-          ...itDeviceEntity,
-          form: itDeviceEntity?.form?.id,
-        };
+  const defaultValues = () => ({});
 
   return (
     <div>
@@ -124,8 +117,8 @@ export const ItDeviceUpdate = () => {
                 type="select"
                 required
               >
-                <option value={lastForm} key={lastForm}>
-                  {lastForm}
+                <option value={lastFormId} key={lastFormId}>
+                  {lastFormId}
                 </option>
               </ValidatedField>
               &nbsp;

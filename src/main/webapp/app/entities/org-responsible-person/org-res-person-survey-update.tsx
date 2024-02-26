@@ -80,7 +80,7 @@ export const OrgResponsiblePersonSurveyUpdate: React.FC<OrgResponsiblePersonSurv
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!orgResponsiblePersonEntity === null ? (
                 <ValidatedField
                   name="id"
                   required

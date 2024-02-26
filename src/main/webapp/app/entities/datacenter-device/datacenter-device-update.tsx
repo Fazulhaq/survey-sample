@@ -19,7 +19,7 @@ export const DatacenterDeviceUpdate = () => {
   const updating = useAppSelector(state => state.datacenterDevice.updating);
   const dataCenterDeviceTypeValues = Object.keys(DataCenterDeviceType);
 
-  const lastForm = forms.reduce((maxId, form) => {
+  const lastFormId = forms.reduce((maxId, form) => {
     return form.id > maxId ? form.id : maxId;
   }, 0);
 
@@ -38,14 +38,7 @@ export const DatacenterDeviceUpdate = () => {
     dispatch(incrementIndex(1));
   };
 
-  const defaultValues = () =>
-    true
-      ? {}
-      : {
-          deviceType: 'Racks',
-          ...datacenterDeviceEntity,
-          form: datacenterDeviceEntity?.form?.id,
-        };
+  const defaultValues = () => ({});
 
   return (
     <div>
@@ -62,7 +55,7 @@ export const DatacenterDeviceUpdate = () => {
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!datacenterDeviceEntity === null ? (
                 <ValidatedField
                   name="id"
                   required
@@ -129,8 +122,8 @@ export const DatacenterDeviceUpdate = () => {
                 type="select"
                 required
               >
-                <option value={lastForm} key={lastForm}>
-                  {lastForm}
+                <option value={lastFormId} key={lastFormId}>
+                  {lastFormId}
                 </option>
               </ValidatedField>
               &nbsp;

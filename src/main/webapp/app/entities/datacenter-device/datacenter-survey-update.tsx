@@ -72,7 +72,7 @@ export const DatacenterDeviceSurveyUpdate: React.FC<DatacenterDeviceUpdateProps>
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!datacenterDeviceEntity === null ? (
                 <ValidatedField
                   name="id"
                   required

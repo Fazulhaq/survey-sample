@@ -12,8 +12,10 @@ import SystemUpdate from '../system/system-update';
 import CompletionPage from './form-completion';
 import FormUpdate from './form-update';
 import { translate } from 'react-jhipster';
+import { useParams } from 'react-router-dom';
 
 export default function InteractiveSteps() {
+  const { id } = useParams<'id'>();
   const activeStep = useAppSelector(state => state.index.stepperIndex);
 
   const steps = [
@@ -52,7 +54,7 @@ export default function InteractiveSteps() {
   function renderComponent() {
     switch (activeStep) {
       case 0:
-        return <FormUpdate />;
+        return <FormUpdate organizationId={id} />;
       case 1:
         return <ServerUpdate />;
       case 2:

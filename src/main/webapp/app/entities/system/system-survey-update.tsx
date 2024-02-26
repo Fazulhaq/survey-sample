@@ -70,7 +70,7 @@ export const SystemSurveyUpdate: React.FC<SystemSurveyUpdateProps> = ({ formId }
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!systemEntity === null ? (
                 <ValidatedField
                   name="id"
                   required

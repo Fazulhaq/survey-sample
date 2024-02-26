@@ -71,7 +71,7 @@ export const ServerSurveyUpdate: React.FC<ServerSurveyUpdateProps> = ({ formId }
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!serverEntity === null ? (
                 <ValidatedField
                   name="id"
                   required

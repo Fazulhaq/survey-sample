@@ -41,16 +41,11 @@ export const SurveyUpdate: React.FC<SurveyUpdateProps> = ({ formId }) => {
     dispatch(incrementEditIndex(1));
   };
 
-  const defaultValues = () =>
-    false
-      ? {
-          updateDate: displayDefaultDateTime(),
-        }
-      : {
-          ...formEntity,
-          updateDate: displayDefaultDateTime(),
-          user: account.id,
-        };
+  const defaultValues = () => ({
+    ...formEntity,
+    updateDate: displayDefaultDateTime(),
+    user: account.id,
+  });
 
   return (
     <div>

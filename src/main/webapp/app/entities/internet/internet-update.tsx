@@ -17,7 +17,7 @@ export const InternetUpdate = () => {
   const loading = useAppSelector(state => state.internet.loading);
   const updating = useAppSelector(state => state.internet.updating);
 
-  const lastForm = forms.reduce((maxId, form) => {
+  const lastFormId = forms.reduce((maxId, form) => {
     return form.id > maxId ? form.id : maxId;
   }, 0);
 
@@ -36,13 +36,7 @@ export const InternetUpdate = () => {
     dispatch(incrementIndex(1));
   };
 
-  const defaultValues = () =>
-    true
-      ? {}
-      : {
-          ...internetEntity,
-          form: internetEntity?.form?.id,
-        };
+  const defaultValues = () => ({});
 
   return (
     <div>
@@ -59,7 +53,7 @@ export const InternetUpdate = () => {
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!internetEntity === null ? (
                 <ValidatedField
                   name="id"
                   required
@@ -121,8 +115,8 @@ export const InternetUpdate = () => {
                 type="select"
                 required
               >
-                <option value={lastForm} key={lastForm}>
-                  {lastForm}
+                <option value={lastFormId} key={lastFormId}>
+                  {lastFormId}
                 </option>
               </ValidatedField>
               &nbsp;

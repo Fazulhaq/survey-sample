@@ -17,7 +17,7 @@ export const NetworkConfigCheckListUpdate = () => {
   const loading = useAppSelector(state => state.networkConfigCheckList.loading);
   const updating = useAppSelector(state => state.networkConfigCheckList.updating);
 
-  const lastForm = forms.reduce((maxId, form) => {
+  const lastFormId = forms.reduce((maxId, form) => {
     return form.id > maxId ? form.id : maxId;
   }, 0);
 
@@ -36,13 +36,7 @@ export const NetworkConfigCheckListUpdate = () => {
     dispatch(incrementIndex(1));
   };
 
-  const defaultValues = () =>
-    networkConfigCheckListEntity === null
-      ? {}
-      : {
-          ...networkConfigCheckListEntity,
-          form: networkConfigCheckListEntity?.form?.id,
-        };
+  const defaultValues = () => ({});
 
   return (
     <div>
@@ -233,8 +227,8 @@ export const NetworkConfigCheckListUpdate = () => {
                 type="select"
                 required
               >
-                <option value={lastForm} key={lastForm}>
-                  {lastForm}
+                <option value={lastFormId} key={lastFormId}>
+                  {lastFormId}
                 </option>
               </ValidatedField>
               &nbsp;

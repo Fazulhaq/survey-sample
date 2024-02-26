@@ -73,7 +73,7 @@ export const ItDeviceSurveyUpdate: React.FC<ItDeviceSurveyUpdateProps> = ({ form
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!itDeviceEntity === null ? (
                 <ValidatedField
                   name="id"
                   required

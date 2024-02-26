@@ -18,7 +18,7 @@ export const OrgResponsiblePersonUpdate = () => {
   const loading = useAppSelector(state => state.orgResponsiblePerson.loading);
   const updating = useAppSelector(state => state.orgResponsiblePerson.updating);
 
-  const lastForm = forms.reduce((maxId, form) => {
+  const lastFormId = forms.reduce((maxId, form) => {
     return form.id > maxId ? form.id : maxId;
   }, 0);
 
@@ -60,7 +60,7 @@ export const OrgResponsiblePersonUpdate = () => {
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!orgResponsiblePersonEntity === null ? (
                 <ValidatedField
                   name="id"
                   required
@@ -119,8 +119,8 @@ export const OrgResponsiblePersonUpdate = () => {
                 type="select"
                 required
               >
-                <option value={lastForm} key={lastForm}>
-                  {lastForm}
+                <option value={lastFormId} key={lastFormId}>
+                  {lastFormId}
                 </option>
               </ValidatedField>
               &nbsp;

@@ -68,7 +68,7 @@ export const BackupSurveyUpdate: React.FC<BackupSurveyUpdateProps> = ({ formId }
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!backupEntity === null ? (
                 <ValidatedField
                   name="id"
                   required

@@ -17,7 +17,7 @@ export const SystemUpdate = () => {
   const loading = useAppSelector(state => state.system.loading);
   const updating = useAppSelector(state => state.system.updating);
 
-  const lastForm = forms.reduce((maxId, form) => {
+  const lastFormId = forms.reduce((maxId, form) => {
     return form.id > maxId ? form.id : maxId;
   }, 0);
 
@@ -36,13 +36,7 @@ export const SystemUpdate = () => {
     dispatch(incrementIndex(1));
   };
 
-  const defaultValues = () =>
-    true
-      ? {}
-      : {
-          ...systemEntity,
-          form: systemEntity?.form?.id,
-        };
+  const defaultValues = () => ({});
 
   return (
     <div>
@@ -59,7 +53,7 @@ export const SystemUpdate = () => {
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!systemEntity === null ? (
                 <ValidatedField
                   name="id"
                   required
@@ -114,8 +108,8 @@ export const SystemUpdate = () => {
                 type="select"
                 required
               >
-                <option value={lastForm} key={lastForm}>
-                  {lastForm}
+                <option value={lastFormId} key={lastFormId}>
+                  {lastFormId}
                 </option>
               </ValidatedField>
               &nbsp;

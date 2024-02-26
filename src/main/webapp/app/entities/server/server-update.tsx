@@ -36,13 +36,7 @@ export const ServerUpdate = () => {
     dispatch(incrementIndex(1));
   };
 
-  const defaultValues = () =>
-    true
-      ? {}
-      : {
-          ...serverEntity,
-          form: serverEntity?.form?.id,
-        };
+  const defaultValues = () => ({});
 
   return (
     <div>
@@ -59,7 +53,7 @@ export const ServerUpdate = () => {
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!serverEntity === null ? (
                 <ValidatedField
                   name="id"
                   hidden

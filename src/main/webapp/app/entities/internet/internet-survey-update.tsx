@@ -70,7 +70,7 @@ export const InternetSurveyUpdate: React.FC<InternetSurveyUpdateProps> = ({ form
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!internetEntity === null ? (
                 <ValidatedField
                   name="id"
                   required

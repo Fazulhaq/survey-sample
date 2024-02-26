@@ -17,7 +17,7 @@ export const BackupUpdate = () => {
   const loading = useAppSelector(state => state.backup.loading);
   const updating = useAppSelector(state => state.backup.updating);
 
-  const lastForm = forms.reduce((maxId, form) => {
+  const lastFormId = forms.reduce((maxId, form) => {
     return form.id > maxId ? form.id : maxId;
   }, 0);
 
@@ -36,13 +36,7 @@ export const BackupUpdate = () => {
     dispatch(incrementIndex(1));
   };
 
-  const defaultValues = () =>
-    true
-      ? {}
-      : {
-          ...backupEntity,
-          form: backupEntity?.form?.id,
-        };
+  const defaultValues = () => ({});
 
   return (
     <div>
@@ -59,7 +53,7 @@ export const BackupUpdate = () => {
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!backupEntity === null ? (
                 <ValidatedField
                   name="id"
                   required
@@ -127,8 +121,8 @@ export const BackupUpdate = () => {
                 type="select"
                 required
               >
-                <option value={lastForm} key={lastForm}>
-                  {lastForm}
+                <option value={lastFormId} key={lastFormId}>
+                  {lastFormId}
                 </option>
               </ValidatedField>
               &nbsp;

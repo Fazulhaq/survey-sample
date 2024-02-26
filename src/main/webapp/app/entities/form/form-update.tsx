@@ -12,10 +12,12 @@ import { convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util
 import { incrementIndex } from '../stepper-index/stepper-index.reducer';
 import { createEntity, reset } from './form.reducer';
 
-export const FormUpdate = () => {
-  const dispatch = useAppDispatch();
+interface FormUpdateProps {
+  organizationId: string;
+}
 
-  const { id } = useParams<'id'>();
+export const FormUpdate: React.FC<FormUpdateProps> = ({ organizationId }) => {
+  const dispatch = useAppDispatch();
 
   const users = useAppSelector(state => state.userManagement.users);
   const account = useAppSelector(state => state.authentication.account);
@@ -25,7 +27,7 @@ export const FormUpdate = () => {
   const updating = useAppSelector(state => state.form.updating);
   const formStatusValues = Object.keys(FormStatus);
 
-  const foundOrganization = organizations.find(it => it.id.toString() === id.toString());
+  const foundOrganization = organizations.find(it => it.id.toString() === organizationId.toString());
 
   useEffect(() => {
     dispatch(reset());

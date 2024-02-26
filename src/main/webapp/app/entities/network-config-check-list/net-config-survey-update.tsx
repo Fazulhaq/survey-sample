@@ -72,7 +72,7 @@ export const NetworkConfigCheckListSurveyUpdate: React.FC<NetworkConfigCheckList
             <p>Loading...</p>
           ) : (
             <ValidatedForm defaultValues={defaultValues()} onSubmit={saveEntity}>
-              {!true ? (
+              {!networkConfigCheckListEntity === null ? (
                 <ValidatedField
                   name="id"
                   required
