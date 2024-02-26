@@ -116,7 +116,7 @@ export const OrganizationUpdate = () => {
                 id="organization-code"
                 name="code"
                 data-cy="code"
-                type="text"
+                type="number"
                 validate={{
                   required: { value: true, message: translate('entity.validation.required') },
                 }}
@@ -127,6 +127,9 @@ export const OrganizationUpdate = () => {
                 name="description"
                 data-cy="description"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.organization.address')}

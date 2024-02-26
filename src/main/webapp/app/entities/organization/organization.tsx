@@ -5,7 +5,7 @@ import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-u
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
 import { InputText } from 'primereact/inputtext';
 import React, { useEffect, useState } from 'react';
-import { JhiItemCount, JhiPagination, Translate, getPaginationState, translate } from 'react-jhipster';
+import { JhiItemCount, JhiPagination, Translate, ValidatedField, ValidatedForm, getPaginationState, translate } from 'react-jhipster';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
 import { useTranslation } from 'react-i18next';
@@ -115,19 +115,17 @@ export const Organization = () => {
         </div>
       </h2>
       <div className="d-flex">
-        <span className="d-none d-md-inline">
-          <h5>
-            <Translate contentKey="surveySampleApp.organization.home.orgsearchtitle">Search:</Translate>
-            &nbsp;&nbsp;
-          </h5>
-        </span>
-        <span className="p-input-icon-left">
-          <InputText
-            onChange={event => handleChange(event)}
+        <h6>
+          <ValidatedField
+            label={translate('surveySampleApp.organization.home.orgsearchtitle')}
+            id="organization-org_search"
+            name="org-search"
+            data-cy="org-search"
+            type="search"
             placeholder={translate('surveySampleApp.organization.home.orgsearchname')}
-            className="p-inputtext-sm"
+            onChange={event => handleChange(event)}
           />
-        </span>
+        </h6>
       </div>
       <div className="table-responsive">
         {organizationList && organizationList.length > 0 ? (

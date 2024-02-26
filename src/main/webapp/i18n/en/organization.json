@@ -4,7 +4,7 @@
       "home": {
         "title": "Organization List",
         "orgsearchtitle": "Search: ",
-        "orgsearchname": "Type organization name",
+        "orgsearchname": "Organization's name",
         "refreshListLabel": "Refresh list",
         "createLabel": "Add Organization",
         "createOrEditLabel": "Organization Information",
