@@ -70,6 +70,9 @@ export const InternetUpdate = () => {
                 name="question1"
                 data-cy="question1"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.internet.question2')}
@@ -77,6 +80,9 @@ export const InternetUpdate = () => {
                 name="question2"
                 data-cy="question2"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.internet.question3')}
@@ -84,6 +90,9 @@ export const InternetUpdate = () => {
                 name="question3"
                 data-cy="question3"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.internet.question4')}
@@ -91,6 +100,9 @@ export const InternetUpdate = () => {
                 name="question4"
                 data-cy="question4"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.internet.question5')}
@@ -98,6 +110,9 @@ export const InternetUpdate = () => {
                 name="question5"
                 data-cy="question5"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.internet.question6')}
@@ -105,6 +120,9 @@ export const InternetUpdate = () => {
                 name="question6"
                 data-cy="question6"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 id="internet-form"
@@ -113,7 +131,9 @@ export const InternetUpdate = () => {
                 data-cy="form"
                 label={translate('surveySampleApp.internet.form')}
                 type="select"
-                required
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               >
                 <option value={lastFormId} key={lastFormId}>
                   {lastFormId}

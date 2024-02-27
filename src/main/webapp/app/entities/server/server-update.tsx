@@ -70,6 +70,9 @@ export const ServerUpdate = () => {
                 name="question1"
                 data-cy="question1"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.server.question2')}
@@ -77,6 +80,9 @@ export const ServerUpdate = () => {
                 name="question2"
                 data-cy="question2"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.server.question3')}
@@ -84,6 +90,9 @@ export const ServerUpdate = () => {
                 name="question3"
                 data-cy="question3"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.server.question4')}
@@ -91,6 +100,9 @@ export const ServerUpdate = () => {
                 name="question4"
                 data-cy="question4"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.server.question5')}
@@ -98,6 +110,9 @@ export const ServerUpdate = () => {
                 name="question5"
                 data-cy="question5"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.server.question6')}
@@ -105,6 +120,9 @@ export const ServerUpdate = () => {
                 name="question6"
                 data-cy="question6"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.server.question7')}
@@ -112,6 +130,9 @@ export const ServerUpdate = () => {
                 name="question7"
                 data-cy="question7"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 id="server-form"

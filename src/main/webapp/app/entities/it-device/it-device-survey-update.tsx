@@ -102,7 +102,10 @@ export const ItDeviceSurveyUpdate: React.FC<ItDeviceSurveyUpdateProps> = ({ form
                 id="it-device-quantity"
                 name="quantity"
                 data-cy="quantity"
-                type="text"
+                type="number"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.itDevice.brandAndModel')}
@@ -110,6 +113,9 @@ export const ItDeviceSurveyUpdate: React.FC<ItDeviceSurveyUpdateProps> = ({ form
                 name="brandAndModel"
                 data-cy="brandAndModel"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField label={translate('surveySampleApp.itDevice.age')} id="it-device-age" name="age" data-cy="age" type="text" />
               <ValidatedField
@@ -118,6 +124,9 @@ export const ItDeviceSurveyUpdate: React.FC<ItDeviceSurveyUpdateProps> = ({ form
                 name="purpose"
                 data-cy="purpose"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.itDevice.currentStatus')}
@@ -125,6 +134,9 @@ export const ItDeviceSurveyUpdate: React.FC<ItDeviceSurveyUpdateProps> = ({ form
                 name="currentStatus"
                 data-cy="currentStatus"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 id="it-device-form"

@@ -71,6 +71,9 @@ export const DatacenterDeviceUpdate = () => {
                 name="deviceType"
                 data-cy="deviceType"
                 type="select"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               >
                 {dataCenterDeviceTypeValues.map(dataCenterDeviceType => (
                   <option value={dataCenterDeviceType} key={dataCenterDeviceType}>
@@ -83,7 +86,10 @@ export const DatacenterDeviceUpdate = () => {
                 id="datacenter-device-quantity"
                 name="quantity"
                 data-cy="quantity"
-                type="text"
+                type="number"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.datacenterDevice.brandAndModel')}
@@ -91,6 +97,9 @@ export const DatacenterDeviceUpdate = () => {
                 name="brandAndModel"
                 data-cy="brandAndModel"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.datacenterDevice.age')}
@@ -98,6 +107,9 @@ export const DatacenterDeviceUpdate = () => {
                 name="age"
                 data-cy="age"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.datacenterDevice.purpose')}
@@ -105,6 +117,9 @@ export const DatacenterDeviceUpdate = () => {
                 name="purpose"
                 data-cy="purpose"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.datacenterDevice.currentStatus')}
@@ -112,6 +127,9 @@ export const DatacenterDeviceUpdate = () => {
                 name="currentStatus"
                 data-cy="currentStatus"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 id="datacenter-device-form"

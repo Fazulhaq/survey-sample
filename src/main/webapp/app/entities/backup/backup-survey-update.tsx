@@ -84,6 +84,9 @@ export const BackupSurveyUpdate: React.FC<BackupSurveyUpdateProps> = ({ formId }
                 name="question1"
                 data-cy="question1"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.backup.question2')}
@@ -91,6 +94,9 @@ export const BackupSurveyUpdate: React.FC<BackupSurveyUpdateProps> = ({ formId }
                 name="question2"
                 data-cy="question2"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.backup.question3')}
@@ -98,6 +104,9 @@ export const BackupSurveyUpdate: React.FC<BackupSurveyUpdateProps> = ({ formId }
                 name="question3"
                 data-cy="question3"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.backup.question4')}
@@ -105,6 +114,9 @@ export const BackupSurveyUpdate: React.FC<BackupSurveyUpdateProps> = ({ formId }
                 name="question4"
                 data-cy="question4"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.backup.question5')}
@@ -112,6 +124,9 @@ export const BackupSurveyUpdate: React.FC<BackupSurveyUpdateProps> = ({ formId }
                 name="question5"
                 data-cy="question5"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.backup.question6')}
@@ -119,6 +134,9 @@ export const BackupSurveyUpdate: React.FC<BackupSurveyUpdateProps> = ({ formId }
                 name="question6"
                 data-cy="question6"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.backup.question7')}
@@ -126,6 +144,9 @@ export const BackupSurveyUpdate: React.FC<BackupSurveyUpdateProps> = ({ formId }
                 name="question7"
                 data-cy="question7"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 id="backup-form"

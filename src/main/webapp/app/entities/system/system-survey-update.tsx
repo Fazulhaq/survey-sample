@@ -86,6 +86,9 @@ export const SystemSurveyUpdate: React.FC<SystemSurveyUpdateProps> = ({ formId }
                 name="question1"
                 data-cy="question1"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.system.question2')}
@@ -93,6 +96,9 @@ export const SystemSurveyUpdate: React.FC<SystemSurveyUpdateProps> = ({ formId }
                 name="question2"
                 data-cy="question2"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.system.question3')}
@@ -100,6 +106,9 @@ export const SystemSurveyUpdate: React.FC<SystemSurveyUpdateProps> = ({ formId }
                 name="question3"
                 data-cy="question3"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.system.question4')}
@@ -107,6 +116,9 @@ export const SystemSurveyUpdate: React.FC<SystemSurveyUpdateProps> = ({ formId }
                 name="question4"
                 data-cy="question4"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.system.question5')}
@@ -114,6 +126,9 @@ export const SystemSurveyUpdate: React.FC<SystemSurveyUpdateProps> = ({ formId }
                 name="question5"
                 data-cy="question5"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 id="system-form"

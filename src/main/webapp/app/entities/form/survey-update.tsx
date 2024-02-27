@@ -75,10 +75,12 @@ export const SurveyUpdate: React.FC<SurveyUpdateProps> = ({ formId }) => {
               <ValidatedField
                 label={translate('surveySampleApp.form.futurePlan')}
                 id="form-futurePlan"
-                required
                 name="futurePlan"
                 data-cy="futurePlan"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.form.status')}

@@ -34,23 +34,18 @@ public class OrgResponsiblePerson implements Serializable {
 
     @NotNull
     @Column(name = "full_name", nullable = false)
-    @NotBlank
     private String fullName;
 
     @NotNull
     @Column(name = "position", nullable = false)
-    @NotBlank
     private String position;
 
     @NotNull
     @Column(name = "contact", nullable = false)
-    @NotBlank
     private String contact;
 
     @NotNull
     @Column(name = "date", nullable = false)
-    @NotBlank
-    @PastOrPresent
     private LocalDate date;
 
     @ManyToOne(optional = false)

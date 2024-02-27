@@ -72,6 +72,9 @@ export const ItDeviceUpdate = () => {
                 name="deviceType"
                 data-cy="deviceType"
                 type="select"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               >
                 {itDeviceTypeValues.map(itDeviceType => (
                   <option value={itDeviceType} key={itDeviceType}>
@@ -84,7 +87,10 @@ export const ItDeviceUpdate = () => {
                 id="it-device-quantity"
                 name="quantity"
                 data-cy="quantity"
-                type="text"
+                type="number"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.itDevice.brandAndModel')}
@@ -92,6 +98,9 @@ export const ItDeviceUpdate = () => {
                 name="brandAndModel"
                 data-cy="brandAndModel"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField label={translate('surveySampleApp.itDevice.age')} id="it-device-age" name="age" data-cy="age" type="text" />
               <ValidatedField
@@ -100,6 +109,9 @@ export const ItDeviceUpdate = () => {
                 name="purpose"
                 data-cy="purpose"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.itDevice.currentStatus')}
@@ -107,6 +119,9 @@ export const ItDeviceUpdate = () => {
                 name="currentStatus"
                 data-cy="currentStatus"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 id="it-device-form"
@@ -115,7 +130,9 @@ export const ItDeviceUpdate = () => {
                 data-cy="form"
                 label={translate('surveySampleApp.itDevice.form')}
                 type="select"
-                required
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               >
                 <option value={lastFormId} key={lastFormId}>
                   {lastFormId}

@@ -100,7 +100,10 @@ export const DatacenterDeviceSurveyUpdate: React.FC<DatacenterDeviceUpdateProps>
                 id="datacenter-device-quantity"
                 name="quantity"
                 data-cy="quantity"
-                type="text"
+                type="number"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.datacenterDevice.brandAndModel')}
@@ -108,6 +111,9 @@ export const DatacenterDeviceSurveyUpdate: React.FC<DatacenterDeviceUpdateProps>
                 name="brandAndModel"
                 data-cy="brandAndModel"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.datacenterDevice.age')}
@@ -115,6 +121,9 @@ export const DatacenterDeviceSurveyUpdate: React.FC<DatacenterDeviceUpdateProps>
                 name="age"
                 data-cy="age"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.datacenterDevice.purpose')}
@@ -122,6 +131,9 @@ export const DatacenterDeviceSurveyUpdate: React.FC<DatacenterDeviceUpdateProps>
                 name="purpose"
                 data-cy="purpose"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 label={translate('surveySampleApp.datacenterDevice.currentStatus')}
@@ -129,6 +141,9 @@ export const DatacenterDeviceSurveyUpdate: React.FC<DatacenterDeviceUpdateProps>
                 name="currentStatus"
                 data-cy="currentStatus"
                 type="text"
+                validate={{
+                  required: { value: true, message: translate('entity.validation.required') },
+                }}
               />
               <ValidatedField
                 id="datacenter-device-form"
