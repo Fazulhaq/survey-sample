@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { APP_DATE_FORMAT } from 'app/config/constants';
+import { APP_DATE_FORMAT, AUTHORITIES } from 'app/config/constants';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 import React, { useEffect } from 'react';
 import { TextFormat, Translate } from 'react-jhipster';
@@ -7,10 +7,11 @@ import { Link, useParams } from 'react-router-dom';
 import { Button, Col, Row } from 'reactstrap';
 
 import { getEntity } from './organization.reducer';
+import { hasAnyAuthority } from 'app/shared/auth/private-route';
 
 export const OrganizationDetail = () => {
   const dispatch = useAppDispatch();
-
+  const isAdmin = useAppSelector(state => hasAnyAuthority(state.authentication.account.authorities, [AUTHORITIES.ADMIN]));
   const { id } = useParams<'id'>();
 
   useEffect(() => {
@@ -65,12 +66,14 @@ export const OrganizationDetail = () => {
           </span>
         </Button>
         &nbsp;
-        <Button tag={Link} to={`/organization/${organizationEntity.id}/edit`} replace color="primary">
-          <FontAwesomeIcon icon="pencil-alt" />{' '}
-          <span className="d-none d-md-inline">
-            <Translate contentKey="entity.action.edit">Edit</Translate>
-          </span>
-        </Button>
+        {isAdmin && (
+          <Button tag={Link} to={`/organization/${organizationEntity.id}/edit`} replace color="primary">
+            <FontAwesomeIcon icon="pencil-alt" />{' '}
+            <span className="d-none d-md-inline">
+              <Translate contentKey="entity.action.edit">Edit</Translate>
+            </span>
+          </Button>
+        )}
       </Col>
       <Col md="4">
         <br />

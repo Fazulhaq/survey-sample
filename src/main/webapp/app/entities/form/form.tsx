@@ -1,6 +1,6 @@
 import { faSort, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { APP_DATE_FORMAT } from 'app/config/constants';
+import { APP_DATE_FORMAT, AUTHORITIES } from 'app/config/constants';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
@@ -9,9 +9,9 @@ import { JhiItemCount, JhiPagination, TextFormat, Translate, ValidatedField, get
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
 
-import { InputText } from 'primereact/inputtext';
 import { getEntities } from './form.reducer';
 import { resetEditIndex } from './survey-edit-index-reducer';
+import { hasAnyAuthority } from 'app/shared/auth/private-route';
 
 export const Form = () => {
   const dispatch = useAppDispatch();
@@ -26,6 +26,7 @@ export const Form = () => {
   const formList = useAppSelector(state => state.form.entities);
   const loading = useAppSelector(state => state.form.loading);
   const totalItems = useAppSelector(state => state.form.totalItems);
+  const isAdmin = useAppSelector(state => hasAnyAuthority(state.authentication.account.authorities, [AUTHORITIES.ADMIN]));
 
   const [searchString, setSearchString] = useState('');
 
@@ -183,12 +184,14 @@ export const Form = () => {
                         </span>
                       </Button>
                       &nbsp;
-                      <Button tag={Link} to={`/form/${form.id}/delete`} color="danger" size="sm" data-cy="entityDeleteButton">
-                        <FontAwesomeIcon icon="trash" />{' '}
-                        <span className="d-none d-md-inline">
-                          <Translate contentKey="entity.action.delete">Delete</Translate>
-                        </span>
-                      </Button>
+                      {isAdmin && (
+                        <Button tag={Link} to={`/form/${form.id}/delete`} color="danger" size="sm" data-cy="entityDeleteButton">
+                          <FontAwesomeIcon icon="trash" />{' '}
+                          <span className="d-none d-md-inline">
+                            <Translate contentKey="entity.action.delete">Delete</Translate>
+                          </span>
+                        </Button>
+                      )}
                     </div>
                   </td>
                 </tr>

@@ -6,7 +6,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 export interface IMenuItem {
   children: React.ReactNode;
-  icon: IconProp;
+  icon?: IconProp;
   to: string;
   id?: string;
   'data-cy'?: string;

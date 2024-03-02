@@ -11,8 +11,11 @@ import { Button, Table } from 'reactstrap';
 import { useTranslation } from 'react-i18next';
 import { resetIndex } from '../stepper-index/stepper-index.reducer';
 import { getEntities } from './organization.reducer';
+import { hasAnyAuthority } from 'app/shared/auth/private-route';
+import { AUTHORITIES } from 'app/config/constants';
 
 export const Organization = () => {
+  const isAdmin = useAppSelector(state => hasAnyAuthority(state.authentication.account.authorities, [AUTHORITIES.ADMIN]));
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
@@ -106,13 +109,15 @@ export const Organization = () => {
     <div>
       <h2 id="organization-heading" data-cy="OrganizationHeading">
         <Translate contentKey="surveySampleApp.organization.home.title">Organizations</Translate>
-        <div className="d-flex justify-content-end">
-          <Link to="/organization/new" className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
-            <FontAwesomeIcon icon="plus" />
-            &nbsp;
-            <Translate contentKey="surveySampleApp.organization.home.createLabel">Create new Organization</Translate>
-          </Link>
-        </div>
+        {isAdmin && (
+          <div className="d-flex justify-content-end">
+            <Link to="/organization/new" className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
+              <FontAwesomeIcon icon="plus" />
+              &nbsp;
+              <Translate contentKey="surveySampleApp.organization.home.createLabel">Create new Organization</Translate>
+            </Link>
+          </div>
+        )}
       </h2>
       <div className="d-flex">
         <h6>
@@ -190,18 +195,20 @@ export const Organization = () => {
                         </span>
                       </Button>
                       &nbsp;
-                      <Button
-                        tag={Link}
-                        to={`/organization/${organization.id}/edit?page=${paginationState.activePage}&sort=${paginationState.sort},${paginationState.order}`}
-                        color="primary"
-                        size="sm"
-                        data-cy="entityEditButton"
-                      >
-                        <FontAwesomeIcon icon="pencil-alt" />{' '}
-                        <span className="d-none d-md-inline">
-                          <Translate contentKey="entity.action.edit">Edit</Translate>
-                        </span>
-                      </Button>
+                      {isAdmin && (
+                        <Button
+                          tag={Link}
+                          to={`/organization/${organization.id}/edit?page=${paginationState.activePage}&sort=${paginationState.sort},${paginationState.order}`}
+                          color="primary"
+                          size="sm"
+                          data-cy="entityEditButton"
+                        >
+                          <FontAwesomeIcon icon="pencil-alt" />{' '}
+                          <span className="d-none d-md-inline">
+                            <Translate contentKey="entity.action.edit">Edit</Translate>
+                          </span>
+                        </Button>
+                      )}
                     </div>
                   </td>
                 </tr>
