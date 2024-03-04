@@ -17,7 +17,8 @@
         "networkConfigCheckList": "چک لیست",
         "datacenterDevice": "دیتاسنتر وسیله",
         "itDevice": "آی تی وسیله",
-        "system": "سیستم"
+        "system": "سیستم",
+        "report": "راپورونه"
       },
       "account": {
         "main": "حساب",
@@ -112,7 +113,8 @@
       "updatenext": "تغییرول او بعدی",
       "updatefinish": "تغییرول او ختمول",
       "view": "ښودل",
-      "show": "ښودل {{otherEntity}}"
+      "show": "ښودل {{otherEntity}}",
+      "surveyprint": "چاپ کول"
     },
     "detail": {
       "field": "فیلد",

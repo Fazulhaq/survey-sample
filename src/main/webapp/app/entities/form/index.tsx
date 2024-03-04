@@ -8,6 +8,7 @@ import FormDeleteDialog from './form-delete-dialog';
 import InteractiveSteps from './form-stepper';
 import SurveyEditPage from './survey-edit-page';
 import SurveyView from './survey-view';
+import SurveyPrint from './survey-print';
 
 const FormRoutes = () => (
   <ErrorBoundaryRoutes>
@@ -16,6 +17,7 @@ const FormRoutes = () => (
     <Route path=":id">
       <Route index element={<SurveyView />} />
       <Route path="edit" element={<SurveyEditPage />} />
+      <Route path="print" element={<SurveyPrint />} />
       <Route path="delete" element={<FormDeleteDialog />} />
     </Route>
   </ErrorBoundaryRoutes>

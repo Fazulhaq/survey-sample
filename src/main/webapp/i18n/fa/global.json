@@ -17,7 +17,8 @@
         "networkConfigCheckList": "چک لیست شبکه",
         "datacenterDevice": "وسایل دیتاسنتر",
         "itDevice": "وسایل آی تی",
-        "system": "سیستم"
+        "system": "سیستم",
+        "report": "راپور ها"
       },
       "account": {
         "main": "حساب",
@@ -112,7 +113,8 @@
       "updatenext": "ویرایش و بعدی",
       "updatefinish": "ویرایش و تمام",
       "view": "نمایش",
-      "show": "نمایش {{otherEntity}}"
+      "show": "نمایش {{otherEntity}}",
+      "surveyprint": "چاپ کردن"
     },
     "detail": {
       "field": "بخش",

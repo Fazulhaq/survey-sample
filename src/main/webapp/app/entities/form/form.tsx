@@ -163,6 +163,13 @@ export const Form = () => {
                   <td> {form.organization ? form.organization.name : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
+                      <Button tag={Link} to={`/form/${form.id}/print`} color="primary" size="sm" data-cy="entityPrintButton">
+                        <FontAwesomeIcon icon="pencil-alt" />{' '}
+                        <span className="d-none d-md-inline">
+                          <Translate contentKey="entity.action.surveyprint">Print</Translate>
+                        </span>
+                      </Button>
+                      &nbsp;
                       <Button tag={Link} to={`/form/${form.id}`} color="info" size="sm" data-cy="entityDetailsButton">
                         <FontAwesomeIcon icon="eye" />{' '}
                         <span className="d-none d-md-inline">

@@ -17,7 +17,8 @@
         "networkConfigCheckList": "Network Config Check List",
         "datacenterDevice": "Datacenter Device",
         "itDevice": "It Device",
-        "system": "System"
+        "system": "System",
+        "report": "Report"
       },
       "account": {
         "main": "Account",
@@ -112,7 +113,8 @@
       "updatenext": "Update & Next",
       "updatefinish": "Update & Finish",
       "view": "View",
-      "show": "Show {{otherEntity}}"
+      "show": "Show {{otherEntity}}",
+      "surveyprint": "Print"
     },
     "detail": {
       "field": "Field",
