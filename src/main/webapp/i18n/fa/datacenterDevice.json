@@ -18,10 +18,10 @@
         "title": "وسایل دیتا سنتر"
       },
       "id": "شماره",
-      "deviceType": "نوعیت وسیله",
+      "deviceType": "نوعیت",
       "quantity": "مقدار",
       "brandAndModel": "مودل",
-      "age": "مدت زمان قابل استفاده",
+      "age": "زمان استفاده",
       "purpose": "هدف",
       "currentStatus": "حالت فعلی",
       "form": "فورم"

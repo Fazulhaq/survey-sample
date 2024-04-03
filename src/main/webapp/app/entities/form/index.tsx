@@ -1,8 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-
 import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
-
 import Form from './form';
 import FormDeleteDialog from './form-delete-dialog';
 import InteractiveSteps from './form-stepper';

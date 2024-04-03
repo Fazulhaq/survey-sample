@@ -2,9 +2,7 @@ import { useAppSelector } from 'app/config/store';
 import React from 'react';
 import { Stepper } from 'react-form-stepper';
 import BackupUpdate from '../backup/backup-update';
-import DatacenterDeviceUpdate from '../datacenter-device/datacenter-device-update';
 import InternetUpdate from '../internet/internet-update';
-import ItDeviceUpdate from '../it-device/it-device-update';
 import NetworkConfigCheckListUpdate from '../network-config-check-list/network-config-check-list-update';
 import OrgResponsiblePersonUpdate from '../org-responsible-person/org-responsible-person-update';
 import ServerUpdate from '../server/server-update';
@@ -13,6 +11,8 @@ import CompletionPage from './form-completion';
 import FormUpdate from './form-update';
 import { translate } from 'react-jhipster';
 import { useParams } from 'react-router-dom';
+import AddDataCenterDevice from '../datacenter-device/add-datacenter-device';
+import AddItDevices from '../it-device/add-it-devices';
 
 export default function InteractiveSteps() {
   const { id } = useParams<'id'>();
@@ -62,11 +62,11 @@ export default function InteractiveSteps() {
       case 3:
         return <BackupUpdate />;
       case 4:
-        return <DatacenterDeviceUpdate />;
+        return <AddDataCenterDevice />;
       case 5:
         return <InternetUpdate />;
       case 6:
-        return <ItDeviceUpdate />;
+        return <AddItDevices />;
       case 7:
         return <NetworkConfigCheckListUpdate />;
       case 8:
