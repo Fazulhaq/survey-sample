@@ -1,6 +1,7 @@
 package com.amin.survey.repository;
 
 import com.amin.survey.domain.ItDevice;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -16,4 +17,7 @@ import org.springframework.stereotype.Repository;
 public interface ItDeviceRepository extends JpaRepository<ItDevice, Long>, JpaSpecificationExecutor<ItDevice> {
     @Query(value = "SELECT * FROM it_device WHERE form_id=:id", nativeQuery = true)
     Optional<ItDevice> findByFormId(@Param("id") Long id);
+
+    @Query(value = "SELECT * FROM it_device WHERE form_id=:id", nativeQuery = true)
+    List<ItDevice> findItDevicesByFormId(@Param("id") Long id);
 }

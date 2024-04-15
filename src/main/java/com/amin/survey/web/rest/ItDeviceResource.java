@@ -220,4 +220,10 @@ public class ItDeviceResource {
         Optional<ItDevice> itDevice = itDeviceService.findByFormId(id);
         return ResponseUtil.wrapOrNotFound(itDevice);
     }
+
+    @GetMapping("/it-devices/forms/{id}")
+    public ResponseEntity<List<ItDevice>> getAllItDevicesByForm(@PathVariable Long id) {
+        List<ItDevice> ItDevices = itDeviceService.findItDevicesByFormId(id);
+        return ResponseEntity.ok().body(ItDevices);
+    }
 }

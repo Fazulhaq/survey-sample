@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Translate } from 'react-jhipster';
-import { Col, Row } from 'reactstrap';
+import { Col, Row, Table } from 'reactstrap';
 
 import { IItDevice } from 'app/shared/model/it-device.model';
 import axios from 'axios';
@@ -10,13 +10,13 @@ interface ItDeviceDetailProps {
 }
 
 export const ItDeviceDetail: React.FC<ItDeviceDetailProps> = ({ formId }) => {
-  const [itDeviceEntity, setItDeviceEntity] = useState<IItDevice | null>(null);
+  const [itDeviceEntities, setItDeviceEntities] = useState<IItDevice[]>([]);
   useEffect(() => {
     const getItDeviceEntity = async () => {
-      const apiUrl = 'api/it-devices/form';
+      const apiUrl = 'api/it-devices/forms';
       const requestUrl = `${apiUrl}/${formId}`;
-      const response = await axios.get<IItDevice>(requestUrl);
-      setItDeviceEntity(response.data);
+      const response = await axios.get<IItDevice[]>(requestUrl);
+      setItDeviceEntities(response.data);
     };
     getItDeviceEntity();
   }, [formId]);
@@ -24,64 +24,50 @@ export const ItDeviceDetail: React.FC<ItDeviceDetailProps> = ({ formId }) => {
   return (
     <Row className="justify-content-center">
       <Col md="1"></Col>
-      <Col md="5">
+      <Col md="10">
         <br />
         <br />
         <h3 data-cy="itDeviceDetailsHeading">
           <Translate contentKey="surveySampleApp.itDevice.detail.title">ItDevice</Translate>
         </h3>
-        <dl className="jh-entity-details">
-          <dt>
-            <br />
-            <span id="deviceType">
-              <Translate contentKey="surveySampleApp.itDevice.deviceType">Device Type</Translate>
-            </span>
-          </dt>
-          <dd>{itDeviceEntity?.deviceType}</dd>
-          <dt>
-            <br />
-            <span id="quantity">
-              <Translate contentKey="surveySampleApp.itDevice.quantity">Quantity</Translate>
-            </span>
-          </dt>
-          <dd>{itDeviceEntity?.quantity}</dd>
-          <dt>
-            <br />
-            <span id="brandAndModel">
-              <Translate contentKey="surveySampleApp.itDevice.brandAndModel">Brand And Model</Translate>
-            </span>
-          </dt>
-          <dd>{itDeviceEntity?.brandAndModel}</dd>
-        </dl>
-      </Col>
-      <Col md="5">
-        <dl>
-          <dt>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <span id="age">
-              <Translate contentKey="surveySampleApp.itDevice.age">Age</Translate>
-            </span>
-          </dt>
-          <dd>{itDeviceEntity?.age}</dd>
-          <dt>
-            <br />
-            <span id="purpose">
-              <Translate contentKey="surveySampleApp.itDevice.purpose">Purpose</Translate>
-            </span>
-          </dt>
-          <dd>{itDeviceEntity?.purpose}</dd>
-          <dt>
-            <br />
-            <span id="currentStatus">
-              <Translate contentKey="surveySampleApp.itDevice.currentStatus">Current Status</Translate>
-            </span>
-          </dt>
-          <dd>{itDeviceEntity?.currentStatus}</dd>
-        </dl>
+        <br />
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>
+                <Translate contentKey="surveySampleApp.itDevice.deviceType">Device Type</Translate>
+              </th>
+              <th>
+                <Translate contentKey="surveySampleApp.itDevice.brandAndModel">Brand And Model</Translate>
+              </th>
+              <th>
+                <Translate contentKey="surveySampleApp.itDevice.quantity">Quantity</Translate>
+              </th>
+              <th>
+                <Translate contentKey="surveySampleApp.itDevice.age">Age</Translate>
+              </th>
+              <th>
+                <Translate contentKey="surveySampleApp.itDevice.purpose">Purpose</Translate>
+              </th>
+              <th>
+                <Translate contentKey="surveySampleApp.itDevice.currentStatus">Current Status</Translate>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {itDeviceEntities.map((itDevice, index) => (
+              <tr key={index}>
+                <td>{itDevice.deviceType}</td>
+                <td>{itDevice.brandAndModel}</td>
+                <td>{itDevice.quantity}</td>
+                <td>{itDevice.age}</td>
+                <td>{itDevice.purpose}</td>
+                <td>{itDevice.currentStatus}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+        <br />
       </Col>
       <Col md="1"></Col>
     </Row>

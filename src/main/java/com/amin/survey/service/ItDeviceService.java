@@ -2,6 +2,7 @@ package com.amin.survey.service;
 
 import com.amin.survey.domain.ItDevice;
 import com.amin.survey.repository.ItDeviceRepository;
+import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -121,5 +122,11 @@ public class ItDeviceService {
     public Optional<ItDevice> findByFormId(Long id) {
         log.debug("Request to get ItDevice : {}", id);
         return itDeviceRepository.findByFormId(id);
+    }
+
+    @Transactional(readOnly = true)
+    public List<ItDevice> findItDevicesByFormId(Long id) {
+        log.debug("Request to get ItDevice : {}", id);
+        return itDeviceRepository.findItDevicesByFormId(id);
     }
 }
