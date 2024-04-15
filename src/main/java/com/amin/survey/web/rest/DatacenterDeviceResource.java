@@ -221,4 +221,10 @@ public class DatacenterDeviceResource {
         Optional<DatacenterDevice> datacenterDevice = datacenterDeviceService.findByFormId(id);
         return ResponseUtil.wrapOrNotFound(datacenterDevice);
     }
+
+    @GetMapping("/datacenter-devices/forms/{id}")
+    public ResponseEntity<List<DatacenterDevice>> getFormsAllDatacenterDevices(@PathVariable Long id) {
+        List<DatacenterDevice> datacenterDevices = datacenterDeviceService.findDataCenterByFromId(id);
+        return ResponseEntity.ok().body(datacenterDevices);
+    }
 }

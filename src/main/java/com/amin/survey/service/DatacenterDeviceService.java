@@ -2,6 +2,8 @@ package com.amin.survey.service;
 
 import com.amin.survey.domain.DatacenterDevice;
 import com.amin.survey.repository.DatacenterDeviceRepository;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -121,5 +123,10 @@ public class DatacenterDeviceService {
     public Optional<DatacenterDevice> findByFormId(Long id) {
         log.debug("Request to get DatacenterDevice : {}", id);
         return datacenterDeviceRepository.findByFormId(id);
+    }
+
+    @Transactional(readOnly = true)
+    public List<DatacenterDevice> findDataCenterByFromId(Long id) {
+        return datacenterDeviceRepository.findDataCenterDevicesByFormId(id);
     }
 }
