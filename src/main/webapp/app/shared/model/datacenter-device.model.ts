@@ -1,9 +1,8 @@
 import { IForm } from 'app/shared/model/form.model';
-import { DataCenterDeviceType } from 'app/shared/model/enumerations/data-center-device-type.model';
 
 export interface IDatacenterDevice {
   id?: number;
-  deviceType?: keyof typeof DataCenterDeviceType | null;
+  deviceType?: string | null;
   quantity?: string | null;
   brandAndModel?: string | null;
   age?: string | null;
