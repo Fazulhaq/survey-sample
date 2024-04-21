@@ -20,7 +20,7 @@
       "id": "ID",
       "deviceType": "Device Type",
       "quantity": "Quantity",
-      "brandAndModel": "Brand And Model",
+      "brandAndModel": "Brand/Model",
       "age": "Age",
       "purpose": "Purpose",
       "currentStatus": "Current Status",
