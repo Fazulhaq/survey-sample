@@ -114,7 +114,8 @@
       "updatefinish": "تغییرول او ختمول",
       "view": "ښودل",
       "show": "ښودل {{otherEntity}}",
-      "surveyprint": "چاپ کول"
+      "surveyprint": "چاپ کول",
+      "print": "چاپول"
     },
     "detail": {
       "field": "فیلد",

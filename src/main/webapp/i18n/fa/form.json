@@ -36,7 +36,7 @@
         "nextstep": "بعدی"
       },
       "id": "شماره",
-      "futurePlan": "عنوان سروی",
+      "futurePlan": "عنوان سروی:",
       "status": "حالت",
       "createDate": "تاریخ ایجاد",
       "updateDate": "تاریخ ویرایش",

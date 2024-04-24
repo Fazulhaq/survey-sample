@@ -22,6 +22,7 @@
       "position": "Position",
       "contact": "Contact",
       "date": "Date",
+      "signature": "Signature",
       "form": "Form"
     }
   }

@@ -114,7 +114,8 @@
       "updatefinish": "ویرایش و تمام",
       "view": "نمایش",
       "show": "نمایش {{otherEntity}}",
-      "surveyprint": "چاپ کردن"
+      "surveyprint": "نمایش چاپ",
+      "print": "چاپ"
     },
     "detail": {
       "field": "بخش",

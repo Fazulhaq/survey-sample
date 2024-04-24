@@ -166,7 +166,7 @@ export const Form = () => {
                       <Button tag={Link} to={`/form/${form.id}/print`} color="primary" size="sm" data-cy="entityPrintButton">
                         <FontAwesomeIcon icon="pencil-alt" />{' '}
                         <span className="d-none d-md-inline">
-                          <Translate contentKey="entity.action.surveyprint">Print</Translate>
+                          <Translate contentKey="entity.action.surveyprint">Print View</Translate>
                         </span>
                       </Button>
                       &nbsp;
