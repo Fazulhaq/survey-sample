@@ -1,5 +1,5 @@
 import { Button, Col, Row } from 'reactstrap';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useReactToPrint } from 'react-to-print';
 import SurveyFormDetail from '../survey-print/survey-form-details';
@@ -12,11 +12,24 @@ import SurveyItDeviceDetail from '../survey-print/survey-itdevice-details';
 import SurveyNetworkConfigCheckListDetail from '../survey-print/survey-netconfiglist.details';
 import SurveyOrgResponsiblePersonDetail from '../survey-print/survey-orgresperson.details';
 import { Translate } from 'react-jhipster';
+import { useAppSelector } from 'app/config/store';
+
+type Direction = 'ltr' | 'rtl';
 
 export const SurveyPrint = () => {
   const { id } = useParams<'id'>();
 
   const CompToPrintRef = useRef(null);
+
+  const [printdirection, setPrintdirection] = useState<Direction>('ltr');
+  const currentLocale = useAppSelector(state => state.locale.currentLocale);
+  useEffect(() => {
+    if (currentLocale === 'en') {
+      setPrintdirection('ltr');
+    } else {
+      setPrintdirection('rtl');
+    }
+  }, [currentLocale]);
 
   const pageBreakDiv = `
     @media print {
@@ -47,7 +60,7 @@ export const SurveyPrint = () => {
           </span>
         </Button>
         <br />
-        <div ref={CompToPrintRef} style={{ margin: '25px' }}>
+        <div ref={CompToPrintRef} style={{ margin: '25px', direction: printdirection }}>
           <style>{pageBreakDiv}</style>
           <br />
           <br />
