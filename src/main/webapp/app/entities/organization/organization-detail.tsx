@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { APP_DATE_FORMAT, AUTHORITIES } from 'app/config/constants';
+import { APP_LOCAL_DATE_FORMAT, AUTHORITIES } from 'app/config/constants';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 import React, { useEffect } from 'react';
 import { TextFormat, Translate } from 'react-jhipster';
@@ -94,7 +94,7 @@ export const OrganizationDetail = () => {
           </dt>
           <dd>
             {organizationEntity.createDate ? (
-              <TextFormat value={organizationEntity.createDate} type="date" format={APP_DATE_FORMAT} />
+              <TextFormat value={organizationEntity.createDate} type="date" format={APP_LOCAL_DATE_FORMAT} />
             ) : null}
           </dd>
           <dt>
@@ -105,7 +105,7 @@ export const OrganizationDetail = () => {
           </dt>
           <dd>
             {organizationEntity.updateDate ? (
-              <TextFormat value={organizationEntity.updateDate} type="date" format={APP_DATE_FORMAT} />
+              <TextFormat value={organizationEntity.updateDate} type="date" format={APP_LOCAL_DATE_FORMAT} />
             ) : null}
           </dd>
           <dt>

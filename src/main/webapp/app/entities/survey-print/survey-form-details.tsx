@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { TextFormat, Translate } from 'react-jhipster';
 import { Col, Row } from 'reactstrap';
 
-import { APP_DATE_FORMAT } from 'app/config/constants';
+import { APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { getEntity } from '../form/form.reducer';
 import { Divider } from 'primereact/divider';
@@ -40,19 +40,21 @@ export const SurveyFormDetail: React.FC<SurveyFormDetailProps> = ({ formId }) =>
           <dd>{formEntity.id}</dd>
           <br />
           <dt>
-            <Translate contentKey="surveySampleApp.form.organization">Organization</Translate>
+            <Translate contentKey="surveySampleApp.organization.name">Name</Translate>
           </dt>
           <dd>{formEntity.organization ? formEntity.organization.name : ''}</dd>
+          <br />
+          <dt>
+            <Translate contentKey="surveySampleApp.organization.address">Address</Translate>
+          </dt>
+          <dd>{formEntity.organization ? formEntity.organization.address : ''}</dd>
           <br />
           <dt>
             <span id="createDate">
               <Translate contentKey="surveySampleApp.form.createDate">Create Date</Translate>
             </span>
           </dt>
-          <dd>{formEntity.createDate ? <TextFormat value={formEntity.createDate} type="date" format={APP_DATE_FORMAT} /> : null}</dd>
-          <br />
-          <br />
-          <br />
+          <dd>{formEntity.createDate ? <TextFormat value={formEntity.createDate} type="date" format={APP_LOCAL_DATE_FORMAT} /> : null}</dd>
           <br />
           <br />
         </dl>

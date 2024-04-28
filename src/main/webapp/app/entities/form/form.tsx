@@ -1,6 +1,6 @@
 import { faSort, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { APP_DATE_FORMAT, AUTHORITIES } from 'app/config/constants';
+import { APP_LOCAL_DATE_FORMAT, AUTHORITIES } from 'app/config/constants';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
 import { ASC, DESC, ITEMS_PER_PAGE, SORT } from 'app/shared/util/pagination.constants';
@@ -157,8 +157,8 @@ export const Form = () => {
                 <tr key={`entity-${i}`} data-cy="entityTable">
                   <td>{form.id}</td>
                   <td>{form.futurePlan}</td>
-                  <td>{form.createDate ? <TextFormat type="date" value={form.createDate} format={APP_DATE_FORMAT} /> : null}</td>
-                  <td>{form.updateDate ? <TextFormat type="date" value={form.updateDate} format={APP_DATE_FORMAT} /> : null}</td>
+                  <td>{form.createDate ? <TextFormat type="date" value={form.createDate} format={APP_LOCAL_DATE_FORMAT} /> : null}</td>
+                  <td>{form.updateDate ? <TextFormat type="date" value={form.updateDate} format={APP_LOCAL_DATE_FORMAT} /> : null}</td>
                   <td>{form.user ? form.user.login : ''}</td>
                   <td> {form.organization ? form.organization.name : ''}</td>
                   <td className="text-end">

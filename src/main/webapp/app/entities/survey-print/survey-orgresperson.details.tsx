@@ -7,6 +7,7 @@ import { APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
 import { IOrgResponsiblePerson } from 'app/shared/model/org-responsible-person.model';
 import axios from 'axios';
 import { Divider } from 'primereact/divider';
+import { displayDefaultDateTime } from 'app/shared/util/date-utils';
 
 interface OrgResponsiblePersonDetailProps {
   formId: string;
@@ -85,7 +86,7 @@ export const SurveyOrgResponsiblePersonDetail: React.FC<OrgResponsiblePersonDeta
           </dt>
           <dd>
             {orgResponsiblePersonEntity?.date ? (
-              <TextFormat value={orgResponsiblePersonEntity?.date} type="date" format={APP_LOCAL_DATE_FORMAT} />
+              <TextFormat value={displayDefaultDateTime()} type="date" format={APP_LOCAL_DATE_FORMAT} />
             ) : null}
           </dd>
         </dl>
