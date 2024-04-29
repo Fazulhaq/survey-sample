@@ -12,13 +12,13 @@ const IndexSlice = createSlice({
   name: 'index',
   initialState,
   reducers: {
-    incrementIndex: (state, action: PayloadAction<number>) => {
+    incrementIndex(state, action: PayloadAction<number>) {
       state.stepperIndex += action.payload;
     },
-    decrementIndex: (state, action: PayloadAction<number>) => {
+    decrementIndex(state, action: PayloadAction<number>) {
       state.stepperIndex -= action.payload;
     },
-    resetIndex: (state, action: PayloadAction<number>) => {
+    resetIndex(state, action: PayloadAction<number>) {
       state.stepperIndex = action.payload;
     },
   },

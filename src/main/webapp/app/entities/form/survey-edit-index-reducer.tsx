@@ -12,13 +12,13 @@ const SurveyEditIndexSlice = createSlice({
   name: 'surveyeditindex',
   initialState,
   reducers: {
-    incrementEditIndex: (state, action: PayloadAction<number>) => {
+    incrementEditIndex(state, action: PayloadAction<number>) {
       state.surveyEditIndex += action.payload;
     },
-    decrementEditIndex: (state, action: PayloadAction<number>) => {
+    decrementEditIndex(state, action: PayloadAction<number>) {
       state.surveyEditIndex -= action.payload;
     },
-    resetEditIndex: (state, action: PayloadAction<number>) => {
+    resetEditIndex(state, action: PayloadAction<number>) {
       state.surveyEditIndex = action.payload;
     },
   },
