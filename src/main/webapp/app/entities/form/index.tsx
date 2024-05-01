@@ -7,11 +7,13 @@ import InteractiveSteps from './form-stepper';
 import SurveyEditPage from './survey-edit-page';
 import SurveyView from './survey-view';
 import SurveyPrint from './survey-print';
+import SurveyReport from './survey-reports';
 
 const FormRoutes = () => (
   <ErrorBoundaryRoutes>
     <Route index element={<Form />} />
     <Route path="new/:id" element={<InteractiveSteps />} />
+    <Route path="report" element={<SurveyReport />} />
     <Route path=":id">
       <Route index element={<SurveyView />} />
       <Route path="edit" element={<SurveyEditPage />} />

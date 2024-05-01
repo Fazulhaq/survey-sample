@@ -110,6 +110,12 @@ export const Form = () => {
           <br />
         </div>
       </h2>
+      <div className="d-flex justify-content-end">
+        <Link to="/form/report" className="btn btn-primary jh-create-entity" data-cy="FormExport">
+          &nbsp;
+          <Translate contentKey="surveySampleApp.form.home.formexport">Survey Excel Data</Translate>
+        </Link>
+      </div>
       <div className="d-flex">
         <h6>
           <ValidatedField
@@ -163,17 +169,10 @@ export const Form = () => {
                   <td> {form.organization ? form.organization.name : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
-                      <Button tag={Link} to={`/form/${form.id}/print`} color="primary" size="sm" data-cy="entityPrintButton">
-                        <FontAwesomeIcon icon="pencil-alt" />{' '}
-                        <span className="d-none d-md-inline">
-                          <Translate contentKey="entity.action.surveyprint">Print View</Translate>
-                        </span>
-                      </Button>
-                      &nbsp;
-                      <Button tag={Link} to={`/form/${form.id}`} color="info" size="sm" data-cy="entityDetailsButton">
+                      <Button tag={Link} to={`/form/${form.id}/print`} color="info" size="sm" data-cy="entityDetailsButton">
                         <FontAwesomeIcon icon="eye" />{' '}
                         <span className="d-none d-md-inline">
-                          <Translate contentKey="entity.action.view">View</Translate>
+                          <Translate contentKey="entity.action.surveyprint">Print View</Translate>
                         </span>
                       </Button>
                       &nbsp;

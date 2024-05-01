@@ -8,8 +8,9 @@ import { Collapse, Nav, Navbar, NavbarToggler } from 'reactstrap';
 import { useAppDispatch } from 'app/config/store';
 import { isRTL } from 'app/config/translation';
 import { setLocale } from 'app/shared/reducers/locale';
-import { AccountMenu, AdminMenu, EntitiesMenu, LocaleMenu } from '../menus';
+import { AccountMenu, AdminMenu, OrganizationList, LocaleMenu } from '../menus';
 import { Brand } from './header-components';
+import { FormList } from '../menus/organization-list';
 
 export interface IHeaderProps {
   isAuthenticated: boolean;
@@ -45,7 +46,8 @@ const Header = (props: IHeaderProps) => {
         <Brand />
         <Collapse isOpen={menuOpen} navbar>
           <Nav id="header-tabs" className="ms-auto" navbar>
-            {props.isAuthenticated && <EntitiesMenu />}
+            {props.isAuthenticated && <FormList />}
+            {props.isAuthenticated && <OrganizationList />}
             {props.isAuthenticated && props.isAdmin && <AdminMenu showOpenAPI={props.isOpenAPIEnabled} />}
             <LocaleMenu currentLocale={props.currentLocale} onClick={handleLocaleChange} />
             <AccountMenu isAuthenticated={props.isAuthenticated} />

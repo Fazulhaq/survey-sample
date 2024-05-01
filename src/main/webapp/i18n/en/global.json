@@ -114,7 +114,7 @@
       "updatefinish": "Update & Finish",
       "view": "View",
       "show": "Show {{otherEntity}}",
-      "surveyprint": "Print/View",
+      "surveyprint": "View/Print",
       "print": "Print"
     },
     "detail": {

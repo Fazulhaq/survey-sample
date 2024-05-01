@@ -20,7 +20,8 @@
         "formcongrates": "تبریک! سروی شما موفقانه انجام شد.",
         "formcongratesbtn": "سروی جدید",
         "formsearchtitle": "جستجو: ",
-        "formsearchname": "عنوان سروی را بنویسید"
+        "formsearchname": "عنوان سروی را بنویسید",
+        "formexport": "فایل اکسل سروی ها"
       },
       "created": "موفقانه ایجاد گردید",
       "updated": "موفقانه ویرایش گردید",

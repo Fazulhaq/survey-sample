@@ -20,7 +20,8 @@
         "formcongrates": "! تاسو د سروې اتمام کړل شول",
         "formcongratesbtn": "نوی سروی پیل کړی",
         "formsearchtitle": "لتون: ",
-        "formsearchname": "سروی عنوان تایپ کړی"
+        "formsearchname": "سروی عنوان تایپ کړی",
+        "formexport": "د سروی اکسل فایل"
       },
       "created": "په بریالیتوب سره جوړ شو",
       "updated": "په بریالیتوب سره تازه شوی",

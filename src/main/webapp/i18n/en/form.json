@@ -20,7 +20,8 @@
         "formcongrates": "Congratulations! You have completed the survey.",
         "formcongratesbtn": "Start New Survey",
         "formsearchtitle": "Search: ",
-        "formsearchname": "Type survey title"
+        "formsearchname": "Type survey title",
+        "formexport": "Survey Excel Data"
       },
       "created": "A new Form is created with identifier {{ param }}",
       "updated": "A Form is updated with identifier {{ param }}",
