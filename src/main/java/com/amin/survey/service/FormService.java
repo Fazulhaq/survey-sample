@@ -2,6 +2,7 @@ package com.amin.survey.service;
 
 import com.amin.survey.domain.Form;
 import com.amin.survey.repository.FormRepository;
+import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -118,5 +119,11 @@ public class FormService {
     public void delete(Long id) {
         log.debug("Request to delete Form : {}", id);
         formRepository.deleteById(id);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Form> findAllForms() {
+        log.debug("Request to get all Forms");
+        return formRepository.findAll();
     }
 }

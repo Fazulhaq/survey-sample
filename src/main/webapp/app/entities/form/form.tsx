@@ -12,6 +12,7 @@ import { Button, Table } from 'reactstrap';
 import { getEntities } from './form.reducer';
 import { resetEditIndex } from './survey-edit-index-reducer';
 import { hasAnyAuthority } from 'app/shared/auth/private-route';
+import axios from 'axios';
 
 export const Form = () => {
   const dispatch = useAppDispatch();
@@ -29,6 +30,16 @@ export const Form = () => {
   const isAdmin = useAppSelector(state => hasAnyAuthority(state.authentication.account.authorities, [AUTHORITIES.ADMIN]));
 
   const [searchString, setSearchString] = useState('');
+
+  const [storedSurveyData, setStoredSurveyData] = useState(null);
+
+  const handleExcelData = async () => {
+    const apiUrl = 'api/forms/surveydata';
+    const response = await axios.get(apiUrl);
+    setStoredSurveyData(response.data);
+
+    console.log(storedSurveyData);
+  };
 
   const handleChange = event => {
     setSearchString(event.target.value);
@@ -111,10 +122,14 @@ export const Form = () => {
         </div>
       </h2>
       <div className="d-flex justify-content-end">
-        <Link to="/form/report" className="btn btn-primary jh-create-entity" data-cy="FormExport">
-          &nbsp;
-          <Translate contentKey="surveySampleApp.form.home.formexport">Survey Excel Data</Translate>
-        </Link>
+        {isAdmin && (
+          <Button onClick={handleExcelData} color="primary" size="sm" data-cy="FormExport">
+            <FontAwesomeIcon icon="pencil-alt" />{' '}
+            <span className="d-none d-md-inline">
+              <Translate contentKey="surveySampleApp.form.home.formexport">Survey Excel Data</Translate>
+            </span>
+          </Button>
+        )}
       </div>
       <div className="d-flex">
         <h6>

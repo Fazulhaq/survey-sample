@@ -188,12 +188,14 @@ export const Organization = () => {
                         </span>
                       </Button>
                       &nbsp;
-                      <Button tag={Link} to={`/organization/${organization.id}`} color="info" size="sm" data-cy="entityDetailsButton">
-                        <FontAwesomeIcon icon="eye" />{' '}
-                        <span className="d-none d-md-inline">
-                          <Translate contentKey="entity.action.view">View</Translate>
-                        </span>
-                      </Button>
+                      {isAdmin && (
+                        <Button tag={Link} to={`/organization/${organization.id}`} color="info" size="sm" data-cy="entityDetailsButton">
+                          <FontAwesomeIcon icon="eye" />{' '}
+                          <span className="d-none d-md-inline">
+                            <Translate contentKey="entity.action.view">View</Translate>
+                          </span>
+                        </Button>
+                      )}
                       &nbsp;
                       {isAdmin && (
                         <Button

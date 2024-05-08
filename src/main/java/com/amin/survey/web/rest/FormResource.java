@@ -2,15 +2,26 @@ package com.amin.survey.web.rest;
 
 import com.amin.survey.domain.Form;
 import com.amin.survey.repository.FormRepository;
+import com.amin.survey.service.BackupService;
+import com.amin.survey.service.DatacenterDeviceService;
 import com.amin.survey.service.FormQueryService;
 import com.amin.survey.service.FormService;
+import com.amin.survey.service.InternetService;
+import com.amin.survey.service.ItDeviceService;
+import com.amin.survey.service.NetworkConfigCheckListService;
+import com.amin.survey.service.OrgResponsiblePersonService;
+import com.amin.survey.service.ServerService;
+import com.amin.survey.service.SystemService;
 import com.amin.survey.service.criteria.FormCriteria;
 import com.amin.survey.web.rest.errors.BadRequestAlertException;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -41,13 +52,39 @@ public class FormResource {
     private String applicationName;
 
     private final FormService formService;
-
+    private final ServerService serverService;
+    private final SystemService systemService;
+    private final BackupService backupService;
+    private final DatacenterDeviceService datacenterDeviceService;
+    private final InternetService internetService;
+    private final ItDeviceService itDeviceService;
+    private final NetworkConfigCheckListService networkConfigCheckListService;
+    private final OrgResponsiblePersonService orgResponsiblePersonService;
     private final FormRepository formRepository;
-
     private final FormQueryService formQueryService;
 
-    public FormResource(FormService formService, FormRepository formRepository, FormQueryService formQueryService) {
+    public FormResource(
+        FormService formService,
+        FormRepository formRepository,
+        FormQueryService formQueryService,
+        BackupService backupService,
+        ServerService serverService,
+        SystemService systemService,
+        DatacenterDeviceService datacenterDeviceService,
+        InternetService internetService,
+        ItDeviceService itDeviceService,
+        NetworkConfigCheckListService networkConfigCheckListService,
+        OrgResponsiblePersonService orgResponsiblePersonService
+    ) {
         this.formService = formService;
+        this.serverService = serverService;
+        this.systemService = systemService;
+        this.backupService = backupService;
+        this.datacenterDeviceService = datacenterDeviceService;
+        this.internetService = internetService;
+        this.itDeviceService = itDeviceService;
+        this.networkConfigCheckListService = networkConfigCheckListService;
+        this.orgResponsiblePersonService = orgResponsiblePersonService;
         this.formRepository = formRepository;
         this.formQueryService = formQueryService;
     }
@@ -56,7 +93,9 @@ public class FormResource {
      * {@code POST  /forms} : Create a new form.
      *
      * @param form the form to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new form, or with status {@code 400 (Bad Request)} if the form has already an ID.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with
+     *         body the new form, or with status {@code 400 (Bad Request)} if the
+     *         form has already an ID.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/forms")
@@ -75,11 +114,13 @@ public class FormResource {
     /**
      * {@code PUT  /forms/:id} : Updates an existing form.
      *
-     * @param id the id of the form to save.
+     * @param id   the id of the form to save.
      * @param form the form to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated form,
-     * or with status {@code 400 (Bad Request)} if the form is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the form couldn't be updated.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the updated form,
+     *         or with status {@code 400 (Bad Request)} if the form is not valid,
+     *         or with status {@code 500 (Internal Server Error)} if the form
+     *         couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/forms/{id}")
@@ -105,14 +146,17 @@ public class FormResource {
     }
 
     /**
-     * {@code PATCH  /forms/:id} : Partial updates given fields of an existing form, field will ignore if it is null
+     * {@code PATCH  /forms/:id} : Partial updates given fields of an existing form,
+     * field will ignore if it is null
      *
-     * @param id the id of the form to save.
+     * @param id   the id of the form to save.
      * @param form the form to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated form,
-     * or with status {@code 400 (Bad Request)} if the form is not valid,
-     * or with status {@code 404 (Not Found)} if the form is not found,
-     * or with status {@code 500 (Internal Server Error)} if the form couldn't be updated.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the updated form,
+     *         or with status {@code 400 (Bad Request)} if the form is not valid,
+     *         or with status {@code 404 (Not Found)} if the form is not found,
+     *         or with status {@code 500 (Internal Server Error)} if the form
+     *         couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PatchMapping(value = "/forms/{id}", consumes = { "application/json", "application/merge-patch+json" })
@@ -145,7 +189,8 @@ public class FormResource {
      *
      * @param pageable the pagination information.
      * @param criteria the criteria which the requested entities should match.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of forms in body.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list
+     *         of forms in body.
      */
     @GetMapping("/forms")
     public ResponseEntity<List<Form>> getAllForms(
@@ -163,7 +208,8 @@ public class FormResource {
      * {@code GET  /forms/count} : count all the forms.
      *
      * @param criteria the criteria which the requested entities should match.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the count in body.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the count
+     *         in body.
      */
     @GetMapping("/forms/count")
     public ResponseEntity<Long> countForms(FormCriteria criteria) {
@@ -175,7 +221,8 @@ public class FormResource {
      * {@code GET  /forms/:id} : get the "id" form.
      *
      * @param id the id of the form to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the form, or with status {@code 404 (Not Found)}.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body
+     *         the form, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/forms/{id}")
     public ResponseEntity<Form> getForm(@PathVariable Long id) {
@@ -198,5 +245,27 @@ public class FormResource {
             .noContent()
             .headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString()))
             .build();
+    }
+
+    @GetMapping("/forms/surveydata")
+    public ResponseEntity<Map<Long, List<Object>>> getAllSurveyData() {
+        List<Form> forms = formService.findAllForms();
+        Map<Long, List<Object>> surveyData = new HashMap<>();
+        for (Form form : forms) {
+            if (form.getId() != null) {
+                List<Object> objects = new ArrayList<>();
+                objects.add(form);
+                objects.add(serverService.findByFormId(form.getId()));
+                objects.add(backupService.findByFormId(form.getId()));
+                objects.add(systemService.findByFormId(form.getId()));
+                objects.add(datacenterDeviceService.findDataCenterByFromId(form.getId()));
+                objects.add(internetService.findByFormId(form.getId()));
+                objects.add(itDeviceService.findItDevicesByFormId(form.getId()));
+                objects.add(networkConfigCheckListService.findByFormId(form.getId()));
+                objects.add(orgResponsiblePersonService.findByFormId(form.getId()));
+                surveyData.put(form.getId(), objects);
+            }
+        }
+        return ResponseEntity.ok(surveyData);
     }
 }
