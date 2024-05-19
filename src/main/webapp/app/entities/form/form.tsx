@@ -8,11 +8,11 @@ import React, { useEffect, useState } from 'react';
 import { JhiItemCount, JhiPagination, TextFormat, Translate, ValidatedField, getPaginationState, translate } from 'react-jhipster';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
-
 import { getEntities } from './form.reducer';
 import { resetEditIndex } from './survey-edit-index-reducer';
 import { hasAnyAuthority } from 'app/shared/auth/private-route';
 import axios from 'axios';
+import { CSVLink } from 'react-csv';
 
 export const Form = () => {
   const dispatch = useAppDispatch();
@@ -31,15 +31,250 @@ export const Form = () => {
 
   const [searchString, setSearchString] = useState('');
 
-  const [storedSurveyData, setStoredSurveyData] = useState(null);
+  const [storedSurveyData, setStoredSurveyData] = useState([]);
+  useEffect(() => {
+    const getSurveyData = async () => {
+      const result = [];
+      const requestedData = await axios.get('api/forms/surveydata');
+      const keys = Object.keys(requestedData.data);
+      for (const key of keys) {
+        const obj = {
+          object0: requestedData.data[key][0],
+          object1: requestedData.data[key][1],
+          object2: requestedData.data[key][2],
+          object3: requestedData.data[key][3],
+          object4: requestedData.data[key][4][0],
+          object5: requestedData.data[key][4][1],
+          object6: requestedData.data[key][4][2],
+          object7: requestedData.data[key][4][3],
+          object8: requestedData.data[key][4][4],
+          object9: requestedData.data[key][4][5],
+          object10: requestedData.data[key][5],
+          object11: requestedData.data[key][6][0],
+          object12: requestedData.data[key][6][1],
+          object13: requestedData.data[key][6][2],
+          object14: requestedData.data[key][6][3],
+          object15: requestedData.data[key][6][4],
+          object16: requestedData.data[key][7],
+          object17: requestedData.data[key][8],
+        };
+        result.push(obj);
+      }
+      const reformedData = result.map(data => ({
+        SurveyID: data.object0.id,
+        SurveyTitle: data.object0.futurePlan,
+        CreatedDate: data.object0.createDate.split('T')[0],
+        OrganizationName: data.object0.organization.name,
+        OrganizationAddress: data.object0.organization.address,
+        TypeOfServers: data.object1.question1,
+        TypeOfDataStorage: data.object1.question2,
+        AgeOfServerHardware: data.object1.question3,
+        AlertTypeHandling: data.object1.question4,
+        ServerOperatingSystem: data.object1.question5,
+        ServerMonitoringSystem: data.object1.question6,
+        DisasterRecoveryPlan: data.object1.question7,
+        TechnologicalMonitoringDepartment: data.object2.question1,
+        ITProfessionalsQuantity: data.object2.question2,
+        BudgetAllocatedForITDepartment: data.object2.question3,
+        OfficialWebsiteURL: data.object2.question5,
+        TypeOfDataCenter: data.object3.question1,
+        ReliabilityAndAvailability: data.object3.question2,
+        BackupStorageLocation: data.object3.question3,
+        BackupFrequency: data.object3.question4,
+        BackupMethod: data.object3.question5,
+        BackupTestingFrequency: data.object3.question6,
+        DisasterRecoveryPlanAvailability: data.object3.question7,
+        DataCenterDevice1:
+          data.object4.quantity +
+          ' - ' +
+          data.object4.currentStatus +
+          ' ' +
+          data.object4.brandAndModel +
+          ' ' +
+          data.object4.deviceType +
+          ' for ' +
+          data.object4.purpose,
+        DataCenterDevice2:
+          data.object5.quantity +
+          ' - ' +
+          data.object5.currentStatus +
+          ' ' +
+          data.object5.brandAndModel +
+          ' ' +
+          data.object5.deviceType +
+          ' for ' +
+          data.object5.purpose,
+        DataCenterDevice3:
+          data.object6.quantity +
+          ' - ' +
+          data.object6.currentStatus +
+          ' ' +
+          data.object6.brandAndModel +
+          ' ' +
+          data.object6.deviceType +
+          ' for ' +
+          data.object6.purpose,
+        DataCenterDevice4:
+          data.object7.quantity +
+          ' - ' +
+          data.object7.currentStatus +
+          ' ' +
+          data.object7.brandAndModel +
+          ' ' +
+          data.object7.deviceType +
+          ' for ' +
+          data.object7.purpose,
+        DataCenterDevice5:
+          data.object8.quantity +
+          ' - ' +
+          data.object8.currentStatus +
+          ' ' +
+          data.object8.brandAndModel +
+          ' ' +
+          data.object8.deviceType +
+          ' for ' +
+          data.object8.purpose,
+        DataCenterDevice6:
+          data.object9.quantity +
+          ' - ' +
+          data.object9.currentStatus +
+          ' ' +
+          data.object9.brandAndModel +
+          ' ' +
+          data.object9.deviceType +
+          ' for ' +
+          data.object9.purpose,
+        InternetServiceProvider: data.object10.question1,
+        ConnectionType_FiberOptic_P2P: data.object10.question2,
+        DownloadSpeed_Mps: data.object10.question3,
+        UploadSpeed_Mps: data.object10.question4,
+        NetworkAccessControlMethod: data.object10.question5,
+        NetworkOutages_FrequencyDuration: data.object10.question6,
+        IT_Device1:
+          data.object11.quantity +
+          ' - ' +
+          data.object11.currentStatus +
+          ' ' +
+          data.object11.brandAndModel +
+          ' ' +
+          data.object11.deviceType +
+          ' for ' +
+          data.object11.purpose,
+        IT_Device2:
+          data.object12.quantity +
+          ' - ' +
+          data.object12.currentStatus +
+          ' ' +
+          data.object12.brandAndModel +
+          ' ' +
+          data.object12.deviceType +
+          ' for ' +
+          data.object12.purpose,
+        IT_Device3:
+          data.object13.quantity +
+          ' - ' +
+          data.object13.currentStatus +
+          ' ' +
+          data.object13.brandAndModel +
+          ' ' +
+          data.object13.deviceType +
+          ' for ' +
+          data.object13.purpose,
+        IT_Device4:
+          data.object14.quantity +
+          ' - ' +
+          data.object14.currentStatus +
+          ' ' +
+          data.object14.brandAndModel +
+          ' ' +
+          data.object14.deviceType +
+          ' for ' +
+          data.object14.purpose,
+        IT_Device5:
+          data.object15.quantity +
+          ' - ' +
+          data.object15.currentStatus +
+          ' ' +
+          data.object15.brandAndModel +
+          ' ' +
+          data.object15.deviceType +
+          ' for ' +
+          data.object15.purpose,
+        Network_Tools_List:
+          (data.object16.activeDirectory ? 'Active Directory, ' : '') +
+          (data.object16.antiSpam ? 'Anti Spam Mechanism, ' : '') +
+          (data.object16.antivirus ? 'Anti Virus, ' : '') +
+          (data.object16.autoBackup ? 'Auto Backup, ' : '') +
+          (data.object16.dhcp ? 'DHCP, ' : '') +
+          (data.object16.disasterRecovery ? 'Disaster Recovery, ' : '') +
+          (data.object16.dns ? 'DNS Server, ' : '') +
+          (data.object16.firewalls ? 'FireWalls, ' : '') +
+          (data.object16.integratedSystems ? 'Integrated Systems, ' : '') +
+          (data.object16.loadBalancing ? 'Load Balancing, ' : '') +
+          (data.object16.mailServer ? 'Mail Server, ' : '') +
+          (data.object16.networkMonitoring ? 'Network Monitoring, ' : '') +
+          (data.object16.physicalSecurity ? 'Physical Security, ' : '') +
+          (data.object16.proxyServer ? 'Proxy Server, ' : '') +
+          (data.object16.securityAudit ? 'Security Audit, ' : '') +
+          (data.object16.sharedDrives ? 'Shared Drives, ' : '') +
+          (data.object16.storageServer ? 'Storage Server, ' : '') +
+          (data.object16.wdsServer ? 'WDS Server, ' : '') +
+          (data.object16.wpa ? 'and WPA' : ''),
+        Survey_Responsible: data.object17.fullName,
+        Position: data.object17.position,
+        Contact_Number: data.object17.contact,
+      }));
+      setStoredSurveyData(reformedData);
+    };
+    getSurveyData();
+  }, []);
 
-  const handleExcelData = async () => {
-    const apiUrl = 'api/forms/surveydata';
-    const response = await axios.get(apiUrl);
-    setStoredSurveyData(response.data);
-
-    console.log(storedSurveyData);
-  };
+  const CSVFileHeader = [
+    { label: 'ID', key: 'SurveyID' },
+    { label: 'Title', key: 'SurveyTitle' },
+    { label: 'Established Date', key: 'CreatedDate' },
+    { label: 'Organization Name', key: 'OrganizationName' },
+    { label: 'Organization Address', key: 'OrganizationAddress' },
+    { label: 'Type of Servers', key: 'TypeOfServers' },
+    { label: 'Type of Data Storage', key: 'TypeOfDataStorage' },
+    { label: 'Age of Server Hardware', key: 'AgeOfServerHardware' },
+    { label: 'Alert Type Handling', key: 'AlertTypeHandling' },
+    { label: "Server's Operating Systems", key: 'ServerOperatingSystem' },
+    { label: "Server's Monitoring System", key: 'ServerMonitoringSystem' },
+    { label: 'Disaster Recovery Plan', key: 'DisasterRecoveryPlan' },
+    { label: 'Technological Monitoring Department', key: 'TechnologicalMonitoringDepartment' },
+    { label: 'IT Professionals Personnel', key: 'ITProfessionalsQuantity' },
+    { label: 'Budget Allocated For IT Department', key: 'BudgetAllocatedForITDepartment' },
+    { label: 'OfficialWebsiteURL', key: 'OfficialWebsiteURL' },
+    { label: 'Type of Data Center', key: 'TypeOfDataCenter' },
+    { label: 'Reliability And Availability of System', key: 'ReliabilityAndAvailability' },
+    { label: 'Backup Storage Location', key: 'BackupStorageLocation' },
+    { label: 'Backup Frequency Details', key: 'BackupFrequency' },
+    { label: 'Backup Method', key: 'BackupMethod' },
+    { label: 'Backup Testing Frequency', key: 'BackupTestingFrequency' },
+    { label: 'Disaster Recovery Plan Availability', key: 'DisasterRecoveryPlanAvailability' },
+    { label: 'Data Center Device1', key: 'DataCenterDevice1' },
+    { label: 'Data Center Device2', key: 'DataCenterDevice2' },
+    { label: 'Data Center Device3', key: 'DataCenterDevice3' },
+    { label: 'Data Center Device4', key: 'DataCenterDevice4' },
+    { label: 'Data Center Device5', key: 'DataCenterDevice5' },
+    { label: 'Data Center Device6', key: 'DataCenterDevice6' },
+    { label: 'Internet Service Provider', key: 'InternetServiceProvider' },
+    { label: 'Connection Type like: FiberOptic,P2P...', key: 'ConnectionType_FiberOptic_P2P' },
+    { label: 'Download Speed(Mps)', key: 'DownloadSpeed_Mps' },
+    { label: 'Upload Speed(Mps)', key: 'UploadSpeed_Mps' },
+    { label: 'Network Access Control Method', key: 'NetworkAccessControlMethod' },
+    { label: 'Network Outages(Frequency Duration)', key: 'NetworkOutages_FrequencyDuration' },
+    { label: 'IT Device1', key: 'IT_Device1' },
+    { label: 'IT Device2', key: 'IT_Device2' },
+    { label: 'IT Device3', key: 'IT_Device3' },
+    { label: 'IT Device4', key: 'IT_Device4' },
+    { label: 'IT Device5', key: 'IT_Device5' },
+    { label: 'Network Tools List', key: 'Network_Tools_List' },
+    { label: 'Surveyer Name', key: 'Survey_Responsible' },
+    { label: 'Surveyer Position', key: 'Position' },
+    { label: 'Surveyer Contact', key: 'Contact_Number' },
+  ];
 
   const handleChange = event => {
     setSearchString(event.target.value);
@@ -123,12 +358,9 @@ export const Form = () => {
       </h2>
       <div className="d-flex justify-content-end">
         {isAdmin && (
-          <Button onClick={handleExcelData} color="primary" size="sm" data-cy="FormExport">
-            <FontAwesomeIcon icon="pencil-alt" />{' '}
-            <span className="d-none d-md-inline">
-              <Translate contentKey="surveySampleApp.form.home.formexport">Survey Excel Data</Translate>
-            </span>
-          </Button>
+          <CSVLink headers={CSVFileHeader} data={storedSurveyData} filename={'Survey-File.csv'} className="btn btn-primary" target="_blank">
+            <Translate contentKey="surveySampleApp.form.home.formexport">Survey Excel Data</Translate>
+          </CSVLink>
         )}
       </div>
       <div className="d-flex">

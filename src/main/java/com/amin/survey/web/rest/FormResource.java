@@ -256,8 +256,8 @@ public class FormResource {
                 List<Object> objects = new ArrayList<>();
                 objects.add(form);
                 objects.add(serverService.findByFormId(form.getId()));
-                objects.add(backupService.findByFormId(form.getId()));
                 objects.add(systemService.findByFormId(form.getId()));
+                objects.add(backupService.findByFormId(form.getId()));
                 objects.add(datacenterDeviceService.findDataCenterByFromId(form.getId()));
                 objects.add(internetService.findByFormId(form.getId()));
                 objects.add(itDeviceService.findItDevicesByFormId(form.getId()));
