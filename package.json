@@ -81,7 +81,6 @@
     "path-browserify": "1.0.1",
     "primereact": "^10.3.3",
     "react": "18.2.0",
-    "react-csv": "^2.2.2",
     "react-dom": "18.2.0",
     "react-form-stepper": "^2.0.3",
     "react-hook-form": "7.47.0",
@@ -99,7 +98,8 @@
     "redux-thunk": "2.4.2",
     "styled-components": "^6.1.8",
     "tslib": "2.6.2",
-    "uuid": "9.0.1"
+    "uuid": "9.0.1",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@testing-library/react": "14.0.0",

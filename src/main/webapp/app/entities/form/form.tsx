@@ -12,7 +12,7 @@ import { getEntities } from './form.reducer';
 import { resetEditIndex } from './survey-edit-index-reducer';
 import { hasAnyAuthority } from 'app/shared/auth/private-route';
 import axios from 'axios';
-import { CSVLink } from 'react-csv';
+import * as XLSX from 'xlsx';
 
 export const Form = () => {
   const dispatch = useAppDispatch();
@@ -229,52 +229,122 @@ export const Form = () => {
     getSurveyData();
   }, []);
 
-  const CSVFileHeader = [
-    { label: 'ID', key: 'SurveyID' },
-    { label: 'Title', key: 'SurveyTitle' },
-    { label: 'Established Date', key: 'CreatedDate' },
-    { label: 'Organization Name', key: 'OrganizationName' },
-    { label: 'Organization Address', key: 'OrganizationAddress' },
-    { label: 'Type of Servers', key: 'TypeOfServers' },
-    { label: 'Type of Data Storage', key: 'TypeOfDataStorage' },
-    { label: 'Age of Server Hardware', key: 'AgeOfServerHardware' },
-    { label: 'Alert Type Handling', key: 'AlertTypeHandling' },
-    { label: "Server's Operating Systems", key: 'ServerOperatingSystem' },
-    { label: "Server's Monitoring System", key: 'ServerMonitoringSystem' },
-    { label: 'Disaster Recovery Plan', key: 'DisasterRecoveryPlan' },
-    { label: 'Technological Monitoring Department', key: 'TechnologicalMonitoringDepartment' },
-    { label: 'IT Professionals Personnel', key: 'ITProfessionalsQuantity' },
-    { label: 'Budget Allocated For IT Department', key: 'BudgetAllocatedForITDepartment' },
-    { label: 'OfficialWebsiteURL', key: 'OfficialWebsiteURL' },
-    { label: 'Type of Data Center', key: 'TypeOfDataCenter' },
-    { label: 'Reliability And Availability of System', key: 'ReliabilityAndAvailability' },
-    { label: 'Backup Storage Location', key: 'BackupStorageLocation' },
-    { label: 'Backup Frequency Details', key: 'BackupFrequency' },
-    { label: 'Backup Method', key: 'BackupMethod' },
-    { label: 'Backup Testing Frequency', key: 'BackupTestingFrequency' },
-    { label: 'Disaster Recovery Plan Availability', key: 'DisasterRecoveryPlanAvailability' },
-    { label: 'Data Center Device1', key: 'DataCenterDevice1' },
-    { label: 'Data Center Device2', key: 'DataCenterDevice2' },
-    { label: 'Data Center Device3', key: 'DataCenterDevice3' },
-    { label: 'Data Center Device4', key: 'DataCenterDevice4' },
-    { label: 'Data Center Device5', key: 'DataCenterDevice5' },
-    { label: 'Data Center Device6', key: 'DataCenterDevice6' },
-    { label: 'Internet Service Provider', key: 'InternetServiceProvider' },
-    { label: 'Connection Type like: FiberOptic,P2P...', key: 'ConnectionType_FiberOptic_P2P' },
-    { label: 'Download Speed(Mps)', key: 'DownloadSpeed_Mps' },
-    { label: 'Upload Speed(Mps)', key: 'UploadSpeed_Mps' },
-    { label: 'Network Access Control Method', key: 'NetworkAccessControlMethod' },
-    { label: 'Network Outages(Frequency Duration)', key: 'NetworkOutages_FrequencyDuration' },
-    { label: 'IT Device1', key: 'IT_Device1' },
-    { label: 'IT Device2', key: 'IT_Device2' },
-    { label: 'IT Device3', key: 'IT_Device3' },
-    { label: 'IT Device4', key: 'IT_Device4' },
-    { label: 'IT Device5', key: 'IT_Device5' },
-    { label: 'Network Tools List', key: 'Network_Tools_List' },
-    { label: 'Surveyer Name', key: 'Survey_Responsible' },
-    { label: 'Surveyer Position', key: 'Position' },
-    { label: 'Surveyer Contact', key: 'Contact_Number' },
-  ];
+  const handleXLSXfile = () => {
+    const header = [
+      'ID',
+      'Title(System_Name)',
+      'Established Date',
+      'Organization Name',
+      'Organization Address',
+      'Type of Servers',
+      'Type of Data Storage',
+      'Age of Server Hardware',
+      'Alert Type Handling',
+      'Servers Operating Systems',
+      'Servers Monitoring System',
+      'Disaster Recovery Plan',
+      'Technological Monitoring Department',
+      'IT Professionals Personnel',
+      'Budget Allocated For IT Department',
+      'OfficialWebsiteURL',
+      'Type of Data Center',
+      'Reliability And Availability of System',
+      'Backup Storage Location',
+      'Backup Frequency Details',
+      'Backup Method',
+      'Backup Testing Frequency',
+      'Disaster Recovery Plan Availability',
+      'Data Center Device1',
+      'Data Center Device2',
+      'Data Center Device3',
+      'Data Center Device4',
+      'Data Center Device5',
+      'Data Center Device6',
+      'Internet Service Provider',
+      'Connection Type like: FiberOptic,P2P...',
+      'Download Speed(Mps)',
+      'Upload Speed(Mps)',
+      'Network Access Control Method',
+      'Network Outages(Frequency Duration)',
+      'IT Device1',
+      'IT Device2',
+      'IT Device3',
+      'IT Device4',
+      'IT Device5',
+      'Network Tools List',
+      'Surveyer Name',
+      'Surveyer Position',
+      'Surveyer Contact',
+    ];
+    const worksheetData: (string | number)[][] = [header];
+    storedSurveyData.forEach(item => {
+      const row: (string | number)[] = [
+        item.SurveyID,
+        item.SurveyTitle,
+        item.CreatedDate,
+        item.OrganizationName,
+        item.OrganizationAddress,
+        item.TypeOfServers,
+        item.TypeOfDataStorage,
+        item.AgeOfServerHardware,
+        item.AlertTypeHandling,
+        item.ServerOperatingSystem,
+        item.ServerMonitoringSystem,
+        item.DisasterRecoveryPlan,
+        item.TechnologicalMonitoringDepartment,
+        item.ITProfessionalsQuantity,
+        item.BudgetAllocatedForITDepartment,
+        item.OfficialWebsiteURL,
+        item.TypeOfDataCenter,
+        item.ReliabilityAndAvailability,
+        item.BackupStorageLocation,
+        item.BackupFrequency,
+        item.BackupMethod,
+        item.BackupTestingFrequency,
+        item.DisasterRecoveryPlanAvailability,
+        item.DataCenterDevice1,
+        item.DataCenterDevice2,
+        item.DataCenterDevice3,
+        item.DataCenterDevice4,
+        item.DataCenterDevice5,
+        item.DataCenterDevice6,
+        item.InternetServiceProvider,
+        item.ConnectionType_FiberOptic_P2P,
+        item.DownloadSpeed_Mps,
+        item.UploadSpeed_Mps,
+        item.NetworkAccessControlMethod,
+        item.NetworkOutages_FrequencyDuration,
+        item.IT_Device1,
+        item.IT_Device2,
+        item.IT_Device3,
+        item.IT_Device4,
+        item.IT_Device5,
+        item.Network_Tools_List,
+        item.Survey_Responsible,
+        item.Position,
+        item.Contact_Number,
+      ];
+      worksheetData.push(row);
+    });
+    const worksheet = XLSX.utils.aoa_to_sheet(worksheetData);
+    const range = XLSX.utils.decode_range(worksheet['!ref']);
+    for (let i = range.s.c; i <= range.e.c; i++) {
+      let maxColWidth = 0;
+      for (let j = range.s.r; j <= range.e.r; j++) {
+        const cellAddress = XLSX.utils.encode_cell({ r: j, c: i });
+        const cellValue = worksheet[cellAddress] ? worksheet[cellAddress].v.toString() : '';
+        if (cellValue.length > maxColWidth) {
+          maxColWidth = cellValue.length;
+        }
+      }
+      worksheet['!cols'] = worksheet['!cols'] || [];
+      worksheet['!cols'][i] = { wch: maxColWidth + 3 };
+    }
+    worksheet['!autofilter'] = { ref: `A1:AR1` };
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'All Survey Records');
+    XLSX.writeFile(workbook, 'Survey-Exported-File.xlsx');
+  };
 
   const handleChange = event => {
     setSearchString(event.target.value);
@@ -358,9 +428,11 @@ export const Form = () => {
       </h2>
       <div className="d-flex justify-content-end">
         {isAdmin && (
-          <CSVLink headers={CSVFileHeader} data={storedSurveyData} filename={'Survey-File.csv'} className="btn btn-primary" target="_blank">
-            <Translate contentKey="surveySampleApp.form.home.formexport">Survey Excel Data</Translate>
-          </CSVLink>
+          <Button onClick={handleXLSXfile} color="primary" size="sm">
+            <span className="d-none d-md-inline">
+              <Translate contentKey="surveySampleApp.form.home.formexport">Survey Excel Data</Translate>
+            </span>
+          </Button>
         )}
       </div>
       <div className="d-flex">
