@@ -27,6 +27,7 @@ export const Form = () => {
   const formList = useAppSelector(state => state.form.entities);
   const loading = useAppSelector(state => state.form.loading);
   const totalItems = useAppSelector(state => state.form.totalItems);
+  const account = useAppSelector(state => state.authentication.account);
   const isAdmin = useAppSelector(state => hasAnyAuthority(state.authentication.account.authorities, [AUTHORITIES.ADMIN]));
 
   const [searchString, setSearchString] = useState('');
@@ -468,9 +469,11 @@ export const Form = () => {
                   <Translate contentKey="surveySampleApp.form.updateDate">Update Date</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('updateDate')} />
                 </th>
-                <th>
-                  <Translate contentKey="surveySampleApp.form.user">User</Translate> <FontAwesomeIcon icon="sort" />
-                </th>
+                {isAdmin && (
+                  <th>
+                    <Translate contentKey="surveySampleApp.form.user">User</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                )}
                 <th>
                   <Translate contentKey="surveySampleApp.form.organization">Organization</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
@@ -478,49 +481,52 @@ export const Form = () => {
               </tr>
             </thead>
             <tbody>
-              {filteredForms.map((form, i) => (
-                <tr key={`entity-${i}`} data-cy="entityTable">
-                  <td>{form.id}</td>
-                  <td>{form.futurePlan}</td>
-                  <td>{form.createDate ? <TextFormat type="date" value={form.createDate} format={APP_LOCAL_DATE_FORMAT} /> : null}</td>
-                  <td>{form.updateDate ? <TextFormat type="date" value={form.updateDate} format={APP_LOCAL_DATE_FORMAT} /> : null}</td>
-                  <td>{form.user ? form.user.login : ''}</td>
-                  <td> {form.organization ? form.organization.name : ''}</td>
-                  <td className="text-end">
-                    <div className="btn-group flex-btn-group-container">
-                      <Button tag={Link} to={`/form/${form.id}/print`} color="info" size="sm" data-cy="entityDetailsButton">
-                        <FontAwesomeIcon icon="eye" />{' '}
-                        <span className="d-none d-md-inline">
-                          <Translate contentKey="entity.action.surveyprint">Print View</Translate>
-                        </span>
-                      </Button>
-                      &nbsp;
-                      <Button
-                        tag={Link}
-                        to={`/form/${form.id}/edit`}
-                        color="primary"
-                        onClick={handleClick}
-                        size="sm"
-                        data-cy="entityEditButton"
-                      >
-                        <FontAwesomeIcon icon="pencil-alt" />{' '}
-                        <span className="d-none d-md-inline">
-                          <Translate contentKey="entity.action.edit">Edit</Translate>
-                        </span>
-                      </Button>
-                      &nbsp;
-                      {isAdmin && (
-                        <Button tag={Link} to={`/form/${form.id}/delete`} color="danger" size="sm" data-cy="entityDeleteButton">
-                          <FontAwesomeIcon icon="trash" />{' '}
-                          <span className="d-none d-md-inline">
-                            <Translate contentKey="entity.action.delete">Delete</Translate>
-                          </span>
-                        </Button>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-              ))}
+              {filteredForms.map(
+                (form, i) =>
+                  ((form.user && form.user.login === account.login) || isAdmin) && (
+                    <tr key={`entity-${i}`} data-cy="entityTable">
+                      <td>{form.id}</td>
+                      <td>{form.futurePlan}</td>
+                      <td>{form.createDate ? <TextFormat type="date" value={form.createDate} format={APP_LOCAL_DATE_FORMAT} /> : null}</td>
+                      <td>{form.updateDate ? <TextFormat type="date" value={form.updateDate} format={APP_LOCAL_DATE_FORMAT} /> : null}</td>
+                      {isAdmin && <td>{form.user.login}</td>}
+                      <td> {form.organization ? form.organization.name : ''}</td>
+                      <td className="text-end">
+                        <div className="btn-group flex-btn-group-container">
+                          <Button tag={Link} to={`/form/${form.id}/print`} color="info" size="sm" data-cy="entityDetailsButton">
+                            <FontAwesomeIcon icon="eye" />{' '}
+                            <span className="d-none d-md-inline">
+                              <Translate contentKey="entity.action.surveyprint">Print View</Translate>
+                            </span>
+                          </Button>
+                          &nbsp;
+                          <Button
+                            tag={Link}
+                            to={`/form/${form.id}/edit`}
+                            color="primary"
+                            onClick={handleClick}
+                            size="sm"
+                            data-cy="entityEditButton"
+                          >
+                            <FontAwesomeIcon icon="pencil-alt" />{' '}
+                            <span className="d-none d-md-inline">
+                              <Translate contentKey="entity.action.edit">Edit</Translate>
+                            </span>
+                          </Button>
+                          &nbsp;
+                          {isAdmin && (
+                            <Button tag={Link} to={`/form/${form.id}/delete`} color="danger" size="sm" data-cy="entityDeleteButton">
+                              <FontAwesomeIcon icon="trash" />{' '}
+                              <span className="d-none d-md-inline">
+                                <Translate contentKey="entity.action.delete">Delete</Translate>
+                              </span>
+                            </Button>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  ),
+              )}
             </tbody>
           </Table>
         ) : (
