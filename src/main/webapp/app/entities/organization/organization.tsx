@@ -137,29 +137,27 @@ export const Organization = () => {
           <Table responsive>
             <thead>
               <tr>
-                <th className="hand" onClick={sort('id')}>
+                <th>
                   <Translate contentKey="surveySampleApp.organization.id">ID</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
                 </th>
                 <th className="hand" onClick={sort('name')}>
                   <Translate contentKey="surveySampleApp.organization.name">Name</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('name')} />
                 </th>
-                <th className="hand" onClick={sort('code')}>
+                <th>
                   <Translate contentKey="surveySampleApp.organization.code">Code</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('code')} />
-                </th>
-                <th className="hand" onClick={sort('description')}>
-                  <Translate contentKey="surveySampleApp.organization.description">Description</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('description')} />
-                </th>
-                <th className="hand" onClick={sort('address')}>
-                  <Translate contentKey="surveySampleApp.organization.address">Address</Translate>{' '}
-                  <FontAwesomeIcon icon={getSortIconByFieldName('address')} />
                 </th>
                 <th>
-                  <Translate contentKey="surveySampleApp.organization.user">User</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="surveySampleApp.organization.description">Description</Translate>{' '}
                 </th>
+                <th>
+                  <Translate contentKey="surveySampleApp.organization.address">Address</Translate>{' '}
+                </th>
+                {isAdmin && (
+                  <th>
+                    <Translate contentKey="surveySampleApp.organization.user">User</Translate>
+                  </th>
+                )}
                 <th />
               </tr>
             </thead>
@@ -171,7 +169,7 @@ export const Organization = () => {
                   <td>{organization.code}</td>
                   <td>{organization.description}</td>
                   <td>{organization.address}</td>
-                  <td>{organization.user ? organization.user.login : ''}</td>
+                  {isAdmin && <td>{organization.user ? organization.user.login : ''}</td>}
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button

@@ -454,8 +454,8 @@ export const Form = () => {
           <Table responsive>
             <thead>
               <tr>
-                <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="surveySampleApp.form.id">ID</Translate> <FontAwesomeIcon icon={getSortIconByFieldName('id')} />
+                <th>
+                  <Translate contentKey="surveySampleApp.form.id">ID</Translate>
                 </th>
                 <th className="hand" onClick={sort('futurePlan')}>
                   <Translate contentKey="surveySampleApp.form.futurePlan">Future Plan</Translate>{' '}
@@ -471,7 +471,7 @@ export const Form = () => {
                 </th>
                 {isAdmin && (
                   <th>
-                    <Translate contentKey="surveySampleApp.form.user">User</Translate> <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="surveySampleApp.form.user">User</Translate>
                   </th>
                 )}
                 <th>
