@@ -461,6 +461,9 @@ export const Form = () => {
                   <Translate contentKey="surveySampleApp.form.futurePlan">Future Plan</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('futurePlan')} />
                 </th>
+                <th>
+                  <Translate contentKey="surveySampleApp.form.organization">Organization</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
                 <th className="hand" onClick={sort('createDate')}>
                   <Translate contentKey="surveySampleApp.form.createDate">Create Date</Translate>{' '}
                   <FontAwesomeIcon icon={getSortIconByFieldName('createDate')} />
@@ -474,9 +477,6 @@ export const Form = () => {
                     <Translate contentKey="surveySampleApp.form.user">User</Translate>
                   </th>
                 )}
-                <th>
-                  <Translate contentKey="surveySampleApp.form.organization">Organization</Translate> <FontAwesomeIcon icon="sort" />
-                </th>
                 <th />
               </tr>
             </thead>
@@ -487,10 +487,10 @@ export const Form = () => {
                     <tr key={`entity-${i}`} data-cy="entityTable">
                       <td>{form.id}</td>
                       <td>{form.futurePlan}</td>
+                      <td> {form.organization ? form.organization.name : ''}</td>
                       <td>{form.createDate ? <TextFormat type="date" value={form.createDate} format={APP_LOCAL_DATE_FORMAT} /> : null}</td>
                       <td>{form.updateDate ? <TextFormat type="date" value={form.updateDate} format={APP_LOCAL_DATE_FORMAT} /> : null}</td>
                       {isAdmin && <td>{form.user.login}</td>}
-                      <td> {form.organization ? form.organization.name : ''}</td>
                       <td className="text-end">
                         <div className="btn-group flex-btn-group-container">
                           <Button tag={Link} to={`/form/${form.id}/print`} color="info" size="sm" data-cy="entityDetailsButton">

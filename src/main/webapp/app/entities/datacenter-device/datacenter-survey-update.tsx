@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Translate, ValidatedField } from 'react-jhipster';
 import { Button, Col, Row, Table } from 'reactstrap';
-
+import { DataCenterDeviceType } from 'app/shared/model/enumerations/data-center-device-type.model';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
 import { IDatacenterDevice } from 'app/shared/model/datacenter-device.model';
 import axios from 'axios';
 import { incrementEditIndex } from '../form/survey-edit-index-reducer';
-import { updateEntity } from './datacenter-device.reducer';
+import { createEntity, updateEntity } from './datacenter-device.reducer';
 
 interface DatacenterDeviceUpdateProps {
   formId: string;
@@ -59,6 +59,8 @@ export const DatacenterDeviceSurveyUpdate: React.FC<DatacenterDeviceUpdateProps>
   const [sixthAge, setSixthAge] = useState('');
   const [sixthPurpose, setSixthPurpose] = useState('');
 
+  const datacenterDeviceEntity = useAppSelector(state => state.datacenterDevice.entity);
+
   const [datacenterDeviceEntities, setDatacenterDeviceEntities] = useState<IDatacenterDevice[]>([]);
   useEffect(() => {
     const getDatacenterDeviceEntities = async () => {
@@ -108,6 +110,13 @@ export const DatacenterDeviceSurveyUpdate: React.FC<DatacenterDeviceUpdateProps>
         setSixthQuantity(response.data[5].quantity);
         setSixthAge(response.data[5].age);
         setSixthPurpose(response.data[5].purpose);
+      } else {
+        setFirstDeviceType(DataCenterDeviceType.Racks);
+        setSecondDeviceType(DataCenterDeviceType.Servers);
+        setThirdDeviceType(DataCenterDeviceType.Routers);
+        setFourthDeviceType(DataCenterDeviceType.Switches);
+        setFifthDeviceType(DataCenterDeviceType.Firewalls);
+        setSixthDeviceType(DataCenterDeviceType.DataStorage);
       }
       setDatacenterDeviceEntities(response.data);
     };
@@ -254,82 +263,166 @@ export const DatacenterDeviceSurveyUpdate: React.FC<DatacenterDeviceUpdateProps>
     dispatch(incrementEditIndex(1));
   };
   const updateFirstEntity = async (Id, DeviceType, BrandAndModel, CurrentStatus, Quantity, Age, Purpose) => {
-    const entity = {
-      id: Id,
-      deviceType: DeviceType,
-      brandAndModel: BrandAndModel,
-      currentStatus: CurrentStatus,
-      quantity: Quantity,
-      age: Age,
-      purpose: Purpose,
-      form: forms.find(it => it.id.toString() === formId),
-    };
-    await dispatch(updateEntity(entity));
+    if (Id === null) {
+      const entity = {
+        ...datacenterDeviceEntity,
+        deviceType: DeviceType,
+        brandAndModel: BrandAndModel,
+        currentStatus: CurrentStatus,
+        quantity: Quantity,
+        age: Age,
+        purpose: Purpose,
+        form: forms.find(it => it.id.toString() === formId),
+      };
+      await dispatch(createEntity(entity));
+    } else if (Id !== null) {
+      const entity = {
+        id: Id,
+        deviceType: DeviceType,
+        brandAndModel: BrandAndModel,
+        currentStatus: CurrentStatus,
+        quantity: Quantity,
+        age: Age,
+        purpose: Purpose,
+        form: forms.find(it => it.id.toString() === formId),
+      };
+      await dispatch(updateEntity(entity));
+    }
   };
   const updateSecondEntity = async (Id, DeviceType, BrandAndModel, CurrentStatus, Quantity, Age, Purpose) => {
-    const entity = {
-      id: Id,
-      deviceType: DeviceType,
-      brandAndModel: BrandAndModel,
-      currentStatus: CurrentStatus,
-      quantity: Quantity,
-      age: Age,
-      purpose: Purpose,
-      form: forms.find(it => it.id.toString() === formId),
-    };
-    await dispatch(updateEntity(entity));
+    if (Id === null) {
+      const entity = {
+        ...datacenterDeviceEntity,
+        deviceType: DeviceType,
+        brandAndModel: BrandAndModel,
+        currentStatus: CurrentStatus,
+        quantity: Quantity,
+        age: Age,
+        purpose: Purpose,
+        form: forms.find(it => it.id.toString() === formId),
+      };
+      await dispatch(createEntity(entity));
+    } else if (Id !== null) {
+      const entity = {
+        id: Id,
+        deviceType: DeviceType,
+        brandAndModel: BrandAndModel,
+        currentStatus: CurrentStatus,
+        quantity: Quantity,
+        age: Age,
+        purpose: Purpose,
+        form: forms.find(it => it.id.toString() === formId),
+      };
+      await dispatch(updateEntity(entity));
+    }
   };
   const updateThirdEntity = async (Id, DeviceType, BrandAndModel, CurrentStatus, Quantity, Age, Purpose) => {
-    const entity = {
-      id: Id,
-      deviceType: DeviceType,
-      brandAndModel: BrandAndModel,
-      currentStatus: CurrentStatus,
-      quantity: Quantity,
-      age: Age,
-      purpose: Purpose,
-      form: forms.find(it => it.id.toString() === formId),
-    };
-    await dispatch(updateEntity(entity));
+    if (Id === null) {
+      const entity = {
+        ...datacenterDeviceEntity,
+        deviceType: DeviceType,
+        brandAndModel: BrandAndModel,
+        currentStatus: CurrentStatus,
+        quantity: Quantity,
+        age: Age,
+        purpose: Purpose,
+        form: forms.find(it => it.id.toString() === formId),
+      };
+      await dispatch(createEntity(entity));
+    } else if (Id !== null) {
+      const entity = {
+        id: Id,
+        deviceType: DeviceType,
+        brandAndModel: BrandAndModel,
+        currentStatus: CurrentStatus,
+        quantity: Quantity,
+        age: Age,
+        purpose: Purpose,
+        form: forms.find(it => it.id.toString() === formId),
+      };
+      await dispatch(updateEntity(entity));
+    }
   };
   const updateFourthEntity = async (Id, DeviceType, BrandAndModel, CurrentStatus, Quantity, Age, Purpose) => {
-    const entity = {
-      id: Id,
-      deviceType: DeviceType,
-      brandAndModel: BrandAndModel,
-      currentStatus: CurrentStatus,
-      quantity: Quantity,
-      age: Age,
-      purpose: Purpose,
-      form: forms.find(it => it.id.toString() === formId),
-    };
-    await dispatch(updateEntity(entity));
+    if (Id === null) {
+      const entity = {
+        ...datacenterDeviceEntity,
+        deviceType: DeviceType,
+        brandAndModel: BrandAndModel,
+        currentStatus: CurrentStatus,
+        quantity: Quantity,
+        age: Age,
+        purpose: Purpose,
+        form: forms.find(it => it.id.toString() === formId),
+      };
+      await dispatch(createEntity(entity));
+    } else if (Id !== null) {
+      const entity = {
+        id: Id,
+        deviceType: DeviceType,
+        brandAndModel: BrandAndModel,
+        currentStatus: CurrentStatus,
+        quantity: Quantity,
+        age: Age,
+        purpose: Purpose,
+        form: forms.find(it => it.id.toString() === formId),
+      };
+      await dispatch(updateEntity(entity));
+    }
   };
   const updateFifthEntity = async (Id, DeviceType, BrandAndModel, CurrentStatus, Quantity, Age, Purpose) => {
-    const entity = {
-      id: Id,
-      deviceType: DeviceType,
-      brandAndModel: BrandAndModel,
-      currentStatus: CurrentStatus,
-      quantity: Quantity,
-      age: Age,
-      purpose: Purpose,
-      form: forms.find(it => it.id.toString() === formId),
-    };
-    await dispatch(updateEntity(entity));
+    if (Id === null) {
+      const entity = {
+        ...datacenterDeviceEntity,
+        deviceType: DeviceType,
+        brandAndModel: BrandAndModel,
+        currentStatus: CurrentStatus,
+        quantity: Quantity,
+        age: Age,
+        purpose: Purpose,
+        form: forms.find(it => it.id.toString() === formId),
+      };
+      await dispatch(createEntity(entity));
+    } else if (Id !== null) {
+      const entity = {
+        id: Id,
+        deviceType: DeviceType,
+        brandAndModel: BrandAndModel,
+        currentStatus: CurrentStatus,
+        quantity: Quantity,
+        age: Age,
+        purpose: Purpose,
+        form: forms.find(it => it.id.toString() === formId),
+      };
+      await dispatch(updateEntity(entity));
+    }
   };
   const updateSixthEntity = async (Id, DeviceType, BrandAndModel, CurrentStatus, Quantity, Age, Purpose) => {
-    const entity = {
-      id: Id,
-      deviceType: DeviceType,
-      brandAndModel: BrandAndModel,
-      currentStatus: CurrentStatus,
-      quantity: Quantity,
-      age: Age,
-      purpose: Purpose,
-      form: forms.find(it => it.id.toString() === formId),
-    };
-    await dispatch(updateEntity(entity));
+    if (Id === null) {
+      const entity = {
+        ...datacenterDeviceEntity,
+        deviceType: DeviceType,
+        brandAndModel: BrandAndModel,
+        currentStatus: CurrentStatus,
+        quantity: Quantity,
+        age: Age,
+        purpose: Purpose,
+        form: forms.find(it => it.id.toString() === formId),
+      };
+      await dispatch(createEntity(entity));
+    } else if (Id !== null) {
+      const entity = {
+        id: Id,
+        deviceType: DeviceType,
+        brandAndModel: BrandAndModel,
+        currentStatus: CurrentStatus,
+        quantity: Quantity,
+        age: Age,
+        purpose: Purpose,
+        form: forms.find(it => it.id.toString() === formId),
+      };
+      await dispatch(updateEntity(entity));
+    }
   };
 
   return (
@@ -367,370 +460,392 @@ export const DatacenterDeviceSurveyUpdate: React.FC<DatacenterDeviceUpdateProps>
                   </th>
                 </tr>
               </thead>
-              {datacenterDeviceEntities.length !== 0 && (
-                <tbody>
-                  <tr>
-                    <td hidden>
-                      <ValidatedField defaultValue={datacenterDeviceEntities[0].id} name="firstId" type="text" onChange={handleFirstId} />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[0].deviceType}
-                        name="firstDeviceType"
-                        type="text"
-                        required
-                        disabled
-                        onChange={handleFirstDeviceType}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[0].brandAndModel}
-                        name="firstBrandAndModel"
-                        type="text"
-                        required
-                        onChange={handleFirstBrandAndModel}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[0].currentStatus}
-                        name="firstCurrentStatus"
-                        type="text"
-                        required
-                        onChange={handleFirstCurrentStatus}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[0].quantity}
-                        name="firstQuantity"
-                        type="number"
-                        required
-                        onChange={handleFirstQuantity}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[0].age}
-                        name="firstAge"
-                        type="text"
-                        required
-                        onChange={handleFirstAge}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[0].purpose}
-                        name="firstPurpose"
-                        type="text"
-                        required
-                        onChange={handleFirstPurpose}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td hidden>
-                      <ValidatedField defaultValue={datacenterDeviceEntities[1].id} name="SecondId" type="text" onChange={handleSecondId} />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[1].deviceType}
-                        name="SecondDeviceType"
-                        type="text"
-                        required
-                        disabled
-                        onChange={handleSecondDeviceType}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[1].brandAndModel}
-                        name="SecondBrandAndModel"
-                        type="text"
-                        required
-                        onChange={handleSecondBrandAndModel}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[1].currentStatus}
-                        name="SecondCurrentStatus"
-                        type="text"
-                        required
-                        onChange={handleSecondCurrentStatus}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[1].quantity}
-                        name="SecondQuantity"
-                        type="number"
-                        required
-                        onChange={handleSecondQuantity}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[1].age}
-                        name="SecondAge"
-                        type="text"
-                        required
-                        onChange={handleSecondAge}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[1].purpose}
-                        name="SecondPurpose"
-                        type="text"
-                        required
-                        onChange={handleSecondPurpose}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td hidden>
-                      <ValidatedField defaultValue={datacenterDeviceEntities[2].id} name="ThirdId" type="text" onChange={handleThirdId} />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[2].deviceType}
-                        name="ThirdDeviceType"
-                        type="text"
-                        required
-                        disabled
-                        onChange={handleThirdDeviceType}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[2].brandAndModel}
-                        name="ThirdBrandAndModel"
-                        type="text"
-                        required
-                        onChange={handleThirdBrandAndModel}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[2].currentStatus}
-                        name="ThirdCurrentStatus"
-                        type="text"
-                        required
-                        onChange={handleThirdCurrentStatus}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[2].quantity}
-                        name="ThirdQuantity"
-                        type="number"
-                        required
-                        onChange={handleThirdQuantity}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[2].age}
-                        name="ThirdAge"
-                        type="text"
-                        required
-                        onChange={handleThirdAge}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[2].purpose}
-                        name="ThirdPurpose"
-                        type="text"
-                        required
-                        onChange={handleThirdPurpose}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td hidden>
-                      <ValidatedField defaultValue={datacenterDeviceEntities[3].id} name="FourthId" type="text" onChange={handleFourthId} />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[3].deviceType}
-                        name="FourthDeviceType"
-                        type="text"
-                        required
-                        disabled
-                        onChange={handleFourthDeviceType}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[3].brandAndModel}
-                        name="FourthBrandAndModel"
-                        type="text"
-                        required
-                        onChange={handleFourthBrandAndModel}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[3].currentStatus}
-                        name="FourthCurrentStatus"
-                        type="text"
-                        required
-                        onChange={handleFourthCurrentStatus}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[3].quantity}
-                        name="FourthQuantity"
-                        type="number"
-                        required
-                        onChange={handleFourthQuantity}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[3].age}
-                        name="FourthAge"
-                        type="text"
-                        required
-                        onChange={handleFourthAge}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[3].purpose}
-                        name="FourthPurpose"
-                        type="text"
-                        required
-                        onChange={handleFourthPurpose}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td hidden>
-                      <ValidatedField defaultValue={datacenterDeviceEntities[4].id} name="FifthId" type="text" onChange={handleFifthId} />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[4].deviceType}
-                        name="FifthDeviceType"
-                        type="text"
-                        required
-                        disabled
-                        onChange={handleFifthDeviceType}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[4].brandAndModel}
-                        name="FifthBrandAndModel"
-                        type="text"
-                        required
-                        onChange={handleFifthBrandAndModel}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[4].currentStatus}
-                        name="FifthCurrentStatus"
-                        type="text"
-                        required
-                        onChange={handleFifthCurrentStatus}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[4].quantity}
-                        name="FifthQuantity"
-                        type="number"
-                        required
-                        onChange={handleFifthQuantity}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[4].age}
-                        name="FifthAge"
-                        type="text"
-                        required
-                        onChange={handleFifthAge}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[4].purpose}
-                        name="FifthPurpose"
-                        type="text"
-                        required
-                        onChange={handleFifthPurpose}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td hidden>
-                      <ValidatedField defaultValue={datacenterDeviceEntities[5].id} name="SixthId" type="text" onChange={handleSixthId} />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[5].deviceType}
-                        name="SixthDeviceType"
-                        type="text"
-                        required
-                        disabled
-                        onChange={handleSixthDeviceType}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[5].brandAndModel}
-                        name="SixthBrandAndModel"
-                        type="text"
-                        required
-                        onChange={handleSixthBrandAndModel}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[5].currentStatus}
-                        name="SixthCurrentStatus"
-                        type="text"
-                        required
-                        onChange={handleSixthCurrentStatus}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[5].quantity}
-                        name="SixthQuantity"
-                        type="number"
-                        required
-                        onChange={handleSixthQuantity}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[5].age}
-                        name="SixthAge"
-                        type="text"
-                        required
-                        onChange={handleSixthAge}
-                      />
-                    </td>
-                    <td>
-                      <ValidatedField
-                        defaultValue={datacenterDeviceEntities[5].purpose}
-                        name="SixthPurpose"
-                        type="text"
-                        required
-                        onChange={handleSixthPurpose}
-                      />
-                    </td>
-                  </tr>
-                </tbody>
-              )}
+              <tbody>
+                <tr>
+                  <td hidden>
+                    <ValidatedField defaultValue={datacenterDeviceEntities[0]?.id} name="firstId" type="text" onChange={handleFirstId} />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={
+                        datacenterDeviceEntities[0]?.deviceType.length > 0
+                          ? datacenterDeviceEntities[0].deviceType
+                          : DataCenterDeviceType.Racks
+                      }
+                      name="firstDeviceType"
+                      type="text"
+                      required
+                      disabled
+                      onChange={handleFirstDeviceType}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[0]?.brandAndModel}
+                      name="firstBrandAndModel"
+                      type="text"
+                      required
+                      onChange={handleFirstBrandAndModel}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[0]?.currentStatus}
+                      name="firstCurrentStatus"
+                      type="text"
+                      required
+                      onChange={handleFirstCurrentStatus}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[0]?.quantity}
+                      name="firstQuantity"
+                      type="number"
+                      required
+                      onChange={handleFirstQuantity}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[0]?.age}
+                      name="firstAge"
+                      type="text"
+                      required
+                      onChange={handleFirstAge}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[0]?.purpose}
+                      name="firstPurpose"
+                      type="text"
+                      required
+                      onChange={handleFirstPurpose}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td hidden>
+                    <ValidatedField defaultValue={datacenterDeviceEntities[1]?.id} name="SecondId" type="text" onChange={handleSecondId} />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={
+                        datacenterDeviceEntities[1]?.deviceType.length > 0
+                          ? datacenterDeviceEntities[1].deviceType
+                          : DataCenterDeviceType.Servers
+                      }
+                      name="SecondDeviceType"
+                      type="text"
+                      required
+                      disabled
+                      onChange={handleSecondDeviceType}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[1]?.brandAndModel}
+                      name="SecondBrandAndModel"
+                      type="text"
+                      required
+                      onChange={handleSecondBrandAndModel}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[1]?.currentStatus}
+                      name="SecondCurrentStatus"
+                      type="text"
+                      required
+                      onChange={handleSecondCurrentStatus}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[1]?.quantity}
+                      name="SecondQuantity"
+                      type="number"
+                      required
+                      onChange={handleSecondQuantity}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[1]?.age}
+                      name="SecondAge"
+                      type="text"
+                      required
+                      onChange={handleSecondAge}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[1]?.purpose}
+                      name="SecondPurpose"
+                      type="text"
+                      required
+                      onChange={handleSecondPurpose}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td hidden>
+                    <ValidatedField defaultValue={datacenterDeviceEntities[2]?.id} name="ThirdId" type="text" onChange={handleThirdId} />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={
+                        datacenterDeviceEntities[2]?.deviceType.length > 0
+                          ? datacenterDeviceEntities[2].deviceType
+                          : DataCenterDeviceType.Routers
+                      }
+                      name="ThirdDeviceType"
+                      type="text"
+                      required
+                      disabled
+                      onChange={handleThirdDeviceType}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[2]?.brandAndModel}
+                      name="ThirdBrandAndModel"
+                      type="text"
+                      required
+                      onChange={handleThirdBrandAndModel}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[2]?.currentStatus}
+                      name="ThirdCurrentStatus"
+                      type="text"
+                      required
+                      onChange={handleThirdCurrentStatus}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[2]?.quantity}
+                      name="ThirdQuantity"
+                      type="number"
+                      required
+                      onChange={handleThirdQuantity}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[2]?.age}
+                      name="ThirdAge"
+                      type="text"
+                      required
+                      onChange={handleThirdAge}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[2]?.purpose}
+                      name="ThirdPurpose"
+                      type="text"
+                      required
+                      onChange={handleThirdPurpose}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td hidden>
+                    <ValidatedField defaultValue={datacenterDeviceEntities[3]?.id} name="FourthId" type="text" onChange={handleFourthId} />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={
+                        datacenterDeviceEntities[3]?.deviceType.length > 0
+                          ? datacenterDeviceEntities[3].deviceType
+                          : DataCenterDeviceType.Switches
+                      }
+                      name="FourthDeviceType"
+                      type="text"
+                      required
+                      disabled
+                      onChange={handleFourthDeviceType}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[3]?.brandAndModel}
+                      name="FourthBrandAndModel"
+                      type="text"
+                      required
+                      onChange={handleFourthBrandAndModel}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[3]?.currentStatus}
+                      name="FourthCurrentStatus"
+                      type="text"
+                      required
+                      onChange={handleFourthCurrentStatus}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[3]?.quantity}
+                      name="FourthQuantity"
+                      type="number"
+                      required
+                      onChange={handleFourthQuantity}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[3]?.age}
+                      name="FourthAge"
+                      type="text"
+                      required
+                      onChange={handleFourthAge}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[3]?.purpose}
+                      name="FourthPurpose"
+                      type="text"
+                      required
+                      onChange={handleFourthPurpose}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td hidden>
+                    <ValidatedField defaultValue={datacenterDeviceEntities[4]?.id} name="FifthId" type="text" onChange={handleFifthId} />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={
+                        datacenterDeviceEntities[4]?.deviceType.length > 0
+                          ? datacenterDeviceEntities[4].deviceType
+                          : DataCenterDeviceType.Firewalls
+                      }
+                      name="FifthDeviceType"
+                      type="text"
+                      required
+                      disabled
+                      onChange={handleFifthDeviceType}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[4]?.brandAndModel}
+                      name="FifthBrandAndModel"
+                      type="text"
+                      required
+                      onChange={handleFifthBrandAndModel}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[4]?.currentStatus}
+                      name="FifthCurrentStatus"
+                      type="text"
+                      required
+                      onChange={handleFifthCurrentStatus}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[4]?.quantity}
+                      name="FifthQuantity"
+                      type="number"
+                      required
+                      onChange={handleFifthQuantity}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[4]?.age}
+                      name="FifthAge"
+                      type="text"
+                      required
+                      onChange={handleFifthAge}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[4]?.purpose}
+                      name="FifthPurpose"
+                      type="text"
+                      required
+                      onChange={handleFifthPurpose}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td hidden>
+                    <ValidatedField defaultValue={datacenterDeviceEntities[5]?.id} name="SixthId" type="text" onChange={handleSixthId} />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={
+                        datacenterDeviceEntities[5]?.deviceType.length > 0
+                          ? datacenterDeviceEntities[5].deviceType
+                          : DataCenterDeviceType.DataStorage
+                      }
+                      name="SixthDeviceType"
+                      type="text"
+                      required
+                      disabled
+                      onChange={handleSixthDeviceType}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[5]?.brandAndModel}
+                      name="SixthBrandAndModel"
+                      type="text"
+                      required
+                      onChange={handleSixthBrandAndModel}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[5]?.currentStatus}
+                      name="SixthCurrentStatus"
+                      type="text"
+                      required
+                      onChange={handleSixthCurrentStatus}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[5]?.quantity}
+                      name="SixthQuantity"
+                      type="number"
+                      required
+                      onChange={handleSixthQuantity}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[5]?.age}
+                      name="SixthAge"
+                      type="text"
+                      required
+                      onChange={handleSixthAge}
+                    />
+                  </td>
+                  <td>
+                    <ValidatedField
+                      defaultValue={datacenterDeviceEntities[5]?.purpose}
+                      name="SixthPurpose"
+                      type="text"
+                      required
+                      onChange={handleSixthPurpose}
+                    />
+                  </td>
+                </tr>
+              </tbody>
             </Table>
             <Button color="primary" id="save-entity" data-cy="entityCreateSaveButton" type="submit" disabled={updating}>
               <Translate contentKey="entity.action.updatenext">edit next</Translate>

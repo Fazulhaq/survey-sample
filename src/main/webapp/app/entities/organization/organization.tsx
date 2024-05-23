@@ -145,13 +145,13 @@ export const Organization = () => {
                   <FontAwesomeIcon icon={getSortIconByFieldName('name')} />
                 </th>
                 <th>
-                  <Translate contentKey="surveySampleApp.organization.code">Code</Translate>{' '}
+                  <Translate contentKey="surveySampleApp.organization.address">Address</Translate>{' '}
                 </th>
                 <th>
                   <Translate contentKey="surveySampleApp.organization.description">Description</Translate>{' '}
                 </th>
                 <th>
-                  <Translate contentKey="surveySampleApp.organization.address">Address</Translate>{' '}
+                  <Translate contentKey="surveySampleApp.organization.code">Code</Translate>{' '}
                 </th>
                 {isAdmin && (
                   <th>
@@ -166,9 +166,9 @@ export const Organization = () => {
                 <tr key={`entity-${i}`} data-cy="entityTable">
                   <td>{organization.id}</td>
                   <td>{organization.name}</td>
-                  <td>{organization.code}</td>
-                  <td>{organization.description}</td>
                   <td>{organization.address}</td>
+                  <td>{organization.description}</td>
+                  <td>{organization.code}</td>
                   {isAdmin && <td>{organization.user ? organization.user.login : ''}</td>}
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
